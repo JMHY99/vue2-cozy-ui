@@ -21,11 +21,11 @@
 
 <script>
 import ButtonGroup from "../../packages/button-group/index.js";
-import Button from "../../packages/button/index.js";
+import CButton from "../../packages/button/index.js";
 export default {
   name: "ZlUiButton",
   components: {
-    Button,
+    CButton,
     ButtonGroup,
   },
 
