@@ -7,6 +7,7 @@
       <Button type="info">信息按钮</Button>
       <Button type="danger">危险按钮</Button>
       <Button type="warning">警告按钮</Button>
+      <c-button type="warning">警告按钮</c-button>
     </div>
     <br />
     <ButtonGroup>

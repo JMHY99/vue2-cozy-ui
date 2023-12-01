@@ -1,7 +1,7 @@
-import Button from './button.vue';
+import CButton from './button.vue';
 
-Button.install = function(Vue) {
-  Vue.component(Button.name, Button);
+CButton.install = function(Vue) {
+  Vue.component(CButton.name, CButton);
 };
 
-export default Button;
+export default CButton;

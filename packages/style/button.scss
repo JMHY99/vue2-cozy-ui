@@ -1,0 +1,46 @@
+.zl-button {
+  display: inline-block;
+  margin: 0;
+  padding: 10px 20px;
+  cursor: pointer;
+  color: #333;
+  background: #fff;
+  white-space: nowrap;
+  outline: none;
+  border: 1px solid #666;
+  border-radius: 4px;
+  font-size: 14px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.zl-button-primary {
+  color: #fefefe;
+  background: #279de1;
+  border: none;
+}
+
+.zl-button-success {
+  color: #fefefe;
+  background: #26cdcb;
+  border: none;
+}
+
+.zl-button-info {
+  color: #fefefe;
+  background: #6f8bca;
+  border: none;
+}
+
+.zl-button-danger {
+  color: #fefefe;
+  background: #ff7f4c;
+  border: none;
+}
+
+.zl-button-warning {
+  color: #fefefe;
+  background: #fca04c;
+  background: #ffc143;
+  border: none;
+}

@@ -10,7 +10,7 @@
 
 <script>
 export default {
-  name: "ZlUiButton",
+  name: "c-button",
 
   props: {
     type: {
