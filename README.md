@@ -1,4 +1,4 @@
-# vue2-ui
+# vue2-cozy-ui
 
 ## Project setup
 ```
