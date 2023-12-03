@@ -1,7 +1,7 @@
-import ButtonGroup from "./button-group.vue";
+import CButtonGroup from "./button-group.vue";
 
-ButtonGroup.install = function (Vue) {
-  Vue.component(ButtonGroup.name, ButtonGroup);
+CButtonGroup.install = function (Vue) {
+  Vue.component(CButtonGroup.name, CButtonGroup);
 };
 
-export default ButtonGroup;
+export default CButtonGroup;

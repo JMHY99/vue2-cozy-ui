@@ -1,11 +1,9 @@
 import CButton from "../../packages/button/index.js";
-import "../../packages/style/button.css"
-
-import ElementUI from "element-ui";
-import "element-ui/lib/theme-chalk/index.css";
+import CButtonGroup from "../../packages/button-group/index.js";
 
 export default async ({ Vue }) => {
   if (typeof process === "undefined") {
     Vue.use(CButton);
+    Vue.use(CButtonGroup);
   }
 };

@@ -1,9 +1,5 @@
 <template>
-  <button
-    class="zl-button"
-    @click="(event) => $emit('click', event)"
-    :class="[type ? 'zl-button-' + type : '']"
-  >
+  <button @click="(event) => $emit('click', event)" :class="className">
     <span><slot></slot></span>
   </button>
 </template>
@@ -20,7 +16,7 @@ export default {
     size: [String, Number],
     loading: Boolean,
     disabled: Boolean,
-    plain: Boolean,
+    ghost: Boolean,
     round: Boolean,
     circle: Boolean,
   },
@@ -33,12 +29,22 @@ export default {
 
   methods: {},
 
-  computed: {},
+  computed: {
+    className() {
+      return [
+        "c-button",
+        this.type ? "c-button-" + this.type : "",
+        this.disabled ? "c-button-disabled" : "",
+        this.circle ? "c-button-circle" : "",
+        this.ghost ? "c-button-ghost" : "",
+      ];
+    },
+  },
 };
 </script>
 
 <style lang="scss" scoped>
-.zl-button {
+.c-button {
   display: inline-block;
   margin: 0;
   padding: 10px 20px;
@@ -54,7 +60,7 @@ export default {
   box-sizing: border-box;
 }
 
-.zl-button-primary {
+.c-button-primary {
   color: #fefefe;
   // background: #91a8cf;
   // background: #98ddde;
@@ -66,19 +72,19 @@ export default {
   // background: #b1916b;
 }
 
-.zl-button-success {
+.c-button-success {
   color: #fefefe;
   background: #26cdcb;
   border: none;
 }
 
-.zl-button-info {
+.c-button-info {
   color: #fefefe;
   background: #6f8bca;
   border: none;
 }
 
-.zl-button-danger {
+.c-button-danger {
   color: #fefefe;
   // background: #f7786d;
   background: #ff7f4c;
@@ -86,7 +92,7 @@ export default {
   border: none;
 }
 
-.zl-button-warning {
+.c-button-warning {
   color: #fefefe;
   background: #fca04c;
   // background: #fef97f;
@@ -94,5 +100,63 @@ export default {
   // background: #26cdcb;
   background: #ffc143;
   border: none;
+}
+
+.c-button-disabled {
+  opacity: 0.4;
+  cursor: no-drop;
+
+  &:hover,
+  &focus {
+    opacity: 0.4;
+    cursor: no-drop;
+  }
+}
+
+.c-button-default.c-button-disabled {
+  &:hover,
+  &focus {
+    opacity: 0.4;
+    cursor: no-drop;
+    color: #333;
+    border: 1px solid #dcdee2;
+  }
+}
+
+.c-button-circle {
+  border-radius: 10px;
+}
+
+.c-button-ghost {
+  background: none;
+  &:hover,
+  &focus {
+    background: #e8eaec;
+  }
+}
+
+.c-button-info.c-button-ghost {
+  color: #6f8bca;
+  border: 1px solid #6f8bca;
+}
+
+.c-button-primary.c-button-ghost {
+  color: #279de1;
+  border: 1px solid #279de1;
+}
+
+.c-button-success.c-button-ghost {
+  color: #26cdcb;
+  border: 1px solid #26cdcb;
+}
+
+.c-button-warning.c-button-ghost {
+  color: #ffc143;
+  border: 1px solid #ffc143;
+}
+
+.c-button-danger.c-button-ghost {
+  color: #ff7f4c;
+  border: 1px solid #ff7f4c;
 }
 </style>

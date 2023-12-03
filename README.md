@@ -1,5 +1,7 @@
 # vue2-cozy-ui
 
+node 14
+
 ## Project setup
 ```
 npm install

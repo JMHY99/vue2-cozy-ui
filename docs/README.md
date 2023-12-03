@@ -1,38 +1,16 @@
-# cozy-ui
-
-## Button 按钮
-
-常用的操作按钮。
-
-### 基础用法
-
-基础的按钮用法。
-
-使用`type`、`plain`、`round`和`circle`属性来定义 Button 的样式。
-
-::: demo 
-
-```html
-<c-button>默认按钮</c-button>
-<c-button type="primary">主要按钮</c-button>
-<c-button type="success">成功按钮</c-button>
-<c-button type="info">信息按钮</c-button>
-<c-button type="danger">危险按钮</c-button>
-<c-button type="warning">警告按钮</c-button>
-```
-:::
-
-### Attributes
-
-| 参数        | 说明           | 类型    | 可选值                                             | 默认值 |
-| ----------- | -------------- | ------- | -------------------------------------------------- | ------ |
-| size        | 尺寸           | string  | medium / small / mini                              | —      |
-| type        | 类型           | string  | primary / success / warning / danger / info / text | —      |
-| plain       | 是否朴素按钮   | boolean | —                                                  | false  |
-| round       | 是否圆角按钮   | boolean | —                                                  | false  |
-| circle      | 是否圆形按钮   | boolean | —                                                  | false  |
-| loading     | 是否加载中状态 | boolean | —                                                  | false  |
-| disabled    | 是否禁用状态   | boolean | —                                                  | false  |
-| icon        | 图标类名       | string  | —                                                  | —      |
-| autofocus   | 是否默认聚焦   | boolean | —                                                  | false  |
-| native-type | 原生 type 属性 | string  | button / submit / reset                            | button |
+---
+home: true
+heroImage: /logo.jpg
+heroText: vue2-cozy-ui
+tagline: false
+actionText: 快速上手 →
+actionLink: /components/install
+features:
+- title: 简洁至上
+  details: 以 Markdown 为中心的项目结构，以最少的配置帮助你专注于写作。
+- title: Vue驱动
+  details: 享受 Vue + webpack 的开发体验，在 Markdown 中使用 Vue 组件，同时可以使用 Vue 来开发自定义主题。
+- title: 高性能
+  details: VuePress 为每个页面预渲染生成静态的 HTML，同时在页面被加载的时候，将作为 SPA 运行。
+footer: MIT Licensed | Copyright © 2018-present zjm
+---
