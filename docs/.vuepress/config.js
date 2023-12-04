@@ -11,7 +11,7 @@ module.exports = {
       // 直接跳转，'/'为不添加路由，跳转至首页，以/结尾的最终对应的都是/index.html,也就是README.md文件编译后的页面
       { text: "首页", link: "/" },
       // 对应blog/fontend/README.md
-      { text: "组件", link: "/components/" },
+      { text: "组件", link: "/components/install" },
     ],
     // 禁用导航栏
     // navbar: false,
@@ -35,7 +35,7 @@ module.exports = {
           title: "组件",
           collapsable: false,
           sidebarDepth: 1, // 只显示一级标题
-          children: ["button"],
+          children: ["icon", "button"],
         },
       ],
     },

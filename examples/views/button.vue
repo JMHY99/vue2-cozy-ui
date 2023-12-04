@@ -8,6 +8,8 @@
       <c-button type="danger">危险按钮</c-button>
       <c-button type="warning">警告按钮</c-button>
       <c-button type="warning">警告按钮</c-button>
+      <c-icon name="c-up-outlined"></c-icon>
+      <i class="cozy-icon c-close-circle-outlined"></i>
     </div>
     <br />
     <ButtonGroup>
@@ -22,11 +24,13 @@
 <script>
 import ButtonGroup from "../../packages/button-group/index.js";
 import CButton from "../../packages/button/index.js";
+import CIcon from "../../packages/icon/index.js";
 export default {
   name: "ZlUiButton",
   components: {
     CButton,
     ButtonGroup,
+    CIcon,
   },
 
   data() {
@@ -44,7 +48,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-#show .c-button{
+#show .c-button {
   margin: 5px;
 }
 </style>

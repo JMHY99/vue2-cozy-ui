@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: "c-button",
+  name: "CButton",
 
   props: {
     type: {
