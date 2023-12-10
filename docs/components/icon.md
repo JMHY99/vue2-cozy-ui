@@ -5,13 +5,13 @@
 ::: demo
 
 ```html
-<c-icon class="c-minus-circle-outlined"></c-icon>
-<c-icon class="c-check-circle-outlined"></c-icon>
-<c-icon class="c-close-circle-outlined"></c-icon>
-<c-icon class="c-set-outlined"></c-icon>
-<c-icon class="c-scene-outlined"></c-icon>
-<c-icon class="c-skin-outlined"></c-icon>
-<c-icon class="c-wenjianjia"></c-icon>
+<c-icon name="c-minus-circle-outlined"></c-icon>
+<c-icon name="c-check-circle-outlined"></c-icon>
+<c-icon name="c-close-circle-outlined"></c-icon>
+<c-icon name="c-set-outlined"></c-icon>
+<c-icon name="c-scene-outlined"></c-icon>
+<c-icon name="c-skin-outlined"></c-icon>
+<c-icon name="c-wenjianjia"></c-icon>
 ```
 
 :::
@@ -40,6 +40,14 @@
 ```html
 <c-icon spin class="c-refresh-outlined"></c-icon>
 <c-icon spin class="c-refresh-double-outlined"></c-icon>
+```
+:::
+
+### 图标集合
+`spin`属性
+::: demo
+```html
+<IconList></IconList>
 ```
 :::
 

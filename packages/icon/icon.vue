@@ -9,7 +9,7 @@ export default {
     name: String,
     spin: Boolean,
     size: {
-      type: Number,
+      type: [Number, String],
       default: 24,
     },
   },

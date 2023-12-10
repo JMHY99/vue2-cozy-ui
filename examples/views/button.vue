@@ -18,6 +18,7 @@
       <Button type="primary">按钮</Button>
       <Button type="primary">按钮</Button>
     </ButtonGroup>
+    <!-- <ul><li v-for="item"></li></ul>s -->
   </div>
 </template>
 
@@ -25,6 +26,7 @@
 import ButtonGroup from "../../packages/button-group/index.js";
 import CButton from "../../packages/button/index.js";
 import CIcon from "../../packages/icon/index.js";
+import json from "../../packages/style/fonts/iconfont.json"
 export default {
   name: "ZlUiButton",
   components: {
@@ -37,7 +39,9 @@ export default {
     return {};
   },
 
-  mounted() {},
+  mounted() {
+    console.log(json);
+  },
 
   methods: {
     handleClick(e) {
