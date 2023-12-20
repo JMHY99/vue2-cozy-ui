@@ -60,6 +60,13 @@ export default {
   box-sizing: border-box;
 }
 
+.c-button-default {
+  transform: all 0.2s;
+  &:active {
+    background: #f8f8f9;
+  }
+}
+
 .c-button-primary {
   color: #fefefe;
   // background: #91a8cf;
@@ -70,18 +77,27 @@ export default {
   // background: #9896a4;
   // background: #f7786d;
   // background: #b1916b;
+  &:active {
+    background: #038ddd;
+  }
 }
 
 .c-button-success {
   color: #fefefe;
   background: #26cdcb;
   border: none;
+  &:active {
+    background: #05adab;
+  }
 }
 
 .c-button-info {
   color: #fefefe;
   background: #6f8bca;
   border: none;
+  &:active {
+    background: #4471da;
+  }
 }
 
 .c-button-danger {
@@ -90,6 +106,9 @@ export default {
   background: #ff7f4c;
   // border: 1px solid #ff1500;
   border: none;
+  &:active {
+    background: #f86c34;
+  }
 }
 
 .c-button-warning {
@@ -100,6 +119,9 @@ export default {
   // background: #26cdcb;
   background: #ffc143;
   border: none;
+  &:active {
+    background: #fcb830;
+  }
 }
 
 .c-button-disabled {
