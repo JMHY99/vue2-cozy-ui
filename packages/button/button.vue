@@ -64,6 +64,11 @@ export default {
   transform: all 0.2s;
   &:active {
     background: #f8f8f9;
+    box-shadow: 0 0 5px 0px #279de1;
+  }
+  &:hover {
+    border-color: #279de1;
+    color: #279de1;
   }
 }
 
@@ -79,6 +84,7 @@ export default {
   // background: #b1916b;
   &:active {
     background: #038ddd;
+    box-shadow: 0 0 6px -1px #279de1;
   }
 }
 
@@ -88,6 +94,7 @@ export default {
   border: none;
   &:active {
     background: #05adab;
+    box-shadow: 0 0 6px -1px #05adab;
   }
 }
 
@@ -97,6 +104,7 @@ export default {
   border: none;
   &:active {
     background: #4471da;
+    box-shadow: 0 0 6px -1px #4471da;
   }
 }
 
@@ -108,6 +116,7 @@ export default {
   border: none;
   &:active {
     background: #f86c34;
+    box-shadow: 0 0 6px -1px #f86c34;
   }
 }
 
@@ -121,6 +130,7 @@ export default {
   border: none;
   &:active {
     background: #fcb830;
+    box-shadow: 0 0 6px -1px #fcb830;
   }
 }
 
