@@ -1,6 +1,7 @@
 const path = require("path");
 module.exports = {
-  locales: { //多语言设置
+  //多语言设置
+  locales: {
     "/": {
       lang: "zh-CN",
       title: "vue2-cozy-ui🎉",
@@ -40,12 +41,13 @@ module.exports = {
           title: "组件",
           collapsable: false,
           sidebarDepth: 1, // 只显示一级标题
-          children: ["icon", "button"],
+          children: ["color", "icon", "button"],
         },
       ],
     },
   },
 
+  // 插件使用
   plugins: [
     "demo-container",
     "@vuepress/back-to-top",
@@ -55,6 +57,23 @@ module.exports = {
         size: 2,
         shape: "star", // 形状['star' | 'circle'],
         zIndex: 999999999,
+      },
+    ],
+    [
+      "vuepress-plugin-right-anchor", //右侧小目录插件
+      {
+        showDepth: 3,
+        ignore: [
+          "/",
+          "/api/",
+          // more...
+        ],
+        expand: {
+          trigger: "click",
+          clickModeDefaultOpen: true,
+        },
+        customClass: "right-menu",
+        disableGlobalUI: false,
       },
     ],
   ],
