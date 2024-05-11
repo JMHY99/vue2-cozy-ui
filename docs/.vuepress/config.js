@@ -1,7 +1,12 @@
 const path = require("path");
 module.exports = {
-  title: "vue2-cozy-ui🎉",
-  description: "vue2-cozy-ui",
+  locales: { //多语言设置
+    "/": {
+      lang: "zh-CN",
+      title: "vue2-cozy-ui🎉",
+      description: "vue2-cozy-ui",
+    },
+  },
   themeConfig: {
     stylus: {
       import: [path.resolve(__dirname, "./styles/index.styl")],
