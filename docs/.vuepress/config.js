@@ -41,7 +41,19 @@ module.exports = {
     },
   },
 
-  plugins: ["demo-container", "@vuepress/back-to-top"],
+  plugins: [
+    "demo-container",
+    "@vuepress/back-to-top",
+    [
+      "cursor-effects", //鼠标点击出现星星效果插件
+      {
+        size: 2,
+        shape: "star", // 形状['star' | 'circle'],
+        zIndex: 999999999,
+      },
+    ],
+  ],
+
   chainWebpack: (config) => {
     config.resolve.alias.set("core-js/library/fn", "core-js/features");
   },
