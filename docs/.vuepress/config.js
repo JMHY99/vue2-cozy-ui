@@ -5,19 +5,21 @@ module.exports = {
     "/": {
       lang: "zh-CN",
       title: "vue2-cozy-ui🎉",
-      description: "vue2-cozy-ui",
+      description: "用于Vue 2的轻量级UI组件库",
     },
   },
   themeConfig: {
     stylus: {
       import: [path.resolve(__dirname, "./styles/index.styl")],
     },
+    maxWidth: 1200,
     logo: "/logo.jpg",
     nav: [
       // 直接跳转，'/'为不添加路由，跳转至首页，以/结尾的最终对应的都是/index.html,也就是README.md文件编译后的页面
-      { text: "首页", link: "/" },
+      { text: "🏠首页", link: "/" },
       // 对应blog/fontend/README.md
-      { text: "组件", link: "/components/install" },
+      { text: "🍍组件", link: "/components/install" },
+      { text: "🍒指南", link: "/components/install" },
     ],
     // 禁用导航栏
     // navbar: false,
