@@ -1,8 +1,9 @@
 <template>
-  <div>
+  <div class="icon-list">
     <ul>
-      <li v-for="item,index in list" :key="index">
-        <c-icon :name="item.name"></c-icon>
+      <li v-for="(item, index) in list" :key="index">
+        <c-icon size="36" :name="'c-' + item.font_class"></c-icon>
+        <span>{{ "c-" + item.font_class }}</span>
       </li>
     </ul>
   </div>
@@ -15,9 +16,9 @@ import "../../../packages/style/src/fonts/iconfont.css";
 export default {
   name: "IconList",
 
-  components: {
-    CIcon,
-  },
+  // components: {
+  //   CIcon,
+  // },
 
   data() {
     return {
@@ -27,6 +28,7 @@ export default {
 
   mounted() {
     this.list = iconJson.glyphs;
+    console.log(CIcon);
   },
 
   methods: {},
@@ -34,11 +36,33 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-ul li {
+.icon-list{
+  padding: 20px 0;
+}
+.icon-list ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.icon-list ul li {
   list-style: none;
   margin: 0;
   padding: 0;
-  width: 50px;
-  height: 50px;
+  width: 136px;
+  height: 136px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  &:hover {
+    background: #1890ff;
+    color: #ffffff;
+    border-radius: 5px;
+  }
+  span {
+    text-align: center;
+  }
 }
 </style>
