@@ -60,7 +60,21 @@ pageClass: icon-page-class
 ::: demo
 
 ```html
-<c-icon spin class="c-refresh-outlined"></c-icon> <c-icon spin class="c-refresh-double-outlined"></c-icon>
+<c-icon spin class="c-refresh-outlined"></c-icon>
+<c-icon spin class="c-refresh-outlined"></c-icon>
+<c-icon spin class="c-refresh-outlined"></c-icon>
+<c-icon spin class="c-refresh-outlined"></c-icon>
+<c-icon spin class="c-refresh-outlined"></c-icon>
+<c-icon spin class="c-refresh-outlined"></c-icon>
+<c-icon spin class="c-refresh-outlined"></c-icon>
+<c-icon spin class="c-refresh-outlined"></c-icon>
+<c-icon spin class="c-refresh-double-outlined"></c-icon>
+<c-icon spin class="c-refresh-double-outlined"></c-icon>
+<c-icon spin class="c-refresh-double-outlined"></c-icon>
+<c-icon spin class="c-refresh-double-outlined"></c-icon>
+<c-icon spin class="c-refresh-double-outlined"></c-icon>
+<c-icon spin class="c-refresh-double-outlined"></c-icon>
+<c-icon spin class="c-refresh-double-outlined"></c-icon>
 ```
 
 :::
