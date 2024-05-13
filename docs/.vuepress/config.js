@@ -48,7 +48,38 @@ module.exports = {
           title: "组件",
           collapsable: false,
           sidebarDepth: 1, // 只显示一级标题
-          children: ["color", "icon", "button"],
+          children: [
+            {
+              title: "基础",
+              collapsable: false, //下拉
+              sidebarDepth: 1, // 只显示一级标题
+              children: ["color", "icon", "button"],
+            },
+            {
+              title: "布局",
+              collapsable: false,
+              sidebarDepth: 1, // 只显示一级标题
+              children: ["color", "icon", "button"],
+            },
+            {
+              title: "导航",
+              collapsable: false,
+              sidebarDepth: 1, // 只显示一级标题
+              children: ["color", "icon", "button"],
+            },
+            {
+              title: "表单",
+              collapsable: false,
+              sidebarDepth: 1, // 只显示一级标题
+              children: ["color", "icon", "button"],
+            },
+            {
+              title: "视图",
+              collapsable: false,
+              sidebarDepth: 1, // 只显示一级标题
+              children: ["color", "icon", "button"],
+            },
+          ],
         },
       ],
     },
