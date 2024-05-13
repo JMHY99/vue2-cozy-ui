@@ -1,7 +1,11 @@
 <template>
   <div class="icon-list">
     <ul>
-      <li v-for="(item, index) in list" :key="index">
+      <li
+        v-for="(item, index) in list"
+        :key="index"
+        @click="copy(item.font_class)"
+      >
         <c-icon size="36" :name="'c-' + item.font_class"></c-icon>
         <span>{{ "c-" + item.font_class }}</span>
       </li>
@@ -11,15 +15,9 @@
 
 <script>
 import iconJson from "../../../packages/style/src/fonts/iconfont.json";
-import CIcon from "../../../packages/icon/index.js";
 import "../../../packages/style/src/fonts/iconfont.css";
 export default {
   name: "IconList",
-
-  // components: {
-  //   CIcon,
-  // },
-
   data() {
     return {
       list: [],
@@ -28,15 +26,31 @@ export default {
 
   mounted() {
     this.list = iconJson.glyphs;
-    console.log(CIcon);
   },
 
-  methods: {},
+  methods: {
+    copy(icon) {
+      let copyText = `<c-icon size="36" :name="${"c-" + icon}"></c-icon>`;
+      this.copyToClipboard(copyText);
+    },
+
+    // 复制
+    copyToClipboard(text) {
+      navigator.clipboard
+        .writeText(text)
+        .then(() => {
+          console.log("复制成功");
+        })
+        .catch((error) => {
+          console.error("复制失败: ", error);
+        });
+    },
+  },
 };
 </script>
 
 <style lang="scss" scoped>
-.icon-list{
+.icon-list {
   padding: 20px 0;
 }
 .icon-list ul {
