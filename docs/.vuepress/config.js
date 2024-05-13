@@ -19,7 +19,7 @@ module.exports = {
       { text: "🏠首页", link: "/" },
       // 对应blog/fontend/README.md
       { text: "🍍组件", link: "/components/install" },
-      { text: "🍒指南", link: "/components/install" },
+      { text: "🍒指南", link: "/components/quick-start" },
     ],
     // 禁用导航栏
     // navbar: false,
