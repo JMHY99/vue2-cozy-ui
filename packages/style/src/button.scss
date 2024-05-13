@@ -5,11 +5,11 @@
 	margin: 0;
 	padding: 10px 20px;
 	cursor: pointer;
-	color: #333;
-	background: #fff;
+	color: $color-gray-black-1;
+	background: $color-white;
 	white-space: nowrap;
 	outline: none;
-	border: 1px solid #666;
+	border: 1px solid $color-gray;
 	border-radius: 4px;
 	font-size: 14px;
 	text-align: center;
@@ -19,7 +19,7 @@
 .c-button-default {
 	transform: all 0.2s;
 	&:active {
-		background: #f8f8f9;
+		background: $color-gray-light-3;
 		box-shadow: 0 0 5px 0px $color-primary;
 	}
 	&:hover {
@@ -29,52 +29,52 @@
 }
 
 .c-button-primary {
-	color: #fefefe;
+	color: $color-gray-light-3;
 	background: $color-primary;
 	border: none;
 	&:active {
-		background: #038ddd;
-		box-shadow: 0 0 6px -1px $color-primary;
+		background: $color-primary-light-2;
+		box-shadow: 0 0 6px -1px $color-primary-light-2;
 	}
 }
 
 .c-button-success {
-	color: #fefefe;
+	color: $color-gray-light-3;
 	background: $color-success;
 	border: none;
 	&:active {
-		background: $color-success-light-5;
-		box-shadow: 0 0 6px -1px $color-success-light-5;
+		background: $color-success-light-2;
+		box-shadow: 0 0 6px -1px $color-success-light-2;
 	}
 }
 
 .c-button-info {
-	color: #fefefe;
+	color: $color-gray-light-3;
 	background: $color-info;
 	border: none;
 	&:active {
-		background: #4471da;
-		box-shadow: 0 0 6px -1px #4471da;
+		background: $color-info-light-2;
+		box-shadow: 0 0 6px -1px $color-info-light-2;
 	}
 }
 
 .c-button-danger {
-	color: #fefefe;
+	color: $color-gray-light-3;
 	background: $color-danger;
 	border: none;
 	&:active {
-		background: #f86c34;
-		box-shadow: 0 0 6px -1px #f86c34;
+		background: $color-danger-light-2;
+		box-shadow: 0 0 6px -1px $color-danger-light-2;
 	}
 }
 
 .c-button-warning {
-	color: #fefefe;
+	color: $color-gray-light-3;
 	background: $color-warning;
 	border: none;
 	&:active {
-		background: #fcb830;
-		box-shadow: 0 0 6px -1px #fcb830;
+		background: $color-warning-light-2;
+		box-shadow: 0 0 6px -1px $color-warning-light-2;
 	}
 }
 
@@ -94,8 +94,8 @@
 	&focus {
 		opacity: 0.4;
 		cursor: no-drop;
-		color: #333;
-		border: 1px solid #dcdee2;
+		color: $color-gray-black-1;
+		border: 1px solid $color-gray;
 	}
 }
 
@@ -107,13 +107,13 @@
 	background: none;
 	&:hover,
 	&focus {
-		background: #e8eaec;
+		background: $color-gray-light-2;
 	}
 }
 
 .c-button-info.c-button-ghost {
-	color: #6f8bca;
-	border: 1px solid #6f8bca;
+	color: $color-info;
+	border: 1px solid $color-info;
 }
 
 .c-button-primary.c-button-ghost {
@@ -122,16 +122,16 @@
 }
 
 .c-button-success.c-button-ghost {
-	color: #26cdcb;
-	border: 1px solid #26cdcb;
+	color: $color-success;
+	border: 1px solid $color-success;
 }
 
 .c-button-warning.c-button-ghost {
-	color: #ffc143;
-	border: 1px solid #ffc143;
+	color: $color-warning;
+	border: 1px solid $color-warning;
 }
 
 .c-button-danger.c-button-ghost {
-	color: #ff7f4c;
-	border: 1px solid #ff7f4c;
+	color: $color-danger;
+	border: 1px solid $color-danger;
 }

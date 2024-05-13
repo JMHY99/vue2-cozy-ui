@@ -80,12 +80,12 @@
 
 ```html
 <c-button-group>
-  <c-button type="success">默认按钮</c-button>
-  <c-button type="success">主要按钮</c-button>
   <c-button type="success">成功按钮</c-button>
-  <c-button type="success">信息按钮</c-button>
-  <c-button type="success">危险按钮</c-button>
-  <c-button type="success">警告按钮</c-button>
+  <c-button type="success">成功按钮</c-button>
+  <c-button type="success">成功按钮</c-button>
+  <c-button type="success">成功按钮</c-button>
+  <c-button type="success">成功按钮</c-button>
+  <c-button type="success">成功按钮</c-button>
 </c-button-group>
 ```
 
