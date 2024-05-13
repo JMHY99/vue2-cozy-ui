@@ -59,7 +59,7 @@ module.exports = {
               title: "布局",
               collapsable: false,
               sidebarDepth: 1, // 只显示一级标题
-              children: ["color", "icon", "button"],
+              children: ["flex", "grid", "layout"],
             },
             {
               title: "导航",

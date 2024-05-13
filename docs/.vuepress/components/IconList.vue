@@ -30,7 +30,7 @@ export default {
 
   methods: {
     copy(icon) {
-      let copyText = `<c-icon size="36" :name="${"c-" + icon}"></c-icon>`;
+      let copyText = `<c-icon size="36" name="${"c-" + icon}"></c-icon>`;
       this.copyToClipboard(copyText);
     },
 

@@ -1,3 +1,7 @@
+---
+pageClass: icon-page-class
+---
+
 # Icon 图标
 
 ### 基础用法
@@ -12,6 +16,14 @@
 <c-icon name="c-scene-outlined"></c-icon>
 <c-icon name="c-skin-outlined"></c-icon>
 <c-icon name="c-wenjianjia"></c-icon>
+<c-icon name="c-duihuan"></c-icon>
+<c-icon name="c-fasong"></c-icon>
+<c-icon name="c-fenxiang"></c-icon>
+<c-icon name="c-code-outlined"></c-icon>
+<c-icon name="c-openness-outlined"></c-icon>
+<c-icon name="c-shanchu1"></c-icon>
+<c-icon name="c-qunzu"></c-icon>
+<c-icon name="c-wode2"></c-icon>
 ```
 
 :::
@@ -24,12 +36,20 @@
 
 ```html
 <c-icon size="10" class="c-minus-circle-outlined"></c-icon>
-<c-icon size="15" class="c-check-circle-outlined"></c-icon>
-<c-icon size="20" class="c-close-circle-outlined"></c-icon>
-<c-icon size="25" class="c-set-outlined"></c-icon>
-<c-icon size="30" class="c-scene-outlined"></c-icon>
-<c-icon size="35" class="c-skin-outlined"></c-icon>
-<c-icon size="40" class="c-wenjianjia"></c-icon>
+<c-icon size="12" class="c-check-circle-outlined"></c-icon>
+<c-icon size="14" class="c-close-circle-outlined"></c-icon>
+<c-icon size="16" class="c-set-outlined"></c-icon>
+<c-icon size="18" class="c-scene-outlined"></c-icon>
+<c-icon size="20" class="c-skin-outlined"></c-icon>
+<c-icon size="22" class="c-wenjianjia"></c-icon>
+<c-icon size="24" name="c-duihuan"></c-icon>
+<c-icon size="26" name="c-fasong"></c-icon>
+<c-icon size="28" name="c-fenxiang"></c-icon>
+<c-icon size="30" name="c-code-outlined"></c-icon>
+<c-icon size="34" name="c-openness-outlined"></c-icon>
+<c-icon size="36" name="c-shanchu1"></c-icon>
+<c-icon size="38" name="c-qunzu"></c-icon>
+<c-icon size="40" name="c-wode2"></c-icon>
 ```
 
 :::
