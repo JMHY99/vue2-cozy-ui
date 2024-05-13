@@ -20,6 +20,11 @@ module.exports = {
       // 对应blog/fontend/README.md
       { text: "🍍组件", link: "/components/install" },
       { text: "🍒指南", link: "/components/quick-start" },
+      {
+        text: "Gitee",
+        link: "https://gitee.com/itxiaoming9/vue2-cozy-ui.git",
+        target: "_blank",
+      },
     ],
     // 禁用导航栏
     // navbar: false,
