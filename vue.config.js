@@ -25,5 +25,14 @@ module.exports = defineConfig({
     config.resolve.alias["@"] = resolve("examples");
     config.resolve.alias["components"] = resolve("examples/components");
     config.resolve.alias["~"] = resolve("packages");
+    // 生产环境配置
+    if (isProduction) {
+      config.mode = "production";
+      // 打包文件大小配置
+      config.performance = {
+        maxEntrypointSize: 10000000,
+        maxAssetSize: 30000000,
+      };
+    }
   },
 });
