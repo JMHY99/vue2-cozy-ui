@@ -5,7 +5,6 @@
     <div class="color color3"></div>
     <div class="color color4"></div>
     <div class="color color5"></div>
-    <div class="color color6"></div>
   </div>
 </template>
 
@@ -30,22 +29,18 @@
 }
 
 .color2 {
-  background: $color-primary-light-1;
+  background: $color-info;
 }
 
 .color3 {
-  background: $color-primary-light-2;
+  background: $color-success;
 }
 
 .color4 {
-  background: $color-primary-light-3;
+  background: $color-warning;
 }
 
 .color5 {
-  background: $color-primary-light-4;
-}
-
-.color6 {
-  background: $color-primary-light-5;
+  background: $color-danger;
 }
 </style>
