@@ -9,9 +9,9 @@
 </template>
 
 <script>
-import iconJson from "../../../packages/style/fonts/iconfont.json";
+import iconJson from "../../../packages/style/src/fonts/iconfont.json";
 import CIcon from "../../../packages/icon/index.js";
-import "../../../packages/style/fonts/iconfont.css";
+import "../../../packages/style/src/fonts/iconfont.css";
 export default {
   name: "IconList",
 

@@ -43,152 +43,142 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-.c-button {
-  display: inline-block;
-  margin: 0;
-  padding: 10px 20px;
-  cursor: pointer;
-  color: #333;
-  background: #fff;
-  white-space: nowrap;
-  outline: none;
-  border: 1px solid #666;
-  border-radius: 4px;
-  font-size: 14px;
-  text-align: center;
-  box-sizing: border-box;
-}
+// <style lang="scss" scoped>
+// @import "../style/variables.scss";
 
-.c-button-default {
-  transform: all 0.2s;
-  &:active {
-    background: #f8f8f9;
-    box-shadow: 0 0 5px 0px #279de1;
-  }
-  &:hover {
-    border-color: #279de1;
-    color: #279de1;
-  }
-}
+// .c-button {
+//   display: inline-block;
+//   margin: 0;
+//   padding: 10px 20px;
+//   cursor: pointer;
+//   color: #333;
+//   background: #fff;
+//   white-space: nowrap;
+//   outline: none;
+//   border: 1px solid #666;
+//   border-radius: 4px;
+//   font-size: 14px;
+//   text-align: center;
+//   box-sizing: border-box;
+// }
 
-.c-button-primary {
-  color: #fefefe;
-  // background: #91a8cf;
-  // background: #98ddde;
-  background: #279de1;
-  border: none;
-  // border: 1px solid #00fbff;
-  // background: #9896a4;
-  // background: #f7786d;
-  // background: #b1916b;
-  &:active {
-    background: #038ddd;
-    box-shadow: 0 0 6px -1px #279de1;
-  }
-}
+// .c-button-default {
+//   transform: all 0.2s;
+//   &:active {
+//     background: #f8f8f9;
+//     box-shadow: 0 0 5px 0px $color-primary;
+//   }
+//   &:hover {
+//     border-color: $color-primary;
+//     color: $color-primary;
+//   }
+// }
 
-.c-button-success {
-  color: #fefefe;
-  background: #26cdcb;
-  border: none;
-  &:active {
-    background: #05adab;
-    box-shadow: 0 0 6px -1px #05adab;
-  }
-}
+// .c-button-primary {
+//   color: #fefefe;
+//   background: $color-primary;
+//   border: none;
+//   &:active {
+//     background: #038ddd;
+//     box-shadow: 0 0 6px -1px $color-primary;
+//   }
+// }
 
-.c-button-info {
-  color: #fefefe;
-  background: #6f8bca;
-  border: none;
-  &:active {
-    background: #4471da;
-    box-shadow: 0 0 6px -1px #4471da;
-  }
-}
+// .c-button-success {
+//   color: #fefefe;
+//   background: $color-success;
+//   border: none;
+//   &:active {
+//     background: $color-success-light-5;
+//     box-shadow: 0 0 6px -1px $color-success-light-5;
+//   }
+// }
 
-.c-button-danger {
-  color: #fefefe;
-  // background: #f7786d;
-  background: #ff7f4c;
-  // border: 1px solid #ff1500;
-  border: none;
-  &:active {
-    background: #f86c34;
-    box-shadow: 0 0 6px -1px #f86c34;
-  }
-}
+// .c-button-info {
+//   color: #fefefe;
+//   background: $color-info;
+//   border: none;
+//   &:active {
+//     background: #4471da;
+//     box-shadow: 0 0 6px -1px #4471da;
+//   }
+// }
 
-.c-button-warning {
-  color: #fefefe;
-  background: #fca04c;
-  // background: #fef97f;
-  // background: #24345a;
-  // background: #26cdcb;
-  background: #ffc143;
-  border: none;
-  &:active {
-    background: #fcb830;
-    box-shadow: 0 0 6px -1px #fcb830;
-  }
-}
+// .c-button-danger {
+//   color: #fefefe;
+//   background: $color-danger;
+//   border: none;
+//   &:active {
+//     background: #f86c34;
+//     box-shadow: 0 0 6px -1px #f86c34;
+//   }
+// }
 
-.c-button-disabled {
-  opacity: 0.4;
-  cursor: no-drop;
+// .c-button-warning {
+//   color: #fefefe;
+//   background: $color-warning;
+//   border: none;
+//   &:active {
+//     background: #fcb830;
+//     box-shadow: 0 0 6px -1px #fcb830;
+//   }
+// }
 
-  &:hover,
-  &focus {
-    opacity: 0.4;
-    cursor: no-drop;
-  }
-}
+// .c-button-disabled {
+//   opacity: 0.4;
+//   cursor: no-drop;
 
-.c-button-default.c-button-disabled {
-  &:hover,
-  &focus {
-    opacity: 0.4;
-    cursor: no-drop;
-    color: #333;
-    border: 1px solid #dcdee2;
-  }
-}
+//   &:hover,
+//   &focus {
+//     opacity: 0.4;
+//     cursor: no-drop;
+//   }
+// }
 
-.c-button-circle {
-  border-radius: 10px;
-}
+// .c-button-default.c-button-disabled {
+//   &:hover,
+//   &focus {
+//     opacity: 0.4;
+//     cursor: no-drop;
+//     color: #333;
+//     border: 1px solid #dcdee2;
+//   }
+// }
 
-.c-button-ghost {
-  background: none;
-  &:hover,
-  &focus {
-    background: #e8eaec;
-  }
-}
+// .c-button-circle {
+//   border-radius: 10px;
+// }
 
-.c-button-info.c-button-ghost {
-  color: #6f8bca;
-  border: 1px solid #6f8bca;
-}
+// .c-button-ghost {
+//   background: none;
+//   &:hover,
+//   &focus {
+//     background: #e8eaec;
+//   }
+// }
 
-.c-button-primary.c-button-ghost {
-  color: #279de1;
-  border: 1px solid #279de1;
-}
+// .c-button-info.c-button-ghost {
+//   color: #6f8bca;
+//   border: 1px solid #6f8bca;
+// }
 
-.c-button-success.c-button-ghost {
-  color: #26cdcb;
-  border: 1px solid #26cdcb;
-}
+// .c-button-primary.c-button-ghost {
+//   color: $color-primary;
+//   border: 1px solid $color-primary;
+// }
 
-.c-button-warning.c-button-ghost {
-  color: #ffc143;
-  border: 1px solid #ffc143;
-}
+// .c-button-success.c-button-ghost {
+//   color: #26cdcb;
+//   border: 1px solid #26cdcb;
+// }
 
-.c-button-danger.c-button-ghost {
-  color: #ff7f4c;
-  border: 1px solid #ff7f4c;
-}
-</style>
+// .c-button-warning.c-button-ghost {
+//   color: #ffc143;
+//   border: 1px solid #ffc143;
+// }
+
+// .c-button-danger.c-button-ghost {
+//   color: #ff7f4c;
+//   border: 1px solid #ff7f4c;
+// }
+// </style>

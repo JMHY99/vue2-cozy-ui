@@ -3,7 +3,8 @@ import CButtonGroup from "../../packages/button-group/index.js";
 import CIcon from "../../packages/icon/index.js";
 import IconList from "./components/IconList.vue";
 import ColorDemo from "./components/ColorDemo.vue";
-import "../../packages/style/fonts/iconfont.css";
+import "../../packages/style/src/fonts/iconfont.css";
+import "../../packages/style/src/index.scss";
 
 export default async ({ Vue }) => {
   if (typeof process === "undefined") {
