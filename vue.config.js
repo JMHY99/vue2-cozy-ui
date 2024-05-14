@@ -1,5 +1,6 @@
 const { defineConfig } = require("@vue/cli-service");
 const path = require("path");
+const isProduction = process.env.NODE_ENV === "production";
 function resolve(dir) {
   return path.join(__dirname, dir);
 }

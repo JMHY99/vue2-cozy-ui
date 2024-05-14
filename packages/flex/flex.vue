@@ -22,13 +22,13 @@ export default {
     },
 
     // 主轴方向的对齐方式，默认为起始位置
-    justify: {
+    justifyContent: {
       type: String,
       default: "flex-start",
     },
 
     // 交叉轴方向的对齐方式，默认为拉伸填充
-    align: {
+    alignItems: {
       type: String,
       default: "stretch",
     },
@@ -47,8 +47,8 @@ export default {
       return {
         "flex-container": true,
         [`flex-${this.direction}`]: true,
-        [`justify-${this.justify}`]: true,
-        [`align-${this.align}`]: true,
+        [`justify-${this.justifyContent}`]: true,
+        [`align-${this.alignItems}`]: true,
         [`flex-wrap-${this.wrap}`]: true,
       };
     },
@@ -101,6 +101,10 @@ export default {
 
 .justify-space-around {
   justify-content: space-around;
+}
+
+.justify-space-evenly {
+  justify-content: space-evenly;
 }
 
 /* 上下对齐方式 */

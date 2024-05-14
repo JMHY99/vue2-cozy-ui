@@ -7,7 +7,8 @@ const routes = [
   {
     path: "/",
     name: "home",
-    component: () => import("@/views/button.vue"),
+    // component: () => import("@/views/button.vue"),
+    component: () => import("@/views/flexDemo.vue"),
     // component: () => require("@/docs/button.md"),
   },
 ];
