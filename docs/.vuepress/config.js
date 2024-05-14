@@ -12,8 +12,9 @@ module.exports = {
     stylus: {
       import: [path.resolve(__dirname, "./styles/index.styl")],
     },
-    maxWidth: 1200,
     logo: "/logo.jpg",
+    // 浏览器标签页图标
+    head: [["link", { rel: "icon", href: `/favicon.ico` }]],
     nav: [
       // 直接跳转，'/'为不添加路由，跳转至首页，以/结尾的最终对应的都是/index.html,也就是README.md文件编译后的页面
       { text: "首页", link: "/" },

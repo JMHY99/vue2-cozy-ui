@@ -45,19 +45,30 @@
 }
 
 /* 表格宽度 */
-.theme-container .page .theme-default-content table th,td{
+.theme-container .page .theme-default-content table th,
+td {
   min-width: 158px;
 }
 
 /* 图标 */
-.theme-container.icon-page-class .demo-block .demo-content div{
+.theme-container.icon-page-class .demo-block .demo-content div {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 /* 按钮 */
-.theme-container.button-page-class .demo-block .demo-content div{
+.theme-container.button-page-class .demo-block .demo-content div {
   display: flex;
   justify-content: space-between;
+}
+
+/* 代码块语言位置 */
+.code-content div[class*="language-"]::before {
+  top: 1em;
+}
+
+/* 代码块间距 */
+.code-content .theme-default-content pre, .theme-default-content pre[class*="language-"]{
+  margin: 0;
 }
