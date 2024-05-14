@@ -2,6 +2,8 @@ import CButton from "../../packages/button/index.js";
 import CButtonGroup from "../../packages/button-group/index.js";
 import CIcon from "../../packages/icon/index.js";
 import CFlex from "../../packages/flex/index.js";
+import CRow from "../../packages/row/index.js";
+import CCol from "../../packages/col/index.js";
 import CSpace from "../../packages/space/index.js";
 
 
@@ -18,6 +20,8 @@ export default async ({ Vue }) => {
     Vue.use(CButtonGroup);
     Vue.use(CIcon);
     Vue.use(CFlex);
+    Vue.use(CRow);
+    Vue.use(CCol);
     Vue.use(CSpace);
     Vue.use(IconList);
     Vue.use(ColorDemo);
