@@ -60,25 +60,25 @@ module.exports = {
               title: "布局",
               collapsable: false,
               sidebarDepth: 1, // 只显示一级标题
-              children: ["flex", "grid", "layout","space"],
+              children: ["flex", "grid", "layout", "space"],
             },
             {
               title: "导航",
               collapsable: false,
               sidebarDepth: 1, // 只显示一级标题
-              children: [],
+              children: ["anchor", "breadcrumb", "dropdown"],
             },
             {
               title: "表单",
               collapsable: false,
               sidebarDepth: 1, // 只显示一级标题
-              children: [],
+              children: ["form", "input", "input-number"],
             },
             {
               title: "视图",
               collapsable: false,
               sidebarDepth: 1, // 只显示一级标题
-              children: [],
+              children: ["alert", "message"],
             },
           ],
         },
