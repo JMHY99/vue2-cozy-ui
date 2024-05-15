@@ -17,3 +17,8 @@ vue2-cozy-ui 用于 Vue 2 的轻量级 UI 组件库
 # 项目目录结构
 
 ![目录结构](public/目录结构.png)
+
+# 项目演示
+
+![color](public/color.png)
+![icon](public/icon.png)
