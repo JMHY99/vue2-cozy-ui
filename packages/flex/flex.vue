@@ -12,7 +12,7 @@ export default {
     // 排列方式
     direction: {
       type: String,
-      default: "row", // 默认为水平排列，也可以是 'column'，垂直排列
+      default: "horizontal", // 默认为水平排列，也可以是 'vertical'，垂直排列
     },
 
     // 设置元素单行显示还是多行显示
@@ -61,11 +61,11 @@ export default {
 }
 
 /* 排列方式 */
-.flex-row {
+.flex-horizontal {
   flex-direction: row;
 }
 
-.flex-column {
+.flex-vertical {
   flex-direction: column;
 }
 
@@ -124,3 +124,4 @@ export default {
   align-items: center;
 }
 </style>
+

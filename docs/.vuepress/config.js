@@ -72,7 +72,7 @@ module.exports = {
               title: "表单",
               collapsable: false,
               sidebarDepth: 1, // 只显示一级标题
-              children: ["form", "input", "input-number"],
+              children: ["form", "input", "input-number", "radio"],
             },
             {
               title: "视图",
