@@ -116,7 +116,7 @@ Flex 弹性布局是一种用于实现灵活和自适应布局的技术。
 
 <style>
 
-  .demo2 div{
+  .demo2>div{
     height:100px;
     border:1px solid #ccc;
   }
@@ -138,7 +138,7 @@ Flex 弹性布局是一种用于实现灵活和自适应布局的技术。
 
 :::
 
-### 是否换行
+### 自动换行
 
 创建不同样式的按钮，可以通过设置 `type` 属性为 primary、info、success、warning 或 danger。如果不设置 `type` 属性，则按钮将采用默认样式。
 
