@@ -16,6 +16,30 @@
   box-sizing: border-box;
 }
 
+.cozy-button > span {
+  display: inline-flex;
+  align-items: center;
+}
+
+/* 尺寸大小 */
+.cozy-button-large {
+  font-size: 16px;
+  height: 40px;
+  padding: 8px 15px;
+  border-radius: 8px;
+}
+.cozy-button-middle {
+  font-size: 14px;
+  height: 32px;
+  padding: 6px 15px;
+  line-height: 1;
+}
+.cozy-button-small {
+  font-size: 14px;
+  height: 24px;
+  padding: 0px 7px;
+}
+
 .cozy-button-default {
   transform: all 0.2s;
   &:active {
@@ -291,5 +315,77 @@
   }
   &:active {
     background: none;
+  }
+}
+
+.cozy-button-loading-icon {
+  width: 9px;
+  height: 9px;
+  border: 1px solid $color-white;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  border-radius: 100%;
+  animation: circle infinite 0.75s linear;
+} // 转转转动画
+@keyframes circle {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.cozy-button-loading-icon-default {
+  border: 1px solid $color-gray-black-1;
+  border-top-color: transparent;
+  border-left-color: transparent;
+}
+
+.cozy-button-loading-icon-info {
+  border: 1px solid $color-info;
+  border-top-color: transparent;
+  border-left-color: transparent;
+}
+
+.cozy-button-loading-icon-primary {
+  border: 1px solid $color-primary;
+  border-top-color: transparent;
+  border-left-color: transparent;
+}
+
+.cozy-button-loading-icon-success {
+  border: 1px solid $color-success;
+  border-top-color: transparent;
+  border-left-color: transparent;
+}
+.cozy-button-loading-icon-warning {
+  border: 1px solid $color-warning;
+  border-top-color: transparent;
+  border-left-color: transparent;
+}
+.cozy-button-loading-icon-danger {
+  border: 1px solid $color-danger;
+  border-top-color: transparent;
+  border-left-color: transparent;
+}
+
+.cozy-button-loading {
+  opacity: 0.4;
+}
+
+.cozy-button-ghost.cozy-button-loading {
+  &:hover .cozy-button-loading-icon {
+    border: 1px solid $color-white;
+    border-top-color: transparent;
+    border-left-color: transparent;
+  }
+}
+
+.cozy-button-ghost.cozy-button-default.cozy-button-loading {
+  &:hover .cozy-button-loading-icon {
+    border: 1px solid $color-gray-black-1;
+    border-top-color: transparent;
+    border-left-color: transparent;
   }
 }
