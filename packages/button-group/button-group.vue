@@ -1,5 +1,5 @@
 <template>
-  <div class="c-button-group">
+  <div class="cozy-button-group">
     <slot></slot>
   </div>
 </template>

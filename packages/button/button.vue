@@ -32,11 +32,11 @@ export default {
   computed: {
     className() {
       return [
-        "c-button",
-        this.type ? "c-button-" + this.type : "",
-        this.disabled ? "c-button-disabled" : "",
-        this.circle ? "c-button-circle" : "",
-        this.ghost ? "c-button-ghost" : "",
+        "cozy-button",
+        this.type ? "cozy-button-" + this.type : "",
+        this.disabled ? "cozy-button-disabled" : "",
+        this.circle ? "cozy-button-circle" : "",
+        this.ghost ? "cozy-button-ghost" : "",
       ];
     },
   },

@@ -1,18 +1,20 @@
-.c-button-group{
+@import "./variables.scss";
+
+.cozy-button-group{
   display: flex;
 }
-.c-button-group > .c-button {
+.cozy-button-group > .cozy-button {
   border-radius: unset !important;
   border: none;
 }
-.c-button-group > .c-button:not(:last-child) {
-  border-right: 1px solid #fff;
+.cozy-button-group > .cozy-button:not(:last-child) {
+  border-right: 1px solid  $color-white;
 }
-.c-button-group > .c-button:first-of-type {
+.cozy-button-group > .cozy-button:first-of-type {
   border-top-left-radius: 4px !important;
   border-bottom-left-radius: 4px !important;
 }
-.c-button-group > .c-button:last-of-type {
+.cozy-button-group > .cozy-button:last-of-type {
   border-top-right-radius: 4px !important;
   border-bottom-right-radius: 4px !important;
 }

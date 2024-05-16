@@ -14,21 +14,27 @@
 <template>
   <c-radio label="0" v-model="gender">男</c-radio>
   <c-radio label="1" v-model="gender">女</c-radio>
+
+  <c-radio-group v-model="radioValue">
+    <c-radio-button value="A">A</c-radio-button>
+    <c-radio-button value="B">B</c-radio-button>
+    <c-radio-button value="C">C</c-radio-button>
+  </c-radio-group>
 </template>
 
 <script>
-export default {
+  export default {
+    data() {
+      return {
+        gender: "1",
+        radioValue: "A",
+      };
+    },
 
-  data() {
-    return {
-      gender:"1"
-    };
-  },
+    mounted() {},
 
-  mounted() {},
-
-  methods: {},
-};
+    methods: {},
+  };
 </script>
 ```
 

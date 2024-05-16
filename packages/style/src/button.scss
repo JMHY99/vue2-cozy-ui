@@ -1,6 +1,6 @@
 @import "./variables.scss";
 
-.c-button {
+.cozy-button {
 	display: inline-block;
 	margin: 0;
 	padding: 10px 20px;
@@ -16,7 +16,7 @@
 	box-sizing: border-box;
 }
 
-.c-button-default {
+.cozy-button-default {
 	transform: all 0.2s;
 	&:active {
 		background: $color-gray-light-3;
@@ -28,7 +28,7 @@
 	}
 }
 
-.c-button-primary {
+.cozy-button-primary {
 	color: $color-gray-light-3;
 	background: $color-primary;
 	border: none;
@@ -38,7 +38,7 @@
 	}
 }
 
-.c-button-success {
+.cozy-button-success {
 	color: $color-gray-light-3;
 	background: $color-success;
 	border: none;
@@ -48,7 +48,7 @@
 	}
 }
 
-.c-button-info {
+.cozy-button-info {
 	color: $color-gray-light-3;
 	background: $color-info;
 	border: none;
@@ -58,7 +58,7 @@
 	}
 }
 
-.c-button-danger {
+.cozy-button-danger {
 	color: $color-gray-light-3;
 	background: $color-danger;
 	border: none;
@@ -68,7 +68,7 @@
 	}
 }
 
-.c-button-warning {
+.cozy-button-warning {
 	color: $color-gray-light-3;
 	background: $color-warning;
 	border: none;
@@ -78,7 +78,7 @@
 	}
 }
 
-.c-button-disabled {
+.cozy-button-disabled {
 	opacity: 0.4;
 	cursor: no-drop;
 
@@ -89,7 +89,7 @@
 	}
 }
 
-.c-button-default.c-button-disabled {
+.cozy-button-default.cozy-button-disabled {
 	&:hover,
 	&focus {
 		opacity: 0.4;
@@ -99,11 +99,11 @@
 	}
 }
 
-.c-button-circle {
+.cozy-button-circle {
 	border-radius: 10px;
 }
 
-.c-button-ghost {
+.cozy-button-ghost {
 	background: none;
 	&:hover,
 	&focus {
@@ -111,27 +111,27 @@
 	}
 }
 
-.c-button-info.c-button-ghost {
+.cozy-button-info.cozy-button-ghost {
 	color: $color-info;
 	border: 1px solid $color-info;
 }
 
-.c-button-primary.c-button-ghost {
+.cozy-button-primary.cozy-button-ghost {
 	color: $color-primary;
 	border: 1px solid $color-primary;
 }
 
-.c-button-success.c-button-ghost {
+.cozy-button-success.cozy-button-ghost {
 	color: $color-success;
 	border: 1px solid $color-success;
 }
 
-.c-button-warning.c-button-ghost {
+.cozy-button-warning.cozy-button-ghost {
 	color: $color-warning;
 	border: 1px solid $color-warning;
 }
 
-.c-button-danger.c-button-ghost {
+.cozy-button-danger.cozy-button-ghost {
 	color: $color-danger;
 	border: 1px solid $color-danger;
 }

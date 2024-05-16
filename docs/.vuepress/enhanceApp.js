@@ -6,6 +6,7 @@ import CRow from "../../packages/row/index.js";
 import CCol from "../../packages/col/index.js";
 import CSpace from "../../packages/space/index.js";
 import CRadio from "../../packages/radio/index.js";
+import CRadioButton from "../../packages/radio-button/index.js";
 import CRadioGroup from "../../packages/radio-group/index.js";
 
 import IconList from "./components/IconList.vue";
@@ -25,6 +26,7 @@ export default async ({ Vue }) => {
     Vue.use(CCol);
     Vue.use(CSpace);
     Vue.use(CRadio);
+    Vue.use(CRadioButton);
     Vue.use(CRadioGroup);
     Vue.use(IconList);
     Vue.use(ColorDemo);
