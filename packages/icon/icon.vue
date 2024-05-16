@@ -6,12 +6,18 @@
 export default {
   name: "CIcon",
   props: {
-    name: String,
-    spin: Boolean,
+    // 图标名称
+    name: {
+      type: String,
+      default: null,
+    },
+    //  图标大小
     size: {
       type: [Number, String],
       default: 24,
     },
+    // 是否有旋转动画
+    spin: Boolean,
   },
 
   data() {
@@ -24,24 +30,8 @@ export default {
 
   computed: {
     className() {
-      return ["cozy-icon", this.name, this.spin ? "icon-spin" : ""];
+      return ["cozy-icon", this.name, this.spin ? "cozy-icon-spin" : ""];
     },
   },
 };
 </script>
-
-<style lang="scss" scoped>
-.icon-spin {
-  display: inline-block;
-  animation: rotation 1s infinite linear;
-}
-
-@keyframes rotation {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-</style>
