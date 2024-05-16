@@ -1,12 +1,12 @@
 <template>
   <div class="color-box">
     <div class="color color1">#000000</div>
-    <div class="color color2"></div>
-    <div class="color color3"></div>
-    <div class="color color4"></div>
-    <div class="color color5"></div>
-    <div class="color color6"></div>
-    <div class="color color7"></div>
+    <div class="color color2">#222222</div>
+    <div class="color color3">#333333</div>
+    <div class="color color4">#808080</div>
+    <div class="color color5">#cccccc</div>
+    <div class="color color6">#e0e0e0</div>
+    <div class="color color7">#f5f5f5</div>
     <div class="color color8">#ffffff</div>
   </div>
 </template>
@@ -47,6 +47,7 @@
 
 .color4 {
   background: $color-gray;
+  color: $color-white;
 }
 
 .color5 {
@@ -63,6 +64,7 @@
 
 .color8 {
   background: $color-white;
-  border: 1px solid #ccc;
+  color: $color-gray;
+  border: 1px dashed #ccc;
 }
 </style>
