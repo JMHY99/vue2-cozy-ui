@@ -1,5 +1,8 @@
 <template>
-  <i :class="className" :style="{ 'font-size': size + 'px' }"></i>
+  <i
+    :class="[`cozy-icon ${name}`,{ 'cozy-icon-spin': spin }]"
+    :style="{ 'font-size': size + 'px' }"
+  ></i>
 </template>
 
 <script>
@@ -18,20 +21,6 @@ export default {
     },
     // 是否有旋转动画
     spin: Boolean,
-  },
-
-  data() {
-    return {};
-  },
-
-  mounted() {},
-
-  methods: {},
-
-  computed: {
-    className() {
-      return ["cozy-icon", this.name, this.spin ? "cozy-icon-spin" : ""];
-    },
   },
 };
 </script>

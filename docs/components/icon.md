@@ -42,13 +42,13 @@ pageClass: icon-page-class
 ::: demo
 
 ```html
-<c-icon size="10" class="c-minus-circle-outlined"></c-icon>
-<c-icon size="12" class="c-check-circle-outlined"></c-icon>
-<c-icon size="14" class="c-close-circle-outlined"></c-icon>
-<c-icon size="16" class="c-set-outlined"></c-icon>
-<c-icon size="18" class="c-scene-outlined"></c-icon>
-<c-icon size="20" class="c-skin-outlined"></c-icon>
-<c-icon size="22" class="c-wenjianjia"></c-icon>
+<c-icon size="10" name="c-minus-circle-outlined"></c-icon>
+<c-icon size="12" name="c-check-circle-outlined"></c-icon>
+<c-icon size="14" name="c-close-circle-outlined"></c-icon>
+<c-icon size="16" name="c-set-outlined"></c-icon>
+<c-icon size="18" name="c-scene-outlined"></c-icon>
+<c-icon size="20" name="c-skin-outlined"></c-icon>
+<c-icon size="22" name="c-wenjianjia"></c-icon>
 <c-icon size="24" name="c-duihuan"></c-icon>
 <c-icon size="26" name="c-fasong"></c-icon>
 <c-icon size="28" name="c-fenxiang"></c-icon>
@@ -67,21 +67,21 @@ pageClass: icon-page-class
 ::: demo
 
 ```html
-<c-icon spin class="c-refresh-outlined"></c-icon>
-<c-icon spin class="c-refresh-outlined"></c-icon>
-<c-icon spin class="c-refresh-outlined"></c-icon>
-<c-icon spin class="c-refresh-outlined"></c-icon>
-<c-icon spin class="c-refresh-outlined"></c-icon>
-<c-icon spin class="c-refresh-outlined"></c-icon>
-<c-icon spin class="c-refresh-outlined"></c-icon>
-<c-icon spin class="c-refresh-outlined"></c-icon>
-<c-icon spin class="c-refresh-double-outlined"></c-icon>
-<c-icon spin class="c-refresh-double-outlined"></c-icon>
-<c-icon spin class="c-refresh-double-outlined"></c-icon>
-<c-icon spin class="c-refresh-double-outlined"></c-icon>
-<c-icon spin class="c-refresh-double-outlined"></c-icon>
-<c-icon spin class="c-refresh-double-outlined"></c-icon>
-<c-icon spin class="c-refresh-double-outlined"></c-icon>
+<c-icon spin name="c-refresh-outlined"></c-icon>
+<c-icon spin name="c-refresh-outlined"></c-icon>
+<c-icon spin name="c-refresh-outlined"></c-icon>
+<c-icon spin name="c-refresh-outlined"></c-icon>
+<c-icon spin name="c-refresh-outlined"></c-icon>
+<c-icon spin name="c-refresh-outlined"></c-icon>
+<c-icon spin name="c-refresh-outlined"></c-icon>
+<c-icon spin name="c-refresh-outlined"></c-icon>
+<c-icon spin name="c-refresh-double-outlined"></c-icon>
+<c-icon spin name="c-refresh-double-outlined"></c-icon>
+<c-icon spin name="c-refresh-double-outlined"></c-icon>
+<c-icon spin name="c-refresh-double-outlined"></c-icon>
+<c-icon spin name="c-refresh-double-outlined"></c-icon>
+<c-icon spin name="c-refresh-double-outlined"></c-icon>
+<c-icon spin name="c-refresh-double-outlined"></c-icon>
 ```
 
 :::
