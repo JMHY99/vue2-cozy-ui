@@ -1,5 +1,5 @@
 <template>
-  <div :class="flexClass">
+  <div :class="flexClass" :style="flexStyle">
     <slot></slot>
   </div>
 </template>
@@ -32,6 +32,12 @@ export default {
       type: String,
       default: "stretch",
     },
+
+    // 间距大小small middle large 20 [20,40]
+    gap: {
+      type: [String, Number, Array],
+      default: 0,
+    },
   },
 
   data() {
@@ -50,6 +56,26 @@ export default {
         [`justify-${this.justifyContent}`]: true,
         [`align-${this.alignItems}`]: true,
         [`flex-wrap-${this.wrap}`]: true,
+      };
+    },
+    flexStyle() {
+      let gap = "0px";
+      if (typeof this.gap === "number") {
+        gap = this.gap + "px";
+      } else if (Array.isArray(this.gap)) {
+        gap = `${this.gap[1]}px ${this.gap[0]}px`;
+      } else if (["small", "middle", "large"].includes(this.gap)) {
+        const gapMap = {
+          small: "8px",
+          middle: "16px",
+          large: "24px",
+        };
+        gap = gapMap[this.gap];
+      } else {
+        gap = this.gap;
+      }
+      return {
+        gap: gap,
       };
     },
   },
@@ -124,4 +150,3 @@ export default {
   align-items: center;
 }
 </style>
-
