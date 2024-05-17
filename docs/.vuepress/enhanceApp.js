@@ -8,6 +8,11 @@ import CSpace from "../../packages/space/index.js";
 import CRadio from "../../packages/radio/index.js";
 import CRadioButton from "../../packages/radio-button/index.js";
 import CRadioGroup from "../../packages/radio-group/index.js";
+import CLayout from "../../packages/layout/index.js";
+import CHeader from "../../packages/header/index.js";
+import CContent from "../../packages/content/index.js";
+import CSider from "../../packages/sider/index.js";
+import CFooter from "../../packages/footer/index.js";
 
 import IconList from "./components/IconList.vue";
 import ColorDemo from "./components/ColorDemo.vue";
@@ -24,6 +29,11 @@ export default async ({ Vue }) => {
     Vue.use(CFlex);
     Vue.use(CRow);
     Vue.use(CCol);
+    Vue.use(CLayout);
+    Vue.use(CHeader);
+    Vue.use(CContent);
+    Vue.use(CSider);
+    Vue.use(CFooter);
     Vue.use(CSpace);
     Vue.use(CRadio);
     Vue.use(CRadioButton);

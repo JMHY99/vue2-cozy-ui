@@ -1,12 +1,12 @@
 <template>
-  <footer class="footer">
+  <aside class="sider">
     <slot></slot>
-  </footer>
+  </aside>
 </template>
 
 <script>
 export default {
-  name: "CFooter",
+  name: "CSider",
 
   data() {
     return {};
@@ -19,9 +19,9 @@ export default {
 </script>
 
 <style scoped>
-.footer {
-  background-color: #001529;
-  color: #fff;
+.sider {
+  background-color: #f0f2f5;
+  width: 200px;
   padding: 15px;
 }
 </style>
