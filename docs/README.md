@@ -1,7 +1,7 @@
 ---
 home: true
 heroImage: /logo.jpg
-heroText: vue2-cozy-ui
+heroText: Cozy UI
 tagline: false
 actionText: 快速上手 →
 actionLink: /components/install

@@ -1,6 +1,6 @@
-# vue2-cozy-ui
+# Cozy UI
 
-vue2-cozy-ui 用于 Vue 2 的轻量级 UI 组件库
+Cozy UI 用于 Vue 2 的轻量级 UI 组件库
 
 # 项目简介
 

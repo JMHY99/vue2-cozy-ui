@@ -4,7 +4,7 @@ module.exports = {
   locales: {
     "/": {
       lang: "zh-CN",
-      title: "vue2-cozy-ui🎉",
+      title: "Cozy UI",
       description: "用于Vue 2的轻量级UI组件库",
     },
   },
