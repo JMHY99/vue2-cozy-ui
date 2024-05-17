@@ -35,7 +35,7 @@ module.exports = {
         {
           title: "指南", // 侧边栏显示的名称
           collapsable: false, // 是否展开
-          children: ["", "安装", "快速上手"],
+          // children: ["", "install", "quick-start"],
         },
       ],
       "/components/": [
