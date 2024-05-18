@@ -42,10 +42,10 @@ export default {
 .cozy-layout {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  flex: auto;
 }
 
-.cozy-layout .cozy-layout-has-sider {
+.cozy-layout.cozy-layout-has-sider {
   flex-direction: row;
 }
 </style>

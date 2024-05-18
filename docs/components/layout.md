@@ -2,23 +2,95 @@
 
 ### 概述
 
-按钮用于触发一个操作，是用户与应用进行交互的重要方式之一。
+- c-layout：布局容器，其下可嵌套 c-header c-sider c-content c-footer 或 c-layout 本身，可以放在任何父容器中。
+- c-header：顶部布局，自带默认样式，其下可嵌套任何元素，只能放在 c-layout 中。
+- c-sider：侧边栏，自带默认样式及基本功能，其下可嵌套任何元素，只能放在 c-layout 中。
+- c-content：内容部分，自带默认样式，其下可嵌套任何元素，只能放在 c-layout 中。
+- c-footer：底部布局，自带默认样式，其下可嵌套任何元素，只能放在 c-layout 中。
 
 ### 基础用法
 
-创建不同样式的按钮，可以通过设置 `type` 属性为 primary、info、success、warning 或 danger。如果不设置 `type` 属性，则按钮将采用默认样式。
+典型的页面布局。
 
 ::: demo
 
 ```html
-<c-layout>
-  <c-header>头部</c-header>
-  <c-layout>
-    <c-sider>侧边</c-sider>
-    <c-content>内容</c-content>
-  </c-layout>
-  <c-footer>脚部</c-footer>
-</c-layout>
+<template>
+  <c-flex direction="vertical" :gap="30">
+    <c-layout>
+      <c-header :style="headerStyle">头部</c-header>
+      <c-content :style="contentStyle">内容</c-content>
+      <c-footer :style="footerStyle">脚部</c-footer>
+    </c-layout>
+
+    <c-layout>
+      <c-header :style="headerStyle">头部</c-header>
+      <c-layout>
+        <c-sider :style="siderStyle">侧边</c-sider>
+        <c-content :style="contentStyle">内容</c-content>
+      </c-layout>
+      <c-footer :style="footerStyle">脚部</c-footer>
+    </c-layout>
+
+    <c-layout>
+      <c-header :style="headerStyle">Header</c-header>
+      <c-layout>
+        <c-content :style="contentStyle">Content</c-content>
+        <c-sider :style="siderStyle">Sider</c-sider>
+      </c-layout>
+      <c-footer :style="footerStyle">Footer</c-footer>
+    </c-layout>
+
+    <c-layout>
+      <c-sider :style="siderStyle">Sider</c-sider>
+      <c-layout>
+        <c-header :style="headerStyle">Header</c-header>
+        <c-content :style="contentStyle">Content</c-content>
+        <c-footer :style="footerStyle">Footer</c-footer>
+      </c-layout>
+    </c-layout>
+  </c-flex>
+</template>
+
+<script>
+  export default {
+    data() {
+      return {
+        headerStyle: {
+          textAlign: "center",
+          color: "#fff",
+          height: 64,
+          paddingInline: 50,
+          lineHeight: "64px",
+          backgroundColor: "#7dbcea",
+        },
+        contentStyle: {
+          textAlign: "center",
+          minHeight: 120,
+          lineHeight: "120px",
+          color: "#fff",
+          backgroundColor: "#108ee9",
+        },
+        siderStyle: {
+          textAlign: "center",
+          lineHeight: "120px",
+          color: "#fff",
+          backgroundColor: "#3ba0e9",
+        },
+        footerStyle: {
+          textAlign: "center",
+          color: "#fff",
+          lineHeight: "64px",
+          backgroundColor: "#7dbcea",
+        },
+      };
+    },
+
+    mounted() {},
+
+    methods: {},
+  };
+</script>
 ```
 
 :::
