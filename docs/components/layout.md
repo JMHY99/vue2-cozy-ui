@@ -33,20 +33,20 @@
     </c-layout>
 
     <c-layout>
-      <c-header :style="headerStyle">Header</c-header>
+      <c-header :style="headerStyle">头部</c-header>
       <c-layout>
-        <c-content :style="contentStyle">Content</c-content>
-        <c-sider :style="siderStyle">Sider</c-sider>
+        <c-content :style="contentStyle">内容</c-content>
+        <c-sider :style="siderStyle">侧边</c-sider>
       </c-layout>
-      <c-footer :style="footerStyle">Footer</c-footer>
+      <c-footer :style="footerStyle">脚部</c-footer>
     </c-layout>
 
     <c-layout>
-      <c-sider :style="siderStyle">Sider</c-sider>
+      <c-sider :style="siderStyle">侧边</c-sider>
       <c-layout>
-        <c-header :style="headerStyle">Header</c-header>
-        <c-content :style="contentStyle">Content</c-content>
-        <c-footer :style="footerStyle">Footer</c-footer>
+        <c-header :style="headerStyle">头部</c-header>
+        <c-content :style="contentStyle">内容</c-content>
+        <c-footer :style="footerStyle">脚部</c-footer>
       </c-layout>
     </c-layout>
   </c-flex>
