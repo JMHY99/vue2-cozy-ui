@@ -17,12 +17,15 @@ export default {
     align: {
       type: String,
       default: "stretch",
+      validator: (value) =>
+        ["stretch", "start", "end", "center", "baseline"].includes(value),
     },
 
     // 间距方向 horizontal | vertical
     direction: {
       type: String,
       default: "horizontal",
+      validator: (value) => ["horizontal", "vertical"].includes(value),
     },
 
     // 间距大小small middle large 20 [20,40]
