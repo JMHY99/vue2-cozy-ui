@@ -31,7 +31,7 @@ export default {
     layoutClass() {
       return {
         "cozy-layout": true,
-        "cozy-layout-has-sider": this.hasSiderChildren(), // 动态添加类名
+        "cozy-layout-is-vertical": this.hasSiderChildren(), // 动态添加类名
       };
     },
   },
@@ -45,7 +45,7 @@ export default {
   flex: auto;
 }
 
-.cozy-layout.cozy-layout-has-sider {
+.cozy-layout.cozy-layout-is-vertical {
   flex-direction: row;
 }
 </style>
