@@ -13,6 +13,8 @@ import CHeader from "../../packages/header/index.js";
 import CContent from "../../packages/content/index.js";
 import CSider from "../../packages/sider/index.js";
 import CFooter from "../../packages/footer/index.js";
+import CAlert from "../../packages/alert/index.js";
+import CMessage from "../../packages/message/index.js";
 
 import IconList from "./components/IconList.vue";
 import ColorDemo from "./components/ColorDemo.vue";
@@ -38,6 +40,8 @@ export default async ({ Vue }) => {
     Vue.use(CRadio);
     Vue.use(CRadioButton);
     Vue.use(CRadioGroup);
+    Vue.use(CAlert);
+    Vue.use(CMessage);
     Vue.use(IconList);
     Vue.use(ColorDemo);
     Vue.use(ColorDemo1);
