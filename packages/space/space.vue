@@ -1,5 +1,6 @@
 <template>
   <div
+    ref="space"
     class="c-space"
     :class="[`c-space-${direction} c-space-align-${align}`]"
     :style="spaceStyle"
@@ -42,7 +43,18 @@ export default {
     return {};
   },
 
-  mounted() {},
+  mounted() {
+    const parentElement = this.$refs.space;
+    const childElements = parentElement.children;
+    // 给每个子元素套一层div
+    for (let i = 0; i < childElements.length; i++) {
+      const childElement = childElements[i]; //获取子元素
+      const divElement = document.createElement("div"); //创建div
+      divElement.classList.add("c-space-item"); //  给新创建的div元素添加class
+      childElement.parentNode.insertBefore(divElement, childElement); //将新创建的div元素插入到当前子元素的前面，实现给子元素套一层div的效果。
+      divElement.appendChild(childElement); //将当前子元素作为新创建的div元素的子元素，使其成为新创建的div元素的内容。
+    }
+  },
 
   methods: {},
 
@@ -62,10 +74,7 @@ export default {
         gap = gapMap[this.size];
       }
       return {
-        display: "flex",
-        // "flex-direction": direction === "horizontal" ? "row" : "column",
         gap: gap,
-        width: "fit-content",
         "flex-wrap": this.wrap ? "wrap" : "nowrap",
       };
     },
@@ -97,5 +106,8 @@ export default {
 }
 .c-space-align-baseline {
   align-items: baseline;
+}
+.c-space-item {
+  width: fit-content;
 }
 </style>
