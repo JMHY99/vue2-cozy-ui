@@ -1,5 +1,5 @@
 <template>
-  <aside class="sider">
+  <aside class="cozy-sider">
     <slot></slot>
   </aside>
 </template>
@@ -17,11 +17,3 @@ export default {
   methods: {},
 };
 </script>
-
-<style scoped>
-.sider {
-  background-color: #f0f2f5;
-  width: 200px;
-  padding: 15px;
-}
-</style>

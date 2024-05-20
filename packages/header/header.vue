@@ -1,5 +1,5 @@
 <template>
-  <header class="header">
+  <header class="cozy-header">
     <slot></slot>
   </header>
 </template>
@@ -17,11 +17,3 @@ export default {
   methods: {},
 };
 </script>
-
-<style scoped>
-.header {
-  background-color: #001529;
-  color: #fff;
-  height: 64px;
-}
-</style>

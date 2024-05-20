@@ -1,5 +1,5 @@
 <template>
-  <footer class="footer">
+  <footer class="cozy-footer">
     <slot></slot>
   </footer>
 </template>
@@ -17,11 +17,3 @@ export default {
   methods: {},
 };
 </script>
-
-<style scoped>
-.footer {
-  background-color: #001529;
-  color: #fff;
-  height: 64px;
-}
-</style>

@@ -1,31 +1,18 @@
 <template>
-  <main class="content">
+  <main class="cozy-content">
     <slot></slot>
   </main>
 </template>
 <script>
 export default {
-  name: 'CContent',
+  name: "CContent",
 
   data() {
-    return {
-      
-    };
+    return {};
   },
 
-  mounted() {
-    
-  },
+  mounted() {},
 
-  methods: {
-    
-  },
+  methods: {},
 };
 </script>
-
-<style scoped>
-.content {
-  flex: 1;
-  padding: 15px;
-}
-</style>

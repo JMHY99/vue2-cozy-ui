@@ -37,15 +37,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-.cozy-layout {
-  display: flex;
-  flex-direction: column;
-  flex: auto;
-}
-
-.cozy-layout.cozy-layout-is-vertical {
-  flex-direction: row;
-}
-</style>
