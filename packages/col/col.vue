@@ -86,25 +86,25 @@ export default {
 /* 循环生成 */
 @for $i from 1 through 24 {
   .col-span-#{$i} {
-    flex-basis: #{percentage($i / 24)};
+    flex-basis: percentage($i / 24);
   }
 }
 
-.col-flex-0 {
-  flex: 0 0 auto;
-}
+// .col-flex-0 {
+//   flex: 0 0 auto;
+// }
 
-.col-flex-1 {
-  flex: 1;
-}
+// .col-flex-1 {
+//   flex: 1;
+// }
 
-.col-flex-2 {
-  flex: 2;
-}
+// .col-flex-2 {
+//   flex: 2;
+// }
 
-.col-flex-3 {
-  flex: 3;
-}
+// .col-flex-3 {
+//   flex: 3;
+// }
 
 .col-xs,
 .col-sm,

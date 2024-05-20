@@ -10,92 +10,191 @@
 
 ::: demo
 
-```html
-<c-row :gutter="10">
-  <c-col :span="24">
-    <c-button type="primary">主要按钮</c-button>
-  </c-col>
-</c-row>
-<c-row :gutter="10">
-  <c-col :span="12">
-    <c-button type="primary">主要按钮</c-button>
-  </c-col>
-  <c-col :span="12">
-    <c-button type="primary">主要按钮</c-button>
-  </c-col>
-</c-row>
-<c-row :gutter="10">
-  <c-col :span="6">
-    <c-button type="primary">主要按钮</c-button>
-  </c-col>
-  <c-col :span="6">
-    <c-button type="primary">主要按钮</c-button>
-  </c-col>
-  <c-col :span="6">
-    <c-button type="primary">主要按钮</c-button>
-  </c-col>
-  <c-col :span="6">
-    <c-button type="primary">主要按钮</c-button>
-  </c-col>
-</c-row>
-<c-row :gutter="10">
-  <c-col :span="4">
-    <c-button type="primary">主要按钮</c-button>
-  </c-col>
-  <c-col :span="4">
-    <c-button type="primary">主要按钮</c-button>
-  </c-col>
-  <c-col :span="4">
-    <c-button type="primary">主要按钮</c-button>
-  </c-col>
-  <c-col :span="4">
-    <c-button type="primary">主要按钮</c-button>
-  </c-col>
-  <c-col :span="4">
-    <c-button type="primary">主要按钮</c-button>
-  </c-col>
-  <c-col :span="4">
-    <c-button type="primary">主要按钮</c-button>
-  </c-col>
-</c-row>
-<c-row :gutter="10">
-  <c-col :span="1">
-    <c-button type="primary">主要按钮</c-button>
-  </c-col>
-  <c-col :span="1">
-    <c-button type="primary">主要按钮</c-button>
-  </c-col>
-  <c-col :span="1">
-    <c-button type="primary">主要按钮</c-button>
-  </c-col>
-  <c-col :span="1">
-    <c-button type="primary">主要按钮</c-button>
-  </c-col>
-  <c-col :span="1">
-    <c-button type="primary">主要按钮</c-button>
-  </c-col>
-  <c-col :span="1">
-    <c-button type="primary">主要按钮</c-button>
-  </c-col>
-  <c-col :span="1">
-    <c-button type="primary">主要按钮</c-button>
-  </c-col>
-  <c-col :span="1">
-    <c-button type="primary">主要按钮</c-button>
-  </c-col>
-  <c-col :span="1">
-    <c-button type="primary">主要按钮</c-button>
-  </c-col>
-  <c-col :span="1">
-    <c-button type="primary">主要按钮</c-button>
-  </c-col>
-  <c-col :span="1">
-    <c-button type="primary">主要按钮</c-button>
-  </c-col>
-  <!-- <c-col :span="1">
-    <c-button type="primary">主要按钮</c-button>
-  </c-col> -->
-</c-row>
+```vue
+<template>
+  <div class="grid-demo">
+    <c-row :gutter="10">
+      <c-col :span="24">
+        <div class="demo1"></div>
+      </c-col>
+    </c-row>
+    <c-row :gutter="10">
+      <c-col :span="12">
+        <div class="demo1"></div>
+      </c-col>
+      <c-col :span="12">
+        <div class="demo1"></div>
+      </c-col>
+    </c-row>
+    <c-row :gutter="10">
+      <c-col :span="6">
+        <div class="demo1"></div>
+      </c-col>
+      <c-col :span="6">
+        <div class="demo1"></div>
+      </c-col>
+      <c-col :span="6">
+        <div class="demo1"></div>
+      </c-col>
+      <c-col :span="6">
+        <div class="demo1"></div>
+      </c-col>
+    </c-row>
+    <c-row :gutter="10">
+      <c-col :span="4">
+        <div class="demo1"></div>
+      </c-col>
+      <c-col :span="4">
+        <div class="demo1"></div>
+      </c-col>
+      <c-col :span="4">
+        <div class="demo1"></div>
+      </c-col>
+      <c-col :span="4">
+        <div class="demo1"></div>
+      </c-col>
+      <c-col :span="4">
+        <div class="demo1"></div>
+      </c-col>
+      <c-col :span="4">
+        <div class="demo1"></div>
+      </c-col>
+    </c-row>
+    <c-row :gutter="10">
+      <c-col :span="2">
+        <div class="demo1"></div>
+      </c-col>
+      <c-col :span="2">
+        <div class="demo1"></div>
+      </c-col>
+      <c-col :span="2">
+        <div class="demo1"></div>
+      </c-col>
+      <c-col :span="2">
+        <div class="demo1"></div>
+      </c-col>
+      <c-col :span="2">
+        <div class="demo1"></div>
+      </c-col>
+      <c-col :span="2">
+        <div class="demo1"></div>
+      </c-col>
+      <c-col :span="2">
+        <div class="demo1"></div>
+      </c-col>
+      <c-col :span="2">
+        <div class="demo1"></div>
+      </c-col>
+      <c-col :span="2">
+        <div class="demo1"></div>
+      </c-col>
+      <c-col :span="2">
+        <div class="demo1"></div>
+      </c-col>
+      <c-col :span="2">
+        <div class="demo1"></div>
+      </c-col>
+      <c-col :span="2">
+        <div class="demo1"></div>
+      </c-col>
+    </c-row>
+    <c-row :gutter="10">
+      <c-col :span="1">
+        <div class="demo1"></div>
+      </c-col>
+      <c-col :span="1">
+        <div class="demo1"></div>
+      </c-col>
+      <c-col :span="1">
+        <div class="demo1"></div>
+      </c-col>
+      <c-col :span="1">
+        <div class="demo1"></div>
+      </c-col>
+      <c-col :span="1">
+        <div class="demo1"></div>
+      </c-col>
+      <c-col :span="1">
+        <div class="demo1"></div>
+      </c-col>
+      <c-col :span="1">
+        <div class="demo1"></div>
+      </c-col>
+      <c-col :span="1">
+        <div class="demo1"></div>
+      </c-col>
+      <c-col :span="1">
+        <div class="demo1"></div>
+      </c-col>
+      <c-col :span="1">
+        <div class="demo1"></div>
+      </c-col>
+      <c-col :span="1">
+        <div class="demo1"></div>
+      </c-col>
+      <c-col :span="1">
+        <div class="demo1"></div>
+      </c-col>
+      <c-col :span="1">
+        <div class="demo1"></div>
+      </c-col>
+      <c-col :span="1">
+        <div class="demo1"></div>
+      </c-col>
+      <c-col :span="1">
+        <div class="demo1"></div>
+      </c-col>
+      <c-col :span="1">
+        <div class="demo1"></div>
+      </c-col>
+      <c-col :span="1">
+        <div class="demo1"></div>
+      </c-col>
+      <c-col :span="1">
+        <div class="demo1"></div>
+      </c-col>
+      <c-col :span="1">
+        <div class="demo1"></div>
+      </c-col>
+      <c-col :span="1">
+        <div class="demo1"></div>
+      </c-col>
+      <c-col :span="1">
+        <div class="demo1"></div>
+      </c-col>
+      <c-col :span="1">
+        <div class="demo1"></div>
+      </c-col>
+      <c-col :span="1">
+        <div class="demo1"></div>
+      </c-col>
+      <c-col :span="1">
+        <div class="demo1"></div>
+      </c-col>
+    </c-row>
+  </div>
+</template>
+
+<script>
+export default {
+  computed: {},
+};
+</script>
+
+<style>
+.demo1 {
+  width: 100%;
+  height: 40px;
+}
+
+.grid-demo div > div:nth-child(odd) .demo1 {
+  background-color: #7387ef;
+}
+
+.grid-demo div > div:nth-child(even) .demo1 {
+  background-color: #90a1f3;
+}
+</style>
 ```
 
 :::

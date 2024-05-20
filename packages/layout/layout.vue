@@ -19,7 +19,6 @@ export default {
       let hasSider = false;
       // 检查子节点是否存在Sider组件
       this.$slots.default.forEach((slot) => {
-        console.log(slot.componentOptions);
         if (slot.componentOptions && slot.componentOptions.tag === "c-sider") {
           hasSider = true;
         }

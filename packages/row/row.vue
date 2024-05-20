@@ -88,9 +88,4 @@ export default {
 .wrap-wrap-reverse {
   flex-wrap: wrap-reverse;
 }
-
-/* You may adjust gutter styles as needed */
-.row > * {
-  margin-right: 0.5rem; /* Example gutter value */
-}
 </style>
