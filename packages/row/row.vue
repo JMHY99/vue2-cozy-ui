@@ -1,5 +1,5 @@
 <template>
-  <div :class="['row', alignClass, justifyClass, wrapClass]">
+  <div :class="['row', alignClass, justifyClass, wrapClass]" :style="rowStyles">
     <slot></slot>
   </div>
 </template>
@@ -35,6 +35,29 @@ export default {
     wrapClass() {
       return `wrap-${this.wrap}`;
     },
+    rowStyles() {
+      let horizontalGutter, verticalGutter;
+      if (typeof this.gutter === "object") {
+        horizontalGutter = this.gutter.xs || 0;
+        verticalGutter = this.gutter.ys || 0;
+      } else if (Array.isArray(this.gutter)) {
+        [horizontalGutter, verticalGutter] = this.gutter;
+      } else {
+        horizontalGutter = verticalGutter = this.gutter;
+      }
+
+      const marginStyles = {
+        marginLeft: `-${horizontalGutter / 2}px`,
+        marginRight: `-${horizontalGutter / 2}px`,
+        marginTop: `-${verticalGutter / 2}px`,
+        marginBottom: `-${verticalGutter / 2}px`,
+      };
+
+      return {
+        ...marginStyles,
+        // padding: `${verticalGutter / 2}px ${horizontalGutter / 2}px`,
+      };
+    },
   },
 };
 </script>
@@ -43,6 +66,7 @@ export default {
 .row {
   display: flex;
   flex-wrap: nowrap;
+  box-sizing: border-box;
 }
 
 .align-top {

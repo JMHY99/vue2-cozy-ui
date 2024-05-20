@@ -1,5 +1,5 @@
 <template>
-  <div :class="colClasses">
+  <div :class="colClasses" :style="colStyles">
     <slot></slot>
   </div>
 </template>
@@ -74,6 +74,31 @@ export default {
       }
       return classList.join(" ");
     },
+
+    colStyles() {
+      const gutter = this.$parent.gutter;
+      let paddingLeft, paddingRight, paddingTop, paddingBottom;
+      if (typeof gutter === "object") {
+        const horizontalGutter = gutter.xs || 0;
+        paddingLeft = paddingRight = `${horizontalGutter / 2}px`;
+        const verticalGutter = gutter.ys || 0;
+        paddingTop = paddingBottom = `${verticalGutter / 2}px`;
+      } else if (Array.isArray(gutter)) {
+        const [horizontalGutter, verticalGutter] = gutter;
+        paddingLeft = paddingRight = `${horizontalGutter / 2}px`;
+        paddingTop = paddingBottom = `${verticalGutter / 2}px`;
+      } else {
+        paddingLeft = paddingRight = `${gutter / 2}px`;
+        paddingTop = paddingBottom = `${gutter / 2}px`;
+      }
+
+      return {
+        paddingLeft,
+        paddingRight,
+        paddingTop,
+        paddingBottom,
+      };
+    },
   },
 };
 </script>
@@ -89,22 +114,6 @@ export default {
     flex-basis: percentage($i / 24);
   }
 }
-
-// .col-flex-0 {
-//   flex: 0 0 auto;
-// }
-
-// .col-flex-1 {
-//   flex: 1;
-// }
-
-// .col-flex-2 {
-//   flex: 2;
-// }
-
-// .col-flex-3 {
-//   flex: 3;
-// }
 
 .col-xs,
 .col-sm,
@@ -201,5 +210,12 @@ export default {
   flex-basis: 0;
   flex-grow: 1;
   max-width: 100%;
+}
+
+.col {
+  position: relative;
+  float: left;
+  min-height: 1px;
+  box-sizing: border-box;
 }
 </style>
