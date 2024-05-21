@@ -15,6 +15,9 @@ import CSider from "../../packages/sider/index.js";
 import CFooter from "../../packages/footer/index.js";
 import CAlert from "../../packages/alert/index.js";
 import CMessage from "../../packages/message/index.js";
+import CAffix from "../../packages/affix/index.js";
+import CForm from "../../packages/form/index.js";
+import CFormItem from "../../packages/form-item/index.js";
 
 import IconList from "./components/IconList.vue";
 import ColorDemo from "./components/ColorDemo.vue";
@@ -42,6 +45,9 @@ export default async ({ Vue }) => {
     Vue.use(CRadioGroup);
     Vue.use(CAlert);
     Vue.use(CMessage);
+    Vue.use(CAffix);
+    Vue.use(CForm);
+    Vue.use(CFormItem);
     Vue.use(IconList);
     Vue.use(ColorDemo);
     Vue.use(ColorDemo1);

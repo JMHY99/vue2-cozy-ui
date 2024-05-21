@@ -66,7 +66,7 @@ module.exports = {
               title: "导航",
               collapsable: false,
               sidebarDepth: 1, // 只显示一级标题
-              children: ["anchor", "breadcrumb", "dropdown"],
+              children: ["affix", "anchor", "breadcrumb", "dropdown"],
             },
             {
               title: "表单",
