@@ -33,7 +33,7 @@ Flex 弹性布局是一种用于实现灵活和自适应布局的技术。
   export default {
     data() {
       return {
-        direction: "row",
+        direction: "horizontal",
       };
     },
 

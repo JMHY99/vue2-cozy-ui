@@ -101,80 +101,6 @@
         <div class="demo1"></div>
       </c-col>
     </c-row>
-    <c-row :gutter="10">
-      <c-col :span="1">
-        <div class="demo1"></div>
-      </c-col>
-      <c-col :span="1">
-        <div class="demo1"></div>
-      </c-col>
-      <c-col :span="1">
-        <div class="demo1"></div>
-      </c-col>
-      <c-col :span="1">
-        <div class="demo1"></div>
-      </c-col>
-      <c-col :span="1">
-        <div class="demo1"></div>
-      </c-col>
-      <c-col :span="1">
-        <div class="demo1"></div>
-      </c-col>
-      <c-col :span="1">
-        <div class="demo1"></div>
-      </c-col>
-      <c-col :span="1">
-        <div class="demo1"></div>
-      </c-col>
-      <c-col :span="1">
-        <div class="demo1"></div>
-      </c-col>
-      <c-col :span="1">
-        <div class="demo1"></div>
-      </c-col>
-      <c-col :span="1">
-        <div class="demo1"></div>
-      </c-col>
-      <c-col :span="1">
-        <div class="demo1"></div>
-      </c-col>
-      <c-col :span="1">
-        <div class="demo1"></div>
-      </c-col>
-      <c-col :span="1">
-        <div class="demo1"></div>
-      </c-col>
-      <c-col :span="1">
-        <div class="demo1"></div>
-      </c-col>
-      <c-col :span="1">
-        <div class="demo1"></div>
-      </c-col>
-      <c-col :span="1">
-        <div class="demo1"></div>
-      </c-col>
-      <c-col :span="1">
-        <div class="demo1"></div>
-      </c-col>
-      <c-col :span="1">
-        <div class="demo1"></div>
-      </c-col>
-      <c-col :span="1">
-        <div class="demo1"></div>
-      </c-col>
-      <c-col :span="1">
-        <div class="demo1"></div>
-      </c-col>
-      <c-col :span="1">
-        <div class="demo1"></div>
-      </c-col>
-      <c-col :span="1">
-        <div class="demo1"></div>
-      </c-col>
-      <c-col :span="1">
-        <div class="demo1"></div>
-      </c-col>
-    </c-row>
   </div>
 </template>
 
@@ -191,11 +117,11 @@ export default {
 }
 
 .grid-demo div > div:nth-child(odd) .demo1 {
-  background-color: #7387ef;
+  background-color: #2f9bff;
 }
 
 .grid-demo div > div:nth-child(even) .demo1 {
-  background-color: #90a1f3;
+  background-color: #7cc0ff;
 }
 </style>
 ```
@@ -275,12 +201,12 @@ export default {
 }
 
 .grid-demo div > div:nth-child(odd) .demo2 {
-  background-color: #7387ef;
+  background-color: #2f9bff;
   height: 120px;
 }
 
 .grid-demo div > div:nth-child(even) .demo2 {
-  background-color: #90a1f3;
+  background-color: #7cc0ff;
 }
 </style>
 ```
@@ -330,11 +256,11 @@ export default {
 }
 
 .grid-demo div > div:nth-child(odd) .demo1 {
-  background-color: #7387ef;
+  background-color: #2f9bff;
 }
 
 .grid-demo div > div:nth-child(even) .demo1 {
-  background-color: #90a1f3;
+  background-color: #7cc0ff;
 }
 </style>
 ```
@@ -442,11 +368,11 @@ export default {
 }
 
 .grid-demo div > div:nth-child(odd) .demo1 {
-  background-color: #7387ef;
+  background-color: #2f9bff;
 }
 
 .grid-demo div > div:nth-child(even) .demo1 {
-  background-color: #90a1f3;
+  background-color: #7cc0ff;
 }
 </style>
 ```
@@ -508,11 +434,11 @@ export default {
 }
 
 .grid-demo div > div:nth-child(odd) .demo1 {
-  background-color: #7387ef;
+  background-color: #2f9bff;
 }
 
 .grid-demo div > div:nth-child(even) .demo1 {
-  background-color: #90a1f3;
+  background-color: #7cc0ff;
 }
 </style>
 ```
