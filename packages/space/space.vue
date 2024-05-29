@@ -1,8 +1,7 @@
 <template>
   <div
     ref="space"
-    class="c-space"
-    :class="[`c-space-${direction} c-space-align-${align}`]"
+    :class="[`cozy-space cozy-space-${direction} cozy-space-align-${align}`]"
     :style="spaceStyle"
   >
     <slot></slot>
@@ -50,7 +49,7 @@ export default {
     for (let i = 0; i < childElements.length; i++) {
       const childElement = childElements[i]; //获取子元素
       const divElement = document.createElement("div"); //创建div
-      divElement.classList.add("c-space-item"); //  给新创建的div元素添加class
+      divElement.classList.add("cozy-space-item"); //  给新创建的div元素添加class
       childElement.parentNode.insertBefore(divElement, childElement); //将新创建的div元素插入到当前子元素的前面，实现给子元素套一层div的效果。
       divElement.appendChild(childElement); //将当前子元素作为新创建的div元素的子元素，使其成为新创建的div元素的内容。
     }
@@ -81,33 +80,3 @@ export default {
   },
 };
 </script>
-<style scoped>
-.c-space {
-  display: flex;
-}
-.c-space-horizontal {
-  flex-direction: row;
-}
-.c-space-vertical {
-  flex-direction: column;
-}
-
-.c-space-align-stretch {
-  align-items: stretch;
-}
-.c-space-align-start {
-  align-items: flex-start;
-}
-.c-space-align-end {
-  align-items: flex-end;
-}
-.c-space-align-center {
-  align-items: center;
-}
-.c-space-align-baseline {
-  align-items: baseline;
-}
-.c-space-item {
-  width: fit-content;
-}
-</style>
