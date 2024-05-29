@@ -51,11 +51,11 @@ export default {
   computed: {
     flexClass() {
       return {
-        "flex-container": true,
-        [`flex-${this.direction}`]: true,
-        [`justify-${this.justifyContent}`]: true,
-        [`align-${this.alignItems}`]: true,
-        [`flex-wrap-${this.wrap}`]: true,
+        "cozy-flex": true,
+        [`cozy-flex-${this.direction}`]: true,
+        [`cozy-justify-${this.justifyContent}`]: true,
+        [`cozy-align-${this.alignItems}`]: true,
+        [`cozy-flex-wrap-${this.wrap}`]: true,
       };
     },
     flexStyle() {
@@ -81,72 +81,3 @@ export default {
   },
 };
 </script>
-<style scoped>
-.flex-container {
-  display: flex;
-}
-
-/* 排列方式 */
-.flex-horizontal {
-  flex-direction: row;
-}
-
-.flex-vertical {
-  flex-direction: column;
-}
-
-/* 是否换行 */
-.flex-wrap-nowrap {
-  flex-wrap: nowrap;
-}
-
-.flex-wrap-wrap {
-  flex-wrap: wrap;
-}
-
-.flex-wrap-wrap-reverse {
-  flex-wrap: wrap-reverse;
-}
-
-/* 左右对齐方式 */
-.justify-flex-start {
-  justify-content: flex-start;
-}
-
-.justify-flex-end {
-  justify-content: flex-end;
-}
-
-.justify-center {
-  justify-content: center;
-}
-
-.justify-space-between {
-  justify-content: space-between;
-}
-
-.justify-space-around {
-  justify-content: space-around;
-}
-
-.justify-space-evenly {
-  justify-content: space-evenly;
-}
-
-/* 上下对齐方式 */
-.align-stretch {
-  align-items: stretch;
-}
-
-.align-flex-start {
-  align-items: flex-start;
-}
-
-.align-flex-end {
-  align-items: flex-end;
-}
-
-.align-center {
-  align-items: center;
-}
-</style>
