@@ -17,12 +17,14 @@ Cozy UI 用于 Vue 2 的轻量级 UI 组件库
 组件库设计了简洁明了的 API，使得组件的使用变得更加容易和直观，开发人员能够更加高效地构建出所需的用户界面。
 
 # 运行项目
+
 安装依赖
 
 ```bash
 npm install
 
 ```
+
 运行文档项目
 
 ```bash
@@ -38,5 +40,4 @@ npm run docs:dev
 
 ![color](public/color.png)
 ![icon](public/icon.png)
-
-[测试链接](./docs/components/alert.md)
+![alert](public/alert.png)
