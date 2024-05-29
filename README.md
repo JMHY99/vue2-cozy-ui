@@ -38,3 +38,5 @@ npm run docs:dev
 
 ![color](public/color.png)
 ![icon](public/icon.png)
+
+[测试链接](./docs/components/alert.md)
