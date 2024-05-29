@@ -1,7 +1,22 @@
 <template>
-  <div v-if="visible" :class="['c-alert', 'c-alert-' + type]">
-    <span class="c-alert-message">{{ message }}</span>
-    <span class="c-alert-close" @click="closeAlert">×</span>
+  <div v-if="visible" :class="['cozy-alert', 'cozy-alert-' + type]">
+    <!-- 图标插槽 -->
+    <slot name="icon" v-if="showIcon">
+      <i :class="[`cozy-icon ${iconName}`]"></i>
+    </slot>
+
+    <!-- 内容插槽 -->
+    <div class="cozy-alert-message">
+      <slot name="message">
+        {{ message }}
+      </slot>
+    </div>
+
+    <div v-if="closable" class="cozy-alert-close" @click="closeAlert">
+      <slot name="closeText">
+        {{ closeText }}
+      </slot>
+    </div>
   </div>
 </template>
 
@@ -9,16 +24,31 @@
 export default {
   name: "CAlert",
   props: {
+    // 内容
     message: {
       type: String,
-      required: true,
+      default: null,
     },
+
+    // 类型
     type: {
       type: String,
       default: "info",
       validator(value) {
         return ["success", "info", "warning", "error"].includes(value);
       },
+    },
+
+    // 显示图标
+    showIcon: Boolean,
+
+    // 关闭按钮
+    closable: Boolean,
+
+    // 自定义关闭按钮
+    closeText: {
+      type: String,
+      default: "×",
     },
   },
   data() {
@@ -32,46 +62,16 @@ export default {
       this.$emit("close");
     },
   },
+  computed: {
+    iconName() {
+      const iconMap = {
+        success: "c-check-circle-outlined",
+        info: "c-plus-circle-outlined",
+        warning: "c-minus-circle-outlined",
+        error: "c-close-circle-outlined",
+      };
+      return iconMap[this.type] || "";
+    },
+  },
 };
 </script>
-
-<style>
-.c-alert {
-  padding: 8px 16px;
-  border-radius: 4px;
-  margin-bottom: 16px;
-  display: flex;
-  align-items: center;
-}
-
-.c-alert-message {
-  flex: 1;
-}
-
-.c-alert-close {
-  cursor: pointer;
-}
-.c-alert-success {
-  background-color: #f6ffed;
-  border: 1px solid #b7eb8f;
-  color: #52c41a;
-}
-
-.c-alert-info {
-  background-color: #e6f7ff;
-  border: 1px solid #91d5ff;
-  color: #1890ff;
-}
-
-.c-alert-warning {
-  background-color: #fffbe6;
-  border: 1px solid #ffe58f;
-  color: #faad14;
-}
-
-.c-alert-error {
-  background-color: #fff1f0;
-  border: 1px solid #ffa39e;
-  color: #f5222d;
-}
-</style>

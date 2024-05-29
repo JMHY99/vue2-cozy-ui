@@ -2,63 +2,150 @@
 
 ### 概述
 
-按钮用于触发一个操作，是用户与应用进行交互的重要方式之一。
+警告提示。
 
 ### 基础用法
 
-创建不同样式的按钮，可以通过设置 `type` 属性为 primary、info、success、warning 或 danger。如果不设置 `type` 属性，则按钮将采用默认样式。
+`type` 属性为 success、info、warning 或 error。默认为 info。
 
 ::: demo
 
-```vue
-<template>
-  <div>
-    <c-button @click="showSuccessAlert">Show Success Alert</c-button>
-    <c-button @click="showInfoAlert">Show Info Alert</c-button>
-    <c-button @click="showWarningAlert">Show Warning Alert</c-button>
-    <c-button @click="showErrorAlert">Show Error Alert</c-button>
-    <c-alert
-      v-if="show"
-      :message="alertMessage"
-      :type="alertType"
-      @close="closeAlert"
-    />
-  </div>
-</template>
-
-<script>
-export default {
-  data() {
-    return {
-      show: false,
-      alertMessage: "",
-      alertType: "",
-    };
-  },
-  methods: {
-    showAlert(message, type) {
-      this.alertMessage = message;
-      this.alertType = type;
-      this.show = true;
-    },
-    closeAlert() {
-      this.show = false;
-    },
-    showSuccessAlert() {
-      this.showAlert("This is a success message.", "success");
-    },
-    showInfoAlert() {
-      this.showAlert("This is an info message.", "info");
-    },
-    showWarningAlert() {
-      this.showAlert("This is a warning message.", "warning");
-    },
-    showErrorAlert() {
-      this.showAlert("This is an error message.", "error");
-    },
-  },
-};
-</script>
+```html
+<div>
+  <c-alert message="This is a success message" type="success" />
+  <br />
+  <c-alert message="This is an info message" type="info" />
+  <br />
+  <c-alert message="This is a warning message" type="warning" />
+  <br />
+  <c-alert message="This is an error message" type="error" />
+</div>
 ```
 
 :::
+
+### 可关闭的
+
+`closable` 属性设置关闭按钮。
+
+::: demo
+
+```html
+<div>
+  <c-alert
+    message="This is a success message"
+    type="success"
+    :closable="true"
+  />
+  <br />
+  <c-alert
+    message="This is an info message"
+    type="info"
+    :closable="true"
+    closeText="关闭"
+  />
+  <br />
+  <c-alert
+    message="This is a warning message"
+    type="warning"
+    :closable="true"
+  />
+  <br />
+  <c-alert message="This is an error message" type="error" :closable="true">
+    <template #closeText>
+      <c-icon size="20" name="c-close-outlined"></c-icon>
+    </template>
+  </c-alert>
+</div>
+```
+
+:::
+
+### 图标显示
+
+可以通过设置 `showIcon`控制是否显示图标，icon 插槽可以自定义图标
+
+::: demo
+
+```html
+<div>
+  <c-alert message="自定义图标显示" type="success" :showIcon="true">
+    <template #icon>
+      <c-icon size="20" name="c-distributed-outlined"></c-icon>
+    </template>
+  </c-alert>
+  <br />
+  <c-alert message="自定义图标显示" type="info" :showIcon="true">
+    <template #icon>
+      <c-icon size="20" name="c-distributed-outlined"></c-icon>
+    </template>
+  </c-alert>
+  <br />
+  <c-alert message="自定义图标显示" type="warning" :showIcon="true">
+    <template #icon>
+      <c-icon size="20" name="c-distributed-outlined"></c-icon>
+    </template>
+  </c-alert>
+  <br />
+  <c-alert message="自定义图标显示" type="error" :showIcon="true">
+    <template #icon>
+      <c-icon size="20" name="c-distributed-outlined"></c-icon>
+    </template>
+  </c-alert>
+</div>
+```
+
+:::
+
+### 设置内容
+
+`message` 属性设置内容，也可以使用 message 插槽
+
+::: demo
+
+```html
+<div>
+  <c-alert type="success" :showIcon="true">
+    <template #message>
+      <span>我是插槽内容</span>
+    </template>
+  </c-alert>
+  <br />
+  <c-alert type="info" :showIcon="true">
+    <template #message>
+      <span>我是插槽内容</span>
+    </template>
+  </c-alert>
+  <br />
+  <c-alert type="warning" :showIcon="true">
+    <template #message>
+      <span>我是插槽内容</span>
+    </template>
+  </c-alert>
+  <br />
+  <c-alert type="error" :showIcon="true">
+    <template #message>
+      <span>我是插槽内容</span>
+    </template>
+  </c-alert>
+</div>
+```
+
+:::
+
+### API
+
+| 参数      | 说明             | 类型         | 可选值                           | 默认值 |
+| --------- | ---------------- | ------------ | -------------------------------- | ------ |
+| type      | 类型             | string       | success / warning / error / info | info   |
+| message   | 警告提示内容     | string/ slot | —                                | —      |
+| closable  | 显示关闭按钮     | boolean      | —                                | false  |
+| closeText | 自定义关闭按钮   | string/ slot | —                                | ×      |
+| showIcon  | 是否显示辅助图标 | boolean      | —                                | false  |
+| icon      | 自定义辅助图标   | slot         | —                                | —      |
+
+### 事件
+
+| 事件名称 | 说明                 | <div style="width:706px;">回调参数</div> |
+| -------- | -------------------- | ---------------------------------------- |
+| close    | 关闭时触发的回调函数 | (e: MouseEvent) => void                  |
