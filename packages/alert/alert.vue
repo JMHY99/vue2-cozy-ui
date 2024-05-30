@@ -66,8 +66,8 @@ export default {
     iconName() {
       const iconMap = {
         success: "c-check-circle-outlined",
-        info: "c-plus-circle-outlined",
-        warning: "c-minus-circle-outlined",
+        info: "c-Info",
+        warning: "c-warning",
         error: "c-close-circle-outlined",
       };
       return iconMap[this.type] || "";
