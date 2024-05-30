@@ -18,6 +18,9 @@ import CMessage from "../../packages/message/index.js";
 import CAffix from "../../packages/affix/index.js";
 import CForm from "../../packages/form/index.js";
 import CFormItem from "../../packages/form-item/index.js";
+import CInput from "../../packages/input/index.js";
+import CTextarea from "../../packages/input-textarea/index.js";
+import CInputNumber from "../../packages/input-number/index.js";
 
 import IconList from "./components/IconList.vue";
 import ColorDemo from "./components/ColorDemo.vue";
@@ -47,6 +50,9 @@ export default async ({ Vue }) => {
     Vue.use(CAffix);
     Vue.use(CForm);
     Vue.use(CFormItem);
+    Vue.use(CInput);
+    Vue.use(CTextarea);
+    Vue.use(CInputNumber);
     Vue.use(IconList);
     Vue.use(ColorDemo);
     Vue.use(ColorDemo1);
