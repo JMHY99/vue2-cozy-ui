@@ -1,8 +1,16 @@
 <template>
-  <transition name="c-message-fade">
-    <div v-if="visible" class="c-message" :class="'c-message-' + type">
-      <span class="c-message-content">{{ message }}</span>
-      <span class="c-message-close" @click="closeMessage">×</span>
+  <transition name="cozy-message-fade">
+    <div
+      v-if="visible"
+      :id="id"
+      :class="['cozy-message', fill ? `cozy-message-fill-${type}` : '']"
+      :style="{ top: top + 'px' }"
+    >
+      <i :class="[`cozy-icon ${iconName} cozy-message-${type}`]"></i>
+      <span class="cozy-message-content">{{ message }}</span>
+      <span v-if="showClose" class="cozy-message-close" @click="closeMessage">
+        <i class="cozy-icon c-close-outlined"></i>
+      </span>
     </div>
   </transition>
 </template>
@@ -22,81 +30,35 @@ export default {
         return ["success", "info", "warning", "error"].includes(value);
       },
     },
-    duration: {
-      type: Number,
-      default: 3000, // 默认3秒后自动关闭
-    },
+    // 顶部高度
+    top: Number, // 接收top属性
+    // 是否填充类型
+    fill: Boolean,
+    // 是否显示关闭
+    showClose: Boolean,
   },
   data() {
     return {
-      visible: true,
+      visible: false,
     };
   },
-  created() {
-    if (this.duration > 0) {
-      setTimeout(() => {
-        this.closeMessage();
-      }, this.duration);
-    }
-  },
+  mounted() {},
   methods: {
     closeMessage() {
-      this.visible = false;
+      this.$options.propsData.onClose();
       this.$emit("close");
+    },
+  },
+  computed: {
+    iconName() {
+      const iconMap = {
+        success: "c-circle-check-filled",
+        info: "c-information",
+        warning: "c-warning-filled",
+        error: "c-circle-close-filled",
+      };
+      return iconMap[this.type] || "";
     },
   },
 };
 </script>
-
-<style>
-.c-message {
-  position: fixed;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  padding: 8px 16px;
-  border-radius: 4px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 300px;
-  z-index: 9999999999;
-}
-
-.c-message-success {
-  background-color: #f6ffed;
-  border: 1px solid #b7eb8f;
-  color: #52c41a;
-}
-
-.c-message-info {
-  background-color: #e6f7ff;
-  border: 1px solid #91d5ff;
-  color: #1890ff;
-}
-
-.c-message-warning {
-  background-color: #fffbe6;
-  border: 1px solid #ffe58f;
-  color: #faad14;
-}
-
-.c-message-error {
-  background-color: #fff1f0;
-  border: 1px solid #ffa39e;
-  color: #f5222d;
-}
-
-.c-message-close {
-  cursor: pointer;
-}
-
-.c-message-fade-enter-active,
-.c-message-fade-leave-active {
-  transition: opacity 0.5s;
-}
-.c-message-fade-enter,
-.c-message-fade-leave-to {
-  opacity: 0;
-}
-</style>

@@ -1,0 +1,83 @@
+@import "./variables.scss";
+.cozy-message {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 400px;
+  padding: 10px 16px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  background-color: #fff;
+  font-size: 14px;
+  z-index: 9999999999;
+}
+
+.cozy-message-success {
+  color: $color-success;
+}
+
+.cozy-message-info {
+  color: $color-info;
+}
+
+.cozy-message-warning {
+  color: $color-warning;
+}
+
+.cozy-message-error {
+  color: $color-danger;
+}
+
+.cozy-message-fill-success {
+  background-color: $color-success-light-10;
+  border: 1px solid $color-success-light-5;
+  color: $color-success;
+}
+
+.cozy-message-fill-info {
+  background-color: $color-info-light-10;
+  border: 1px solid $color-info-light-5;
+  color: $color-info;
+}
+
+.cozy-message-fill-warning {
+  background-color: $color-warning-light-10;
+  border: 1px solid $color-warning-light-5;
+  color: $color-warning;
+}
+
+.cozy-message-fill-error {
+  background-color: $color-danger-light-10;
+  border: 1px solid $color-danger-light-5;
+  color: $color-danger;
+}
+
+.cozy-message-content {
+  margin-right: 12px;
+  margin-left: 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cozy-message-close {
+  cursor: pointer;
+}
+
+.cozy-message-close i {
+  font-size: 14px;
+}
+
+.cozy-message-enter-active,
+.cozy-message-leave-active {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.cozy-message-enter,
+.cozy-message-leave-to {
+  transform: translateY(-100%);
+  opacity: 0;
+}

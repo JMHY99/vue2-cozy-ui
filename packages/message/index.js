@@ -1,6 +1,5 @@
 import Vue from "vue";
-// import CMessage from "./message.vue";
-import CMessage from "./m2.vue";
+import CMessage from "./message.vue";
 
 const MessageConstructor = Vue.extend(CMessage);
 
@@ -34,6 +33,7 @@ const Message = function (options) {
     propsData: {
       ...options,
       top: top, // 设置top值
+      fill: options.fill,
     },
   });
 
@@ -61,13 +61,21 @@ Message.adjustTop = function () {
 
 // 类型
 ["success", "info", "warning", "error"].forEach((type) => {
-  Message[type] = (message, duration = 3) => {
-    const options = {
-      message: message,
-      duration: duration,
+  Message[type] = (options) => {
+    let opt = {
+      message: null,
+      duration: 3,
+      fill: false,
+      showClose: false,
       type: type,
     };
-    return Message(options);
+    if (typeof options === "string") {
+      options = {
+        message: options,
+      };
+    }
+    const mergedObj = { ...opt, ...options };
+    return Message(mergedObj);
   };
 });
 
