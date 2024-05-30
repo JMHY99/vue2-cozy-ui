@@ -1,10 +1,11 @@
 <template>
   <transition name="c-message-fade">
-    <div v-if="visible" class="c-message" :class="'c-message-' + type">
+    <div v-if="visible" :id="id" class="c-message" :style="{ top: top + 'px' }">
+      <i :class="[`cozy-icon ${iconName} c-message-${type}`]"></i>
       <span class="c-message-content">{{ message }}</span>
-      <span class="c-message-close" @click="closeMessage"
-        ><i class="anticon anticon-close"></i
-      ></span>
+      <span class="c-message-close" @click="closeMessage">
+        <i class="anticon anticon-close"> </i>
+      </span>
     </div>
   </transition>
 </template>
@@ -28,23 +29,28 @@ export default {
       type: Number,
       default: 3000, // 默认3秒后自动关闭
     },
+    top: Number, // 接收top属性
   },
   data() {
     return {
-      visible: true,
+      visible: false,
     };
-  },
-  created() {
-    if (this.duration > 0) {
-      setTimeout(() => {
-        this.closeMessage();
-      }, this.duration);
-    }
   },
   methods: {
     closeMessage() {
       this.visible = false;
       this.$emit("close");
+    },
+  },
+  computed: {
+    iconName() {
+      const iconMap = {
+        success: "c-check-circle-outlined",
+        info: "c-plus-circle-outlined",
+        warning: "c-minus-circle-outlined",
+        error: "c-close-circle-outlined",
+      };
+      return iconMap[this.type] || "";
     },
   },
 };
@@ -53,7 +59,7 @@ export default {
 <style>
 .c-message {
   position: fixed;
-  top: 24px;
+  top: 20px;
   left: 50%;
   transform: translateX(-50%);
   max-width: 360px;
@@ -64,27 +70,29 @@ export default {
   justify-content: space-between;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   background-color: #fff;
+  font-size: 14px;
   z-index: 9999999999;
 }
 
 .c-message-success {
-  border-left: 6px solid #52c41a;
+  color: #52c41a;
 }
 
 .c-message-info {
-  border-left: 6px solid #1890ff;
+  color: #1890ff;
 }
 
 .c-message-warning {
-  border-left: 6px solid #faad14;
+  color: #faad14;
 }
 
 .c-message-error {
-  border-left: 6px solid #f5222d;
+  color: #f5222d;
 }
 
 .c-message-content {
   margin-right: 12px;
+  margin-left: 4px;
   overflow: hidden;
   text-overflow: ellipsis;
 }

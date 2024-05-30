@@ -1,8 +1,8 @@
 @font-face {
   font-family: "iconfont"; /* Project id 4357777 */
-  src: url('iconfont.woff2?t=1701674542296') format('woff2'),
-       url('iconfont.woff?t=1701674542296') format('woff'),
-       url('iconfont.ttf?t=1701674542296') format('truetype');
+  src: url("iconfont.woff2?t=1717051546470") format("woff2"),
+    url("iconfont.woff?t=1717051546470") format("woff"),
+    url("iconfont.ttf?t=1717051546470") format("truetype");
 }
 
 .cozy-icon {
@@ -11,6 +11,102 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.c-upload:before {
+  content: "\ebb3";
+}
+
+.c-upload-fill:before {
+  content: "\e63e";
+}
+
+.c-information:before {
+  content: "\e615";
+}
+
+.c-xiazai:before {
+  content: "\e62a";
+}
+
+.c-xiazai1:before {
+  content: "\e6f9";
+}
+
+.c-xiazai2:before {
+  content: "\e6f5";
+}
+
+.c-Info:before {
+  content: "\e691";
+}
+
+.c-folder:before {
+  content: "\e692";
+}
+
+.c-folder-add:before {
+  content: "\e693";
+}
+
+.c-folder-checked:before {
+  content: "\e694";
+}
+
+.c-folder-delete:before {
+  content: "\e695";
+}
+
+.c-folder-opened:before {
+  content: "\e696";
+}
+
+.c-folder-remove:before {
+  content: "\e697";
+}
+
+.c-warning:before {
+  content: "\e6c8";
+}
+
+.c-zoom-in:before {
+  content: "\e6cb";
+}
+
+.c-zoom-out:before {
+  content: "\e6cc";
+}
+
+.c-circle-check-filled:before {
+  content: "\e668";
+}
+
+.c-circle-close-filled:before {
+  content: "\e669";
+}
+
+.c-info-filled:before {
+  content: "\e690";
+}
+
+.c-question-filled:before {
+  content: "\e6a6";
+}
+
+.c-warning-filled:before {
+  content: "\e6c9";
+}
+
+.c-delete:before {
+  content: "\e60f";
+}
+
+.c-edit:before {
+  content: "\e612";
+}
+
+.c-copy:before {
+  content: "\e613";
 }
 
 .c-up-outlined:before {
@@ -375,38 +471,6 @@
 
 .c-jian:before {
   content: "\e611";
-}
-
-.c-wenjianjia:before {
-  content: "\e9b4";
-}
-
-.c-dangan:before {
-  content: "\e9b5";
-}
-
-.c-jianshao:before {
-  content: "\e9b6";
-}
-
-.c-tianjia:before {
-  content: "\e9b7";
-}
-
-.c-dangan1:before {
-  content: "\e9b8";
-}
-
-.c-shanchu:before {
-  content: "\e9b9";
-}
-
-.c-shoucang1:before {
-  content: "\e9ba";
-}
-
-.c-yundangan:before {
-  content: "\e9bb";
 }
 
 .c-yonghu:before {

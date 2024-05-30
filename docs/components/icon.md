@@ -22,7 +22,7 @@ pageClass: icon-page-class
 <c-icon name="c-set-outlined"></c-icon>
 <c-icon name="c-scene-outlined"></c-icon>
 <c-icon name="c-skin-outlined"></c-icon>
-<c-icon name="c-wenjianjia"></c-icon>
+<c-icon name="c-folder"></c-icon>
 <c-icon name="c-duihuan"></c-icon>
 <c-icon name="c-fasong"></c-icon>
 <c-icon name="c-fenxiang"></c-icon>
@@ -48,7 +48,7 @@ pageClass: icon-page-class
 <c-icon size="16" name="c-set-outlined"></c-icon>
 <c-icon size="18" name="c-scene-outlined"></c-icon>
 <c-icon size="20" name="c-skin-outlined"></c-icon>
-<c-icon size="22" name="c-wenjianjia"></c-icon>
+<c-icon size="22" name="c-folder"></c-icon>
 <c-icon size="24" name="c-duihuan"></c-icon>
 <c-icon size="26" name="c-fasong"></c-icon>
 <c-icon size="28" name="c-fenxiang"></c-icon>

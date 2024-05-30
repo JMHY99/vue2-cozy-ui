@@ -13,10 +13,10 @@
 ```vue
 <template>
   <div>
-    <c-button @click="showSuccess">Show Success Message</c-button>
-    <c-button @click="showInfo">Show Info Message</c-button>
-    <c-button @click="showWarning">Show Warning Message</c-button>
-    <c-button @click="showError">Show Error Message</c-button>
+    <c-button type="success" @click="showSuccess">成功提示</c-button>
+    <c-button type="info" @click="showInfo">信息提示</c-button>
+    <c-button type="warning" @click="showWarning">警告提示</c-button>
+    <c-button type="danger" @click="showError">错误提示</c-button>
   </div>
 </template>
 
@@ -24,16 +24,16 @@
 export default {
   methods: {
     showSuccess() {
-      this.$message.success("This is a success message.");
+      this.$message.success("这是个成功提示消息");
     },
     showInfo() {
-      this.$message.info("This is an info message.");
+      this.$message.info("这是个信息提示消息");
     },
     showWarning() {
-      this.$message.warning("This is a warning message.");
+      this.$message.warning("这是个警告提示消息", 10);
     },
     showError() {
-      this.$message.error("This is an error message.");
+      this.$message.error("这是个错误提示消息");
     },
   },
 };

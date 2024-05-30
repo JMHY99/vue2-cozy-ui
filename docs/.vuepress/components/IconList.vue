@@ -7,7 +7,7 @@
         @click="copy(item.font_class)"
       >
         <c-icon size="36" :name="'c-' + item.font_class"></c-icon>
-        <span>{{ "c-" + item.font_class }}</span>
+        <span class="icon-name">{{ "c-" + item.font_class }}</span>
       </li>
     </ul>
   </div>
@@ -39,10 +39,10 @@ export default {
       navigator.clipboard
         .writeText(text)
         .then(() => {
-          console.log("复制成功");
+          this.$message.success("复制成功");
         })
         .catch((error) => {
-          console.error("复制失败: ", error);
+          this.$message.error("复制失败");
         });
     },
   },
@@ -77,6 +77,10 @@ export default {
   }
   span {
     text-align: center;
+    flex: 1;
+  }
+  .icon-name {
+    word-wrap: break-all;
   }
 }
 </style>

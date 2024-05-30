@@ -44,7 +44,6 @@ export default async ({ Vue }) => {
     Vue.use(CRadioButton);
     Vue.use(CRadioGroup);
     Vue.use(CAlert);
-    Vue.use(CMessage);
     Vue.use(CAffix);
     Vue.use(CForm);
     Vue.use(CFormItem);
