@@ -10,6 +10,7 @@
     <input
       ref="input"
       type="text"
+      class="cozy-input-number-input"
       :value="displayValue"
       @input="onInput"
       @blur="onBlur"
@@ -20,7 +21,6 @@
       :placeholder="placeholder"
       :disabled="disabled"
       :readonly="readonly"
-      class="cozy-input-number-input"
     />
     <div class="cozy-input-number-handler">
       <div
@@ -181,12 +181,13 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
 .cozy-input-number {
   display: inline-flex;
   align-items: center;
   width: 100%;
   padding: 4px 11px;
+  height: 32px;
   color: rgba(0, 0, 0, 0.85);
   background-color: #fff;
   border: 1px solid #d9d9d9;
@@ -204,6 +205,10 @@ export default {
 .cozy-input-number-disabled {
   background-color: #f5f5f5;
   cursor: not-allowed;
+}
+
+.cozy-input-number:hover {
+  border-color: #40a9ff;
 }
 
 .cozy-input-number:hover .cozy-input-number-handler {
@@ -230,6 +235,11 @@ export default {
   /* border: 1px solid red; */
 }
 
+.cozy-input-number-handler-up:hover,
+.cozy-input-number-handler-down:hover {
+  color: #40a9ff;
+}
+
 .cozy-input-number-handler .cozy-icon.c-up-outlined,
 .cozy-icon.c-down-outlined {
   font-size: 12px;
@@ -247,12 +257,38 @@ export default {
 }
 
 .cozy-input-number-lg {
+  height: 40px;
   padding: 6px 11px;
   font-size: 16px;
 }
 
+.cozy-input-number-lg .cozy-input-number-handler .cozy-input-number-handler-up,
+.cozy-input-number-lg
+  .cozy-input-number-handler
+  .cozy-input-number-handler-down {
+  width: 16px;
+  height: 16px;
+  line-height: 16px;
+  i {
+    font-size: 14px;
+  }
+}
+
 .cozy-input-number-sm {
+  height: 24px;
   padding: 1px 7px;
   font-size: 12px;
+}
+
+.cozy-input-number-sm .cozy-input-number-handler .cozy-input-number-handler-up,
+.cozy-input-number-sm
+  .cozy-input-number-handler
+  .cozy-input-number-handler-down {
+  width: 8px;
+  height: 8px;
+  line-height: 8px;
+  i {
+    font-size: 11px;
+  }
 }
 </style>

@@ -78,7 +78,7 @@ export default {
 </script>
 
 <style>
-.cozy-input-wrapper {
+/* .cozy-input-wrapper {
   display: flex;
   align-items: center;
   width: 100%;
@@ -117,5 +117,5 @@ export default {
 .cozy-input-prefix,
 .cozy-input-suffix {
   margin: 0 8px;
-}
+} */
 </style>

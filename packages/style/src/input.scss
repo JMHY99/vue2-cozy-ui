@@ -15,6 +15,7 @@
   flex: 1;
   width: 100%;
   padding: 5px 11px;
+  height: 32px;
   color: rgba(0, 0, 0, 0.85);
   background-color: #fff;
   border: 1px solid #d9d9d9;
@@ -46,4 +47,16 @@
 .cozy-input-clear-icon {
   cursor: pointer;
   color: rgba(0, 0, 0, 0.25);
+}
+
+.cozy-input-large {
+  height: 40px;
+  padding: 6px 11px;
+  font-size: 16px;
+}
+
+.cozy-input-small {
+  height: 24px;
+  padding: 1px 7px;
+  font-size: 12px;
 }

@@ -2,49 +2,94 @@
 
 ### 概述
 
-按钮用于触发一个操作，是用户与应用进行交互的重要方式之一。
+数字输入框。
 
 ### 基础用法
 
-创建不同样式的按钮，可以通过设置 `type` 属性为 primary、info、success、warning 或 danger。如果不设置 `type` 属性，则按钮将采用默认样式。
+数字输入框。
 
 ::: demo
 
-```html
+```vue
 <template>
   <div>
     <c-input-number
+      style="width:150px"
       v-model="numberInput"
       :min="1"
       :max="10"
-      :step="0.1"
-      :disabled="false"
-      :placeholder="'Enter a number'"
-      :precision="2"
-      :formatter="formatter"
-      :parser="parser"
-      :size="'large'"
-      :autoFocus="true"
+      @change="onChange"
+    />
+    当前值：{{ numberInput }}
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      numberInput: 5,
+    };
+  },
+  methods: {
+    onChange(value) {
+      console.log("改变", value);
+    },
+  },
+};
+</script>
+```
+
+:::
+
+### 三种大小
+
+数字输入框。
+
+::: demo
+
+```vue
+<template>
+  <div>
+    <c-input-number
+      style="width:150px"
+      size="large"
+      v-model="numberInput"
+      :min="1"
+      :max="10"
+      @change="onChange"
+    />
+    <c-input-number
+      style="width:150px"
+      v-model="numberInput"
+      :min="1"
+      :max="10"
+      @change="onChange"
+    />
+    <c-input-number
+      size="small"
+      style="width:150px"
+      v-model="numberInput"
+      :min="1"
+      :max="10"
+      @change="onChange"
     />
   </div>
 </template>
 
 <script>
-  export default {
-    data() {
-      return {
-        numberInput: 5,
-      };
+export default {
+  data() {
+    return {
+      numberInput: 1,
+    };
+  },
+  methods: {
+    onChange(value) {
+      console.log("改变", value);
     },
-    methods: {
-      formatter(value) {
-        return `$ ${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-      },
-      parser(value) {
-        return value.replace(/\$\s?|(,*)/g, "");
-      },
-    },
-  };
+  },
+};
 </script>
 ```
 
