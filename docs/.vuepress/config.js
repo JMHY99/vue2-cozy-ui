@@ -31,13 +31,13 @@ module.exports = {
     // navbar: false,
     // 设置自动生成侧边栏
     sidebar: {
-      "/guide/": [
-        {
-          title: "指南", // 侧边栏显示的名称
-          collapsable: false, // 是否展开
-          children: ["", "安装", "快速上手"],
-        },
-      ],
+      // "/guide/": [
+      //   {
+      //     title: "指南", // 侧边栏显示的名称
+      //     collapsable: false, // 是否展开
+      //     children: ["", "安装", "快速上手"],
+      //   },
+      // ],
       "/components/": [
         {
           title: "开发指南", // 侧边栏显示的名称
