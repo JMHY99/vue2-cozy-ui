@@ -22,6 +22,7 @@ import CInput from "../../packages/input/index.js";
 import CTextarea from "../../packages/input-textarea/index.js";
 import CInputNumber from "../../packages/input-number/index.js";
 import CAvatar from "../../packages/avatar/index.js";
+import CSwitch from "../../packages/switch/index.js";
 
 import IconList from "./components/IconList.vue";
 import ColorDemo from "./components/ColorDemo.vue";
@@ -55,6 +56,7 @@ export default async ({ Vue }) => {
     Vue.use(CTextarea);
     Vue.use(CInputNumber);
     Vue.use(CAvatar);
+    Vue.use(CSwitch);
     Vue.use(IconList);
     Vue.use(ColorDemo);
     Vue.use(ColorDemo1);
