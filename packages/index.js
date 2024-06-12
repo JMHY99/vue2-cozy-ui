@@ -4,11 +4,56 @@ import CButtonGroup from "./button-group/index.js";
 import CIcon from "./icon/index.js";
 import CFlex from "./flex/index.js";
 import CSpace from "./space/index.js";
+import CRow from "./row/index.js";
+import CCol from "./col/index.js";
+import CRadio from "./radio/index.js";
+import CRadioButton from "./radio-button/index.js";
+import CRadioGroup from "./radio-group/index.js";
+import CLayout from "./layout/index.js";
+import CHeader from "./header/index.js";
+import CContent from "./content/index.js";
+import CSider from "./sider/index.js";
+import CFooter from "./footer/index.js";
+import CAlert from "./alert/index.js";
+import CMessage from "./message/index.js";
+import CAffix from "./affix/index.js";
+import CForm from "./form/index.js";
+import CFormItem from "./form-item/index.js";
+import CInput from "./input/index.js";
+import CTextarea from "./input-textarea/index.js";
+import CInputNumber from "./input-number/index.js";
+import CAvatar from "./avatar/index.js";
+import CSwitch from "./switch/index.js";
 
 import { version } from "../package.json"; //版本号
 
 //组件列表
-const components = [CButton, CButtonGroup, CIcon, CFlex, CSpace];
+const components = [
+  CButton,
+  CButtonGroup,
+  CIcon,
+  CFlex,
+  CSpace,
+  CRow,
+  CCol,
+  CRadio,
+  CRadioButton,
+  CRadioGroup,
+  CLayout,
+  CHeader,
+  CContent,
+  CSider,
+  CFooter,
+  CAffix,
+  CSwitch,
+  CAlert,
+  CForm,
+  CFormItem,
+  CInput,
+  CTextarea,
+  CInputNumber,
+  CAvatar,
+];
 
 const install = function (Vue) {
   // 判断是否安装
@@ -24,7 +69,32 @@ if (typeof window !== "undefined" && window.Vue) {
 }
 
 // 按需引入
-export { CButton, CButtonGroup, CIcon, CFlex, CSpace };
+export {
+  CButton,
+  CButtonGroup,
+  CIcon,
+  CFlex,
+  CSpace,
+  CRow,
+  CCol,
+  CRadio,
+  CRadioButton,
+  CRadioGroup,
+  CLayout,
+  CHeader,
+  CContent,
+  CSider,
+  CFooter,
+  CAffix,
+  CSwitch,
+  CAlert,
+  CForm,
+  CFormItem,
+  CInput,
+  CTextarea,
+  CInputNumber,
+  CAvatar,
+};
 
 export default {
   version,
