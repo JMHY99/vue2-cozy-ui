@@ -28,4 +28,4 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.COZY2_TOKEN }} # 使用GitHub提供的令牌
-          publish_dir: ./docs/.vuepress/dist # VuePress默认的生成静态文件目录
+          publish_dir: docs/.vuepress/dist # VuePress默认的生成静态文件目录
