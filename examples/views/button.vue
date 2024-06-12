@@ -54,5 +54,6 @@ export default {
 <style lang="scss" scoped>
 #show .c-button {
   margin: 5px;
+  padding: 5px;
 }
 </style>
