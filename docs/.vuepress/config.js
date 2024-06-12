@@ -1,5 +1,6 @@
 const path = require("path");
 module.exports = {
+  base:"/vue2-cozy-ui/",
   //多语言设置
   locales: {
     "/": {
