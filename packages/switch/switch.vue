@@ -1,28 +1,33 @@
 <template>
   <div
     :class="[
-      'c-switch',
+      'cozy-switch',
       {
-        'c-switch-checked': isChecked,
-        'c-switch-unchecked': !isChecked,
-        'c-switch-disabled': disabled,
-        'c-switch-small': size === 'small',
-        'c-switch-loading': loading,
+        'cozy-switch-checked': isChecked,
+        'cozy-switch-unchecked': !isChecked,
+        'cozy-switch-disabled': disabled,
+        'cozy-switch-small': size === 'small',
+        'cozy-switch-loading': loading,
       },
     ]"
-    tabindex="0"
     @click="handleClick"
-    @keydown.space.prevent="handleClick"
     @focus="handleFocus"
     @blur="handleBlur"
     ref="switch"
   >
-    <div class="c-switch-inner">
-      <span class="c-switch-inner-checked">{{ checkedChildren }}</span>
-      <span class="c-switch-inner-unchecked">{{ unCheckedChildren }}</span>
+    <!-- 文字和图标 -->
+    <div class="cozy-switch-inner">
+      <span class="cozy-switch-inner-checked" v-show="isChecked">
+        <slot name="checkedChildren">{{ checkedChildren }}</slot>
+      </span>
+      <span class="cozy-switch-inner-unchecked" v-show="!isChecked">
+        <slot name="unCheckedChildren">{{ unCheckedChildren }}</slot>
+      </span>
     </div>
-    <div class="c-switch-handle">
-      <span v-if="loading" class="c-switch-loading-icon">⏳</span>
+
+    <!-- 白色圆圈 -->
+    <div class="cozy-switch-handle">
+      <span v-if="loading" class="cozy-switch-loading-icon"></span>
     </div>
   </div>
 </template>
@@ -88,9 +93,8 @@ export default {
         return;
       }
       this.isChecked = !this.isChecked;
-      this.$emit("input", this.isChecked);
-      this.$emit("change", this.isChecked);
-      this.$emit("click", event);
+      this.$emit("change", this.isChecked, event);
+      this.$emit("click", this.isChecked, event);
     },
     handleFocus(event) {
       this.isFocused = true;
@@ -109,67 +113,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-.c-switch {
-  position: relative;
-  display: inline-block;
-  width: 40px;
-  height: 24px;
-  background-color: #ccc;
-  border-radius: 12px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-.c-switch-checked {
-  background-color: #4caf50;
-}
-.c-switch-inner {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  transition: margin-left 0.3s;
-}
-.c-switch-inner-checked,
-.c-switch-inner-unchecked {
-  width: 100%;
-  text-align: center;
-}
-.c-switch-handle {
-  position: absolute;
-  top: 2px;
-  left: 2px;
-  width: 20px;
-  height: 20px;
-  background-color: white;
-  border-radius: 50%;
-  transition: left 0.3s;
-}
-.c-switch-checked .c-switch-handle {
-  left: calc(100% - 22px);
-}
-.c-switch-small {
-  width: 28px;
-  height: 16px;
-}
-.c-switch-small .c-switch-handle {
-  width: 12px;
-  height: 12px;
-}
-.c-switch-disabled {
-  cursor: not-allowed;
-  opacity: 0.5;
-}
-.c-switch-loading .c-switch-handle {
-  background-color: transparent;
-}
-.c-switch-loading-icon {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 12px;
-  color: #999;
-}
-</style>

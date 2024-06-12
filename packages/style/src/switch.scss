@@ -1,0 +1,121 @@
+@import "./variables.scss";
+.cozy-switch {
+  position: relative;
+  display: inline-block;
+  width: 46px;
+  height: 24px;
+  background-color: $color-gray-light-1;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* 标准语法 */
+}
+.cozy-switch-checked {
+  background-color: $color-primary;
+}
+.cozy-switch-inner {
+  display: inline-flex;
+  color: $color-white;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  transition: margin-left 0.3s;
+  font-size: 12px;
+  .cozy-icon {
+    font-size: 14px !important;
+  }
+}
+.cozy-switch-inner-checked,
+.cozy-switch-inner-unchecked {
+  width: 100%;
+}
+.cozy-switch-inner-checked {
+  text-align: left;
+  margin-left: 5px;
+}
+
+.cozy-switch-inner-unchecked {
+  text-align: right;
+  margin-right: 5px;
+}
+.cozy-switch-handle {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 20px;
+  height: 20px;
+  background-color: $color-white;
+  border-radius: 50%;
+  transition: left 0.3s;
+}
+.cozy-switch-checked .cozy-switch-handle {
+  left: calc(100% - 22px);
+}
+
+/* 小按钮 */
+.cozy-switch-small {
+  width: 30px;
+  height: 16px;
+  .cozy-switch-inner {
+    position: absolute;
+    font-size: 9px;
+    .cozy-switch-inner-checked {
+      margin-left: 3px;
+    }
+
+    .cozy-switch-inner-unchecked {
+      margin-right: 3px;
+    }
+
+    .cozy-icon {
+      font-size: 12px !important;
+    }
+  }
+}
+.cozy-switch-small .cozy-switch-handle {
+  width: 12px;
+  height: 12px;
+}
+
+.cozy-switch-small.cozy-switch-checked .cozy-switch-handle {
+  left: calc(100% - 14px);
+}
+
+/* 禁用 */
+.cozy-switch-disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* 加载中 */
+.cozy-switch-loading {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* 加载图标 */
+.cozy-switch-loading-icon {
+  position: absolute;
+  top: 22%;
+  left: 22%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  height: 50%;
+  border: 1px solid $color-white;
+  border-top-color: $color-primary;
+  border-radius: 50%;
+  animation: cozy-switch-loading 1s linear infinite;
+}
+
+@keyframes cozy-switch-loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
