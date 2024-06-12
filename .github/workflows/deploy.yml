@@ -1,31 +1,31 @@
 name: GitHub Pages
- 
+
 on:
   push:
     branches:
-      - master  # 使用master分支作为部署分支
- 
+      - master # 使用master分支作为部署分支
+
 jobs:
   deploy:
     runs-on: ubuntu-20.04
- 
+
     steps:
-      - name: Checkout  # 检出代码
+      - name: Checkout # 检出代码
         uses: actions/checkout@v2
- 
-      - name: Setup Node.js  # 设置Node.js环境
+
+      - name: Setup Node.js # 设置Node.js环境
         uses: actions/setup-node@v2
         with:
-          node-version: '14.x'
- 
-      - name: Install dependencies  # 安装依赖
+          node-version: "14.x"
+
+      - name: Install dependencies # 安装依赖
         run: npm install
- 
-      - name: Build  # 构建项目
+
+      - name: Build # 构建项目
         run: npm run docs:build
- 
-      - name: Deploy  # 部署到GitHub Pages
+
+      - name: Deploy # 部署到GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}  # 使用GitHub提供的令牌
-          publish_dir: ./docs/.vuepress/dist  # VuePress默认的生成静态文件目录
+          github_token: ${{ secrets.COZY2_TOKEN }} # 使用GitHub提供的令牌
+          publish_dir: ./docs/.vuepress/dist # VuePress默认的生成静态文件目录
