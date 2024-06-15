@@ -16,9 +16,9 @@
   <c-radio label="1" v-model="gender">女</c-radio>
 
   <c-radio-group v-model="radioValue">
-    <c-radio-button value="A">A</c-radio-button>
-    <c-radio-button value="B">B</c-radio-button>
-    <c-radio-button value="C">C</c-radio-button>
+    <c-radio label="A">A</c-radio>
+    <c-radio label="B">B</c-radio>
+    <c-radio label="C">C</c-radio>
   </c-radio-group>
 </template>
 

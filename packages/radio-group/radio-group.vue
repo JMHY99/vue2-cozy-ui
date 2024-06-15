@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="cozy-radio-group">
     <slot></slot>
   </div>
 </template>
@@ -8,6 +8,7 @@
 export default {
   name: "CRadioGroup",
 
+  // 在组件库开发中可以使用，但是自己写普通程序的时候不要使用
   provide() {
     return {
       CRadioGroup: this, //将组件本身的vue对象传递给下级
