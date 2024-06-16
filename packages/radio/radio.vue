@@ -41,7 +41,10 @@ export default {
       default: "",
     },
     disabled: Boolean,
-    label: [String, Number, Boolean],
+    label: {
+      type: [String, Number, Boolean],
+      default: null,
+    },
     value: null, //v-model绑定的值
   },
 
@@ -68,7 +71,8 @@ export default {
 
     // 禁用
     _disabled() {
-      return this.isGroup ? this.CRadioGroup.disabled : this.disable;
+      console.log(this.disabled);
+      return this.isGroup ? this.CRadioGroup.disabled : this.disabled;
     },
   },
   methods: {
@@ -82,77 +86,142 @@ export default {
 };
 </script>
 <style lang="scss">
+$radio-size: 14px;
+$radio-checked-color: #1890ff;
+$radio-inner-size: 8px;
+$radio-border-width: 1px;
+$radio-disabled-color: #ddd;
+$radio-bg: #fff;
+$motion-duration-slow: 0.3s;
+$motion-ease-in-out: ease-in-out;
+
+@keyframes antRadioEffect {
+  0% {
+    transform: scale(0);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+
 .cozy-radio-wrapper {
+  position: relative;
   display: inline-flex;
   align-items: center;
+  margin-inline-start: 0;
+  margin-inline-end: 8px;
   cursor: pointer;
-  font-size: 14px;
-  line-height: 1.5715;
+
+  &.cozy-radio-wrapper-rtl {
+    direction: rtl;
+  }
+
+  &-disabled {
+    cursor: not-allowed;
+    color: $radio-disabled-color;
+  }
+
+  &::after {
+    display: inline-block;
+    width: 0;
+    overflow: hidden;
+    content: "\a0";
+  }
 
   .cozy-radio {
     position: relative;
     display: inline-block;
-    width: 14px;
-    height: 14px;
-    border-radius: 50%;
-    border: 1px solid #d9d9d9;
-    background-color: #fff;
-    transition: all 0.3s;
+    outline: none;
+    cursor: pointer;
+    align-self: center;
     margin-right: 4px;
-    &.cozy-radio-checked {
-      border-color: #1890ff;
-      .cozy-radio-inner:after {
-        transform: translate(-50%, -50%) scale(1);
-      }
+
+    &::after {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: $radio-border-width solid $radio-checked-color;
+      border-radius: 50%;
+      visibility: hidden;
+      animation: antRadioEffect $motion-duration-slow $motion-ease-in-out both;
+      content: "";
     }
-    &.cozy-radio-disabled {
-      cursor: not-allowed;
-      border-color: #d9d9d9;
-      background-color: #f5f5f5;
-      .cozy-radio-inner:after {
-        background-color: #d9d9d9;
-      }
+
+    &:hover .cozy-radio-inner {
+      border-color: $radio-checked-color;
     }
+
     .cozy-radio-inner {
       position: relative;
       display: block;
-      width: 100%;
-      height: 100%;
+      width: $radio-size;
+      height: $radio-size;
+      background-color: $radio-bg;
+      border: $radio-border-width solid $radio-disabled-color;
       border-radius: 50%;
-      background-color: #fff;
-      transition: all 0.3s;
-      &:after {
-        content: "";
+      transition: all $motion-duration-slow $motion-ease-in-out;
+
+      &::after {
         position: absolute;
         top: 50%;
         left: 50%;
-        width: 8px;
-        height: 8px;
+        width: $radio-inner-size;
+        height: $radio-inner-size;
+        background-color: $radio-bg;
         border-radius: 50%;
-        background-color: #1890ff;
         transform: translate(-50%, -50%) scale(0);
-        transform-origin: center center;
-        transition: all 0.3s;
+        opacity: 0;
+        transition: all $motion-duration-slow $motion-ease-in-out;
+        content: "";
+      }
+    }
+
+    &.cozy-radio-checked {
+      .cozy-radio-inner {
+        border-color: $radio-checked-color;
+        background-color: $radio-checked-color;
+
+        &::after {
+          transform: translate(-50%, -50%) scale(1);
+          opacity: 1;
+        }
+      }
+
+      &::after {
+        visibility: visible;
+      }
+    }
+
+    &.cozy-radio-disabled {
+      cursor: not-allowed;
+
+      .cozy-radio-inner {
+        background-color: #f5f5f5;
+        border-color: #b8b8b8;
+        cursor: not-allowed;
+
+        &::after {
+          background-color: #b8b8b8;
+        }
       }
     }
   }
 
   .cozy-radio-original {
     position: absolute;
+    inset: 0;
+    z-index: 1;
+    cursor: pointer;
     opacity: 0;
-    pointer-events: none;
-    width: 0;
-    height: 0;
   }
 
-  .cozy-radio-label {
+  > span:last-child {
     vertical-align: middle;
     font-size: 14px;
     color: rgba(0, 0, 0, 0.85);
-    &:after {
-      content: "\a0";
-      display: inline-block;
-    }
   }
 }
 </style>
