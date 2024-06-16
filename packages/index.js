@@ -24,6 +24,8 @@ import CTextarea from "./input-textarea/index.js";
 import CInputNumber from "./input-number/index.js";
 import CAvatar from "./avatar/index.js";
 import CSwitch from "./switch/index.js";
+import CCheckbox from "./checkbox/index.js";
+import CCheckboxGroup from "./checkbox-group/index.js";
 
 import { version } from "../package.json"; //版本号
 
@@ -53,6 +55,8 @@ const components = [
   CTextarea,
   CInputNumber,
   CAvatar,
+  CCheckbox,
+  CCheckboxGroup,
 ];
 
 const install = function (Vue) {
@@ -94,6 +98,8 @@ export {
   CTextarea,
   CInputNumber,
   CAvatar,
+  CCheckbox,
+  CCheckboxGroup,
 };
 
 export default {

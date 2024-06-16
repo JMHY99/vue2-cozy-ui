@@ -1,6 +1,6 @@
 const path = require("path");
 module.exports = {
-  base:"/vue2-cozy-ui/",
+  base: "/vue2-cozy-ui/",
   //多语言设置
   locales: {
     "/": {
@@ -73,7 +73,14 @@ module.exports = {
               title: "表单",
               collapsable: false,
               sidebarDepth: 1, // 只显示一级标题
-              children: ["form", "input", "input-number", "radio", "switch"],
+              children: [
+                "form",
+                "input",
+                "input-number",
+                "radio",
+                "checkbox",
+                "switch",
+              ],
             },
             {
               title: "视图",
