@@ -176,13 +176,14 @@ export default {
   border: 1px solid #1890ff;
   .cozy-checkbox-inner::after {
     content: "";
-    width: 6px;
+    width: 8px;
     height: 2px;
     background-color: #fff; /* 不确定状态标记颜色 */
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    transition: all 0.2s cubic-bezier(0.12, 0.4, 0.29, 1.46) 0.1s;
   }
 }
 
