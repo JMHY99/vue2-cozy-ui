@@ -9,19 +9,20 @@
       },
     ]"
   >
-    <span class="cozy-checkbox">
+    <span class="cozy-checkbox" :class="{ 'cozy-checkbox-checked': isChecked }">
       <span class="cozy-checkbox-inner"></span>
       <input
         type="checkbox"
         class="cozy-checkbox-input"
+        v-model="model"
+        :name="name"
         :value="label"
-        v-model="isChecked"
         :disabled="isDisabled"
         @change="handleChange"
       />
     </span>
     <span class="cozy-checkbox-label">
-      {{ label }}
+      <slot>{{ label }}</slot>
     </span>
   </label>
 </template>
@@ -37,17 +38,51 @@ export default {
   },
 
   props: {
-    label: String,
-    value: [String, Number, Boolean],
+    name: {
+      type: String,
+      default: "",
+    },
+    label: {
+      type: [String, Number, Boolean],
+      default: false,
+    },
+    value: {
+      type: [String, Number, Boolean],
+      default: false,
+    },
     disabled: Boolean,
     indeterminate: Boolean,
   },
   data() {
-    return {
-      isChecked: this.value || false,
-    };
+    return {};
   },
   computed: {
+    isGroup() {
+      return !!this.CCheckboxGroup;
+    },
+
+    model: {
+      get() {
+        return this.isGroup ? this.CCheckboxGroup.value : this.value;
+      },
+
+      set(value) {
+        this.isGroup
+          ? this.CCheckboxGroup.$emit("input", value) //通过input完成双向绑定
+          : this.$emit("input", value);
+      },
+    },
+
+    isChecked: {
+      get() {
+        return this.isGroup ? this.model.includes(this.label) : this.model;
+      },
+      set(value) {
+        this.isGroup
+          ? this.CCheckboxGroup.$emit("input", value) //通过input完成双向绑定
+          : this.$emit("input", value);
+      },
+    },
     isDisabled() {
       return this.disabled;
     },
@@ -61,67 +96,109 @@ export default {
     },
   },
   methods: {
-    handleChange(event) {
-      this.$emit("input", event.target.checked);
+    handleChange() {
+      this.$nextTick(() => {
+        // 触发change事件，并传入当前的model值
+        this.$emit("change", this.model);
+        // 如果属于radio组，则触发radio组的handleChange事件，并传入当前的model值
+        this.isGroup && this.CCheckboxGroup.$emit("handleChange", this.model); //如xRadioGroup存在，触发其handleChange事件
+      });
     },
   },
 };
 </script>
 
 <style scoped>
-/* 样式可以根据需求进行调整，以下是示例 */
+/* 复选框容器样式 */
 .cozy-checkbox-wrapper {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   cursor: pointer;
+  user-select: none;
+  margin-right: 10px; /* 相邻复选框之间的间距 */
 }
 
+/* 复选框基础样式 */
 .cozy-checkbox {
   position: relative;
-  display: inline-block;
-  vertical-align: middle;
-  width: 16px;
-  height: 16px;
-  border: 1px solid #d9d9d9;
-  border-radius: 2px;
-  background-color: #fff;
+  width: 14px;
+  height: 14px;
+  border: 1px solid #ccc; /* 边框颜色 */
+  border-radius: 3px; /* 边框圆角 */
+  background-color: #fff; /* 背景颜色 */
+  transition: all 0.3s; /* 过渡效果 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 4px;
+
+  &:hover {
+    border: 1px solid #1890ff;
+  }
 }
 
-.cozy-checkbox-inner {
+.cozy-checkbox-checked {
+  background-color: #1890ff;
+  border: 1px solid #1890ff;
+}
+
+/* 选中的 */
+.cozy-checkbox-checked .cozy-checkbox-inner::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 22%;
+  width: 4px;
+  height: 8px;
+  border: 2px solid #fff;
+  border-top: 0;
+  border-left: 0;
+  transform: rotate(45deg) scale(1) translate(-50%, -50%);
+  opacity: 1;
+  transition: all 0.2s cubic-bezier(0.12, 0.4, 0.29, 1.46) 0.1s;
+}
+
+/* 禁用状态的复选框样式 */
+.cozy-checkbox-wrapper-disabled .cozy-checkbox {
+  background-color: #eee; /* 禁用背景颜色 */
+  border-color: #ddd; /* 禁用边框颜色 */
+  cursor: not-allowed;
+}
+
+/* 禁用且选中状态的复选框样式 */
+.cozy-checkbox-wrapper-disabled.cozy-checkbox-wrapper-checked
+  .cozy-checkbox
+  .cozy-checkbox-inner::after {
+  border: 2px solid #b8b8b8;
+  border-top: 0;
+  border-left: 0;
+}
+
+/* 复选框内部的点（用于表示不确定状态） */
+.cozy-checkbox-wrapper-indeterminate
+  .cozy-checkbox
+  .cozy-checkbox-inner::after {
+  content: "";
+  width: 6px;
+  height: 2px;
+  background-color: #fff; /* 不确定状态标记颜色 */
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 8px;
-  height: 8px;
-  background-color: transparent;
-  border: none;
-  border-radius: 1px;
-  transition: background-color 0.3s;
 }
 
+/* 复选框输入标签隐藏 */
 .cozy-checkbox-input {
   position: absolute;
+  z-index: -1;
   opacity: 0;
-  cursor: pointer;
-  width: 100%;
-  height: 100%;
 }
 
-.cozy-checkbox-wrapper-checked .cozy-checkbox-inner {
-  background-color: #1890ff;
-}
-
-.cozy-checkbox-wrapper-disabled {
-  cursor: not-allowed;
-  color: #bfbfbf;
-}
-
-.cozy-checkbox-wrapper-disabled .cozy-checkbox-inner {
-  background-color: #f5f5f5;
-  border-color: #d9d9d9;
-}
-
-.cozy-checkbox-wrapper-indeterminate .cozy-checkbox-inner {
-  background-color: #1890ff;
+/* 复选框标签文本样式 */
+.cozy-checkbox-label {
+  margin-left: 5px; /* 与复选框之间的间距 */
+  font-size: 14px; /* 字体大小 */
+  color: #333; /* 文本颜色 */
 }
 </style>

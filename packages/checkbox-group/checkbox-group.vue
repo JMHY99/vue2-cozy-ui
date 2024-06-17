@@ -29,5 +29,12 @@ export default {
   mounted() {},
 
   methods: {},
+
+  create() {
+    this.$on("handleChange", (value) => {
+      //监听自身的handleChange事件
+      this.$emit("change", value); //触发自身的change事件
+    });
+  },
 };
 </script>
