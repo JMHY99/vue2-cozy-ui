@@ -101,7 +101,7 @@
 
 ### 不确定选择
 
-indeterminate
+在实现全选效果时，用到`indeterminate`
 ::: demo
 
 ```html
@@ -110,7 +110,9 @@ indeterminate
     :indeterminate="indeterminate"
     v-model="checkAll"
     label="全选"
-  ></c-checkbox>
+    @change="onCheckAllChange"
+  >
+  </c-checkbox>
   <c-checkbox-group v-model="checkedList" @change="onChange">
     <c-checkbox label="选项A">选项A</c-checkbox>
     <c-checkbox label="选项B">选项B</c-checkbox>
@@ -125,8 +127,9 @@ indeterminate
         checked: true,
         disabled: false,
         checkAll: false,
-        indeterminate: false,
-        checkedList: ["选项A", "选项B", "选项C", "选项D"],
+        indeterminate: true,
+        checkedList: ["选项A", "选项D"],
+        plainOptions: ["选项A", "选项B", "选项C", "选项D"],
       };
     },
 
@@ -136,8 +139,16 @@ indeterminate
       onChange(checkedList) {
         console.log(checkedList);
         this.indeterminate =
-          !!checkedList.length && checkedList.length < plainOptions.length;
-        this.checkAll = checkedList.length === plainOptions.length;
+          !!checkedList.length && checkedList.length < this.plainOptions.length;
+        this.checkAll = checkedList.length === this.plainOptions.length;
+      },
+
+      onCheckAllChange(e) {
+        Object.assign(this, {
+          checkedList: e ? this.plainOptions : [],
+          indeterminate: false,
+          checkAll: e,
+        });
       },
     },
   };

@@ -90,11 +90,7 @@ export default {
       return this.indeterminate;
     },
   },
-  watch: {
-    value(newValue) {
-      this.isChecked = newValue;
-    },
-  },
+
   methods: {
     handleChange() {
       this.$nextTick(() => {
@@ -108,7 +104,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 /* 复选框容器样式 */
 .cozy-checkbox-wrapper {
   display: inline-flex;
@@ -175,17 +171,19 @@ export default {
 }
 
 /* 复选框内部的点（用于表示不确定状态） */
-.cozy-checkbox-wrapper-indeterminate
-  .cozy-checkbox
+.cozy-checkbox-wrapper-indeterminate .cozy-checkbox {
+  background-color: #1890ff;
+  border: 1px solid #1890ff;
   .cozy-checkbox-inner::after {
-  content: "";
-  width: 6px;
-  height: 2px;
-  background-color: #fff; /* 不确定状态标记颜色 */
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+    content: "";
+    width: 6px;
+    height: 2px;
+    background-color: #fff; /* 不确定状态标记颜色 */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 }
 
 /* 复选框输入标签隐藏 */

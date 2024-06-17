@@ -30,10 +30,10 @@ export default {
 
   methods: {},
 
-  create() {
+  created() {
     this.$on("handleChange", (value) => {
       //监听自身的handleChange事件
-      this.$emit("change", value); //触发自身的change事件
+      this.$emit("change", value); //触发自身的change事件//触发自身的change事件
     });
   },
 };
