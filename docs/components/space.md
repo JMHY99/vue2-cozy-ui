@@ -19,9 +19,6 @@
   <c-button type="primary">主要按钮</c-button>
   <c-button type="primary">主要按钮</c-button>
   <c-button type="primary">主要按钮</c-button>
-  <c-button type="primary">主要按钮</c-button>
-  <c-button type="primary">主要按钮</c-button>
-  <c-button type="primary">主要按钮</c-button>
 </c-space>
 ```
 
@@ -36,8 +33,6 @@
 
 ```html
 <c-space :size="50">
-  <c-button type="primary">主要按钮</c-button>
-  <c-button type="primary">主要按钮</c-button>
   <c-button type="primary">主要按钮</c-button>
   <c-button type="primary">主要按钮</c-button>
   <c-button type="primary">主要按钮</c-button>
@@ -119,9 +114,9 @@
 
 ### API
 
-| 参数      | 说明                         | 类型                   | 可选值                                                                          | 默认值     |
-| --------- | ---------------------------- | ---------------------- | ------------------------------------------------------------------------------- | ---------- |
-| align     | 对齐方式                     | string                 | 参考[align-items](https://developer.mozilla.org/zh-CN/docs/Web/CSS/align-items) | stretch    |
-| direction | 间距方向                     | string                 | vertical / horizontal                                                           | row        |
-| size      | 间距大小                     | string/number/number[] | small /middle /large/number/number[]                                            | small |
-| wrap      | 设置元素单行显示还是多行显示 | boolean                | true/false                                                                      | false      |
+| 参数      | 说明                         | 类型                   | 可选值                                                                          | 默认值  |
+| --------- | ---------------------------- | ---------------------- | ------------------------------------------------------------------------------- | ------- |
+| align     | 对齐方式                     | string                 | 参考[align-items](https://developer.mozilla.org/zh-CN/docs/Web/CSS/align-items) | stretch |
+| direction | 间距方向                     | string                 | vertical / horizontal                                                           | row     |
+| size      | 间距大小                     | string/number/number[] | small /middle /large/number/number[]                                            | small   |
+| wrap      | 设置元素单行显示还是多行显示 | boolean                | true/false                                                                      | false   |

@@ -147,8 +147,7 @@ Flex 弹性布局是一种用于实现灵活和自适应布局的技术。
 <template>
   <div>
     <div class="demo3">
-      <c-flex wrap="wrap">
-        <div></div>
+      <c-flex wrap="wrap" :gap="10">
         <div></div>
         <div></div>
         <div></div>
@@ -192,8 +191,8 @@ Flex 弹性布局是一种用于实现灵活和自适应布局的技术。
 
 <style>
   .demo3 div > div {
-    width: 100px;
-    height: 80px;
+    width: 90px;
+    height: 90px;
   }
 
   .demo3 div > div:nth-child(2n) {
