@@ -86,7 +86,7 @@ module.exports = {
               title: "视图",
               collapsable: false,
               sidebarDepth: 1, // 只显示一级标题
-              children: ["alert", "message", "avatar"],
+              children: ["alert", "message", "avatar", "badge"],
             },
           ],
         },
