@@ -1,9 +1,14 @@
 <template>
-  <label :class="['cozy-checkbox-wrapper', {
-    'cozy-checkbox-wrapper-checked': isChecked,
-    'cozy-checkbox-wrapper-disabled': isDisabled,
-    'cozy-checkbox-wrapper-indeterminate': isIndeterminate,
-  }]">
+  <label
+    :class="[
+      'cozy-checkbox-wrapper',
+      {
+        'cozy-checkbox-wrapper-checked': isChecked,
+        'cozy-checkbox-wrapper-disabled': isDisabled,
+        'cozy-checkbox-wrapper-indeterminate': isIndeterminate,
+      },
+    ]"
+  >
     <span class="cozy-checkbox">
       <span class="cozy-checkbox-inner"></span>
       <input
@@ -23,7 +28,14 @@
 
 <script>
 export default {
-  name: 'CCheckbox',
+  name: "CCheckbox",
+
+  inject: {
+    CCheckboxGroup: {
+      default: null,
+    },
+  },
+
   props: {
     label: String,
     value: [String, Number, Boolean],
@@ -50,7 +62,7 @@ export default {
   },
   methods: {
     handleChange(event) {
-      this.$emit('input', event.target.checked);
+      this.$emit("input", event.target.checked);
     },
   },
 };
