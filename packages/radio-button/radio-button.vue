@@ -33,6 +33,8 @@
 <script>
 export default {
   name: "CRadioButton",
+
+  // 从父组件注入CRadioGroup的值，如果没有则默认为空字符串
   inject: {
     CRadioGroup: {
       default: "", //默认为''
@@ -68,7 +70,9 @@ export default {
   methods: {
     handleChange() {
       this.$nextTick(() => {
+        // 触发change事件，并传递当前的model值
         this.$emit("change", this.model);
+        // 如果在单选按钮组中，则同时触发单选按钮组的handleChange事件
         this.isGroup && this.CRadioGroup.$emit("handleChange", this.model);
       });
     },
@@ -76,6 +80,7 @@ export default {
 };
 </script>
 <style lang="scss">
+// 定义单选按钮容器的样式
 .cozy-radio-button-wrapper {
   position: relative;
   display: inline-block;
@@ -91,6 +96,7 @@ export default {
   cursor: pointer;
   transition: color 0.3s, background 0.3s, border-color 0.3s, box-shadow 0.3s;
 
+  // 当不是第一个子元素时，添加一个左边框的伪元素
   &:not(:first-child) {
     &::before {
       position: absolute;
@@ -108,25 +114,30 @@ export default {
     }
   }
 
+  // 当是第一个子元素时，添加左边框
   &:first-child {
     border-left: 1px solid #d9d9d9;
     border-top-left-radius: 4px;
     border-bottom-left-radius: 4px;
   }
 
+  // 当是最后一个子元素时，添加右边框，并设置圆角
   &:last-child {
     border-top-right-radius: 4px;
     border-bottom-right-radius: 4px;
   }
 
+  // 当既是第一个子元素又是最后一个子元素时，设置完整的圆角
   &:first-child:last-child {
     border-radius: 4px;
   }
 
+  // 鼠标悬停时改变文字颜色
   &:hover {
     color: #1890ff;
   }
 
+  // 当选中且未禁用时
   &.cozy-radio-button-wrapper-checked:not(.cozy-radio-button-wrapper-disabled) {
     z-index: 1;
     color: #fff;
@@ -137,15 +148,18 @@ export default {
       background-color: #1890ff;
     }
 
+    // 鼠标悬停时改变背景色和边框色
     &:hover {
       color: #fff;
       border-color: #40a9ff;
 
+      // 悬停时的左边框伪元素颜色
       &::before {
         background-color: #40a9ff;
       }
     }
 
+    // 激活状态时的样式
     &:active {
       color: #fff;
       border-color: #096dd9;
@@ -156,6 +170,7 @@ export default {
     }
   }
 
+  // 当禁用时
   &.cozy-radio-button-wrapper-disabled {
     color: #bfbfbf;
     background-color: #f5f5f5;
@@ -168,6 +183,10 @@ export default {
       background-color: #f5f5f5;
       border-color: #d9d9d9;
     }
+    &.cozy-radio-button-wrapper-checked {
+      background-color: #d9d9d9;
+      color: #a3a3a3;
+    }
   }
 
   .cozy-radio-button {
@@ -178,6 +197,7 @@ export default {
     width: 100%;
     height: 100%;
 
+    //  隐藏的实际单选按钮的样式
     .cozy-radio-button-input {
       position: absolute;
       top: 0;

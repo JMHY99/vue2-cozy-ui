@@ -6,7 +6,7 @@
 
 ### 基础用法
 
-最简单的用法。
+最简单的用法，`v-model`双向数据绑定
 
 ::: demo
 
@@ -45,10 +45,10 @@
   </c-radio-group>
 
   <c-radio-group v-model="radioValue" @change="handleChange">
-    <c-radio label="A">A</c-radio>
-    <c-radio label="B">B</c-radio>
-    <c-radio label="C">C</c-radio>
-    <c-radio label="D">D</c-radio>
+    <c-radio label="A">选项A</c-radio>
+    <c-radio label="B">选项B</c-radio>
+    <c-radio label="C">选项C</c-radio>
+    <c-radio label="D">选项D</c-radio>
   </c-radio-group>
 </template>
 
@@ -58,6 +58,44 @@
       return {
         gender: "1",
         radioValue: "A",
+      };
+    },
+
+    mounted() {},
+
+    methods: {
+      handleChange(e) {
+        console.log(e);
+      },
+    },
+  };
+</script>
+```
+
+:::
+
+### 垂直单选组
+
+使用`c-radio-group`包裹起来
+
+::: demo
+
+```html
+<template>
+  <c-radio-group v-model="radioValue" @change="handleChange">
+    <c-radio :style="radioStyle" label="A">选项A</c-radio>
+    <c-radio :style="radioStyle" label="B">选项B</c-radio>
+    <c-radio :style="radioStyle" label="C">选项C</c-radio>
+    <c-radio :style="radioStyle" label="D">选项D</c-radio>
+  </c-radio-group>
+</template>
+
+<script>
+  export default {
+    data() {
+      return {
+        radioValue: "A",
+        radioStyle: { display: "flex", height: "30px", lineHeight: "30px" },
       };
     },
 
@@ -86,22 +124,28 @@
   <c-radio label="1" v-model="gender" :disabled="disabled">女</c-radio>
 
   <c-radio-group v-model="radioValue" :disabled="disabled">
-    <c-radio label="A">A</c-radio>
-    <c-radio label="B">B</c-radio>
-    <c-radio label="C">C</c-radio>
-    <c-radio label="D">D</c-radio>
+    <c-radio label="A">选项A</c-radio>
+    <c-radio label="B">选项B</c-radio>
+    <c-radio label="C">选项C</c-radio>
+    <c-radio label="D">选项D</c-radio>
   </c-radio-group>
 
   <c-radio-group v-model="radioValue" :disabled="disabled">
-    <c-radio-button label="A">A</c-radio-button>
-    <c-radio-button label="B">B</c-radio-button>
-    <c-radio-button label="C">C</c-radio-button>
-    <c-radio-button label="D">D</c-radio-button>
+    <c-radio-button label="A">选项A</c-radio-button>
+    <c-radio-button label="B">选项B</c-radio-button>
+    <c-radio-button label="C">选项C</c-radio-button>
+    <c-radio-button label="D">选项D</c-radio-button>
   </c-radio-group>
-  <br />
-  <c-button type="primary" @click="disabled =! disabled"
-    >{{disabled?"启用":"禁用"}}</c-button
-  >
+  <c-radio-group v-model="radioValue" :disabled="disabled" button-style="fill">
+    <c-radio-button label="A">选项A</c-radio-button>
+    <c-radio-button label="B">选项B</c-radio-button>
+    <c-radio-button label="C">选项C</c-radio-button>
+    <c-radio-button label="D">选项D</c-radio-button>
+  </c-radio-group>
+
+  <c-button type="primary" @click="disabled =! disabled">
+    {{disabled?"启用":"禁用"}}
+  </c-button>
 </template>
 
 <script>
@@ -132,10 +176,16 @@
 ```html
 <template>
   <c-radio-group v-model="radioValue">
-    <c-radio-button label="A">A</c-radio-button>
-    <c-radio-button label="B">B</c-radio-button>
-    <c-radio-button label="C">C</c-radio-button>
-    <c-radio-button label="D">D</c-radio-button>
+    <c-radio-button label="A">选项A</c-radio-button>
+    <c-radio-button label="B">选项B</c-radio-button>
+    <c-radio-button label="C">选项C</c-radio-button>
+    <c-radio-button label="D">选项D</c-radio-button>
+  </c-radio-group>
+  <c-radio-group v-model="radioValue" button-style="fill">
+    <c-radio-button label="A">选项A</c-radio-button>
+    <c-radio-button label="B">选项B</c-radio-button>
+    <c-radio-button label="C">选项C</c-radio-button>
+    <c-radio-button label="D">选项D</c-radio-button>
   </c-radio-group>
 </template>
 
@@ -143,7 +193,6 @@
   export default {
     data() {
       return {
-        gender: "1",
         radioValue: "A",
       };
     },
@@ -157,7 +206,7 @@
 
 :::
 
-### 按钮样式
+### 大小
 
 按钮样式
 
@@ -165,20 +214,41 @@
 
 ```html
 <template>
-  <c-radio label="0" v-model="gender">男</c-radio>
-  <c-radio label="1" v-model="gender">女</c-radio>
-
-  <c-radio-group v-model="radioValue">
-    <c-radio label="A">A</c-radio>
-    <c-radio label="B">B</c-radio>
-    <c-radio label="C">C</c-radio>
+  <c-radio-group v-model="radioValue" size="large">
+    <c-radio-button label="A">选项A</c-radio-button>
+    <c-radio-button label="B">选项B</c-radio-button>
+    <c-radio-button label="C">选项C</c-radio-button>
+    <c-radio-button label="D">选项D</c-radio-button>
   </c-radio-group>
-
   <c-radio-group v-model="radioValue">
-    <c-radio-button label="A">A</c-radio-button>
-    <c-radio-button label="B">B</c-radio-button>
-    <c-radio-button label="C">C</c-radio-button>
-    <c-radio-button label="D">D</c-radio-button>
+    <c-radio-button label="A">选项A</c-radio-button>
+    <c-radio-button label="B">选项B</c-radio-button>
+    <c-radio-button label="C">选项C</c-radio-button>
+    <c-radio-button label="D">选项D</c-radio-button>
+  </c-radio-group>
+  <c-radio-group v-model="radioValue" size="small">
+    <c-radio-button label="A">选项A</c-radio-button>
+    <c-radio-button label="B">选项B</c-radio-button>
+    <c-radio-button label="C">选项C</c-radio-button>
+    <c-radio-button label="D">选项D</c-radio-button>
+  </c-radio-group>
+  <c-radio-group v-model="radioValue" size="large" button-style="fill">
+    <c-radio-button label="A">选项A</c-radio-button>
+    <c-radio-button label="B">选项B</c-radio-button>
+    <c-radio-button label="C">选项C</c-radio-button>
+    <c-radio-button label="D">选项D</c-radio-button>
+  </c-radio-group>
+  <c-radio-group v-model="radioValue" button-style="fill">
+    <c-radio-button label="A">选项A</c-radio-button>
+    <c-radio-button label="B">选项B</c-radio-button>
+    <c-radio-button label="C">选项C</c-radio-button>
+    <c-radio-button label="D">选项D</c-radio-button>
+  </c-radio-group>
+  <c-radio-group v-model="radioValue" size="small" button-style="fill">
+    <c-radio-button label="A">选项A</c-radio-button>
+    <c-radio-button label="B">选项B</c-radio-button>
+    <c-radio-button label="C">选项C</c-radio-button>
+    <c-radio-button label="D">选项D</c-radio-button>
   </c-radio-group>
 </template>
 
@@ -186,7 +256,6 @@
   export default {
     data() {
       return {
-        gender: "1",
         radioValue: "A",
       };
     },
@@ -202,7 +271,7 @@
 
 ### API
 
-### Radio/RadioButton
+#### Radio/RadioButton
 
 | 参数     | 说明                              | 类型                    | 可选值     | 默认值 |
 | -------- | --------------------------------- | ----------------------- | ---------- | ------ |
@@ -210,16 +279,17 @@
 | label    | 根据 label 进行比较，判断是否选中 | string, number, boolean |            | —      |
 | disabled | 禁用状态                          | boolean                 | true/false | false  |
 
-### RadioGroup
+#### RadioGroup
 
-| 参数     | 说明                              | 类型                    | 可选值     | 默认值 |
-| -------- | --------------------------------- | ----------------------- | ---------- | ------ |
-| v-model  | 用于设置当前选中的值              | string, number, boolean |            | —      |
-| label    | 根据 label 进行比较，判断是否选中 | string, number, boolean |            | —      |
-| disabled | 禁选所有子单选器                  | boolean                 | true/false | false  |
+| 参数        | 说明                     | 类型                    | 可选值              | 默认值  |
+| ----------- | ------------------------ | ----------------------- | ------------------- | ------- |
+| v-model     | 用于设置当前选中的值     | string, number, boolean |                     | —       |
+| size        | 大小，只对按钮样式生效   | string                  | large/default/small | default |
+| disabled    | 禁选所有子单选器         | boolean                 | true/false          | false   |
+| buttonStyle | 目前有描边和填色两种风格 | string                  | outline / fill      | outline |
 
-### RadioGroup 事件
+#### RadioGroup 事件
 
 | 事件名称 | 说明                 | 回调参数          |
 | -------- | -------------------- | ----------------- |
-| change   | 选项变化时的回调函数 | Function(e:Event) |
+| change   | 选项变化时的回调函数 | Function(value) |
