@@ -44,6 +44,9 @@ Flex 弹性布局是一种用于实现灵活和自适应布局的技术。
 </script>
 
 <style>
+  .demo1 {
+    height: 100%;
+  }
   .demo1 div > div {
     width: 25%;
     height: 80px;
@@ -115,6 +118,9 @@ Flex 弹性布局是一种用于实现灵活和自适应布局的技术。
 </script>
 
 <style>
+  .demo2 {
+    height: 100%;
+  }
   .demo2 > div {
     height: 100px;
     border: 1px solid #ccc;
@@ -190,6 +196,9 @@ Flex 弹性布局是一种用于实现灵活和自适应布局的技术。
 </script>
 
 <style>
+  .demo3 {
+    height: 100%;
+  }
   .demo3 div > div {
     width: 90px;
     height: 90px;
@@ -249,6 +258,9 @@ Flex 弹性布局是一种用于实现灵活和自适应布局的技术。
 </script>
 
 <style>
+  .demo4 {
+    height: 100%;
+  }
   .demo4 div > div {
     width: 100px;
     height: 80px;

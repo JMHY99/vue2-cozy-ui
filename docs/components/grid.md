@@ -18,87 +18,87 @@
   <div class="grid-demo">
     <c-row :gutter="10">
       <c-col :span="24">
-        <div class="demo1"></div>
+        <div class="grid-demo1"></div>
       </c-col>
     </c-row>
     <c-row :gutter="10">
       <c-col :span="12">
-        <div class="demo1"></div>
+        <div class="grid-demo1"></div>
       </c-col>
       <c-col :span="12">
-        <div class="demo1"></div>
+        <div class="grid-demo1"></div>
       </c-col>
     </c-row>
     <c-row :gutter="10">
       <c-col :span="6">
-        <div class="demo1"></div>
+        <div class="grid-demo1"></div>
       </c-col>
       <c-col :span="6">
-        <div class="demo1"></div>
+        <div class="grid-demo1"></div>
       </c-col>
       <c-col :span="6">
-        <div class="demo1"></div>
+        <div class="grid-demo1"></div>
       </c-col>
       <c-col :span="6">
-        <div class="demo1"></div>
+        <div class="grid-demo1"></div>
       </c-col>
     </c-row>
     <c-row :gutter="10">
       <c-col :span="4">
-        <div class="demo1"></div>
+        <div class="grid-demo1"></div>
       </c-col>
       <c-col :span="4">
-        <div class="demo1"></div>
+        <div class="grid-demo1"></div>
       </c-col>
       <c-col :span="4">
-        <div class="demo1"></div>
+        <div class="grid-demo1"></div>
       </c-col>
       <c-col :span="4">
-        <div class="demo1"></div>
+        <div class="grid-demo1"></div>
       </c-col>
       <c-col :span="4">
-        <div class="demo1"></div>
+        <div class="grid-demo1"></div>
       </c-col>
       <c-col :span="4">
-        <div class="demo1"></div>
+        <div class="grid-demo1"></div>
       </c-col>
     </c-row>
     <c-row :gutter="10">
       <c-col :span="2">
-        <div class="demo1"></div>
+        <div class="grid-demo1"></div>
       </c-col>
       <c-col :span="2">
-        <div class="demo1"></div>
+        <div class="grid-demo1"></div>
       </c-col>
       <c-col :span="2">
-        <div class="demo1"></div>
+        <div class="grid-demo1"></div>
       </c-col>
       <c-col :span="2">
-        <div class="demo1"></div>
+        <div class="grid-demo1"></div>
       </c-col>
       <c-col :span="2">
-        <div class="demo1"></div>
+        <div class="grid-demo1"></div>
       </c-col>
       <c-col :span="2">
-        <div class="demo1"></div>
+        <div class="grid-demo1"></div>
       </c-col>
       <c-col :span="2">
-        <div class="demo1"></div>
+        <div class="grid-demo1"></div>
       </c-col>
       <c-col :span="2">
-        <div class="demo1"></div>
+        <div class="grid-demo1"></div>
       </c-col>
       <c-col :span="2">
-        <div class="demo1"></div>
+        <div class="grid-demo1"></div>
       </c-col>
       <c-col :span="2">
-        <div class="demo1"></div>
+        <div class="grid-demo1"></div>
       </c-col>
       <c-col :span="2">
-        <div class="demo1"></div>
+        <div class="grid-demo1"></div>
       </c-col>
       <c-col :span="2">
-        <div class="demo1"></div>
+        <div class="grid-demo1"></div>
       </c-col>
     </c-row>
   </div>
@@ -111,16 +111,16 @@ export default {
 </script>
 
 <style>
-.demo1 {
+.grid-demo1 {
   width: 100%;
   height: 40px;
 }
 
-.grid-demo div > div:nth-child(odd) .demo1 {
+.grid-demo div > div:nth-child(odd) .grid-demo1 {
   background-color: #2f9bff;
 }
 
-.grid-demo div > div:nth-child(even) .demo1 {
+.grid-demo div > div:nth-child(even) .grid-demo1 {
   background-color: #7cc0ff;
 }
 </style>
@@ -139,46 +139,46 @@ Flex 子元素垂直对齐。
   <div class="grid-demo">
     <c-row :gutter="10" align="top">
       <c-col :span="6">
-        <div class="demo2"></div>
+        <div class="grid-demo2"></div>
       </c-col>
       <c-col :span="6">
-        <div class="demo2"></div>
+        <div class="grid-demo2"></div>
       </c-col>
       <c-col :span="6">
-        <div class="demo2"></div>
+        <div class="grid-demo2"></div>
       </c-col>
       <c-col :span="6">
-        <div class="demo2"></div>
+        <div class="grid-demo2"></div>
       </c-col>
     </c-row>
     <br />
     <c-row :gutter="10" align="middle">
       <c-col :span="6">
-        <div class="demo2"></div>
+        <div class="grid-demo2"></div>
       </c-col>
       <c-col :span="6">
-        <div class="demo2"></div>
+        <div class="grid-demo2"></div>
       </c-col>
       <c-col :span="6">
-        <div class="demo2"></div>
+        <div class="grid-demo2"></div>
       </c-col>
       <c-col :span="6">
-        <div class="demo2"></div>
+        <div class="grid-demo2"></div>
       </c-col>
     </c-row>
     <br />
     <c-row :gutter="10" align="bottom">
       <c-col :span="6">
-        <div class="demo2"></div>
+        <div class="grid-demo2"></div>
       </c-col>
       <c-col :span="6">
-        <div class="demo2"></div>
+        <div class="grid-demo2"></div>
       </c-col>
       <c-col :span="6">
-        <div class="demo2"></div>
+        <div class="grid-demo2"></div>
       </c-col>
       <c-col :span="6">
-        <div class="demo2"></div>
+        <div class="grid-demo2"></div>
       </c-col>
     </c-row>
   </div>
@@ -191,7 +191,7 @@ export default {
 </script>
 
 <style>
-.demo2 {
+.grid-demo2 {
   width: 100%;
   height: 60px;
 }
@@ -200,12 +200,12 @@ export default {
   background: #eaecef;
 }
 
-.grid-demo div > div:nth-child(odd) .demo2 {
+.grid-demo div > div:nth-child(odd) .grid-demo2 {
   background-color: #2f9bff;
   height: 120px;
 }
 
-.grid-demo div > div:nth-child(even) .demo2 {
+.grid-demo div > div:nth-child(even) .grid-demo2 {
   background-color: #7cc0ff;
 }
 </style>
@@ -224,16 +224,16 @@ export default {
   <div class="grid-demo">
     <c-row :gutter="10" align="middle">
       <c-col :span="6">
-        <div class="demo1">col-1</div>
+        <div class="grid-demo1">col-1</div>
       </c-col>
       <c-col :span="6">
-        <div class="demo1">col-2</div>
+        <div class="grid-demo1">col-2</div>
       </c-col>
       <c-col :span="6">
-        <div class="demo1">col-3</div>
+        <div class="grid-demo1">col-3</div>
       </c-col>
       <c-col :span="6">
-        <div class="demo1">col-4</div>
+        <div class="grid-demo1">col-4</div>
       </c-col>
     </c-row>
   </div>
@@ -246,7 +246,7 @@ export default {
 </script>
 
 <style>
-.demo2 {
+.grid-demo2 {
   width: 100%;
   height: 60px;
 }
@@ -255,11 +255,11 @@ export default {
   background: #eaecef;
 }
 
-.grid-demo div > div:nth-child(odd) .demo1 {
+.grid-demo div > div:nth-child(odd) .grid-demo1 {
   background-color: #2f9bff;
 }
 
-.grid-demo div > div:nth-child(even) .demo1 {
+.grid-demo div > div:nth-child(even) .grid-demo1 {
   background-color: #7cc0ff;
 }
 </style>
@@ -276,76 +276,76 @@ export default {
   <div class="grid-demo">
     <c-row align="middle" justify="start">
       <c-col :span="4">
-        <div class="demo1">col-4</div>
+        <div class="grid-demo1">col-4</div>
       </c-col>
       <c-col :span="4">
-        <div class="demo1">col-4</div>
+        <div class="grid-demo1">col-4</div>
       </c-col>
       <c-col :span="4">
-        <div class="demo1">col-4</div>
+        <div class="grid-demo1">col-4</div>
       </c-col>
       <c-col :span="4">
-        <div class="demo1">col-4</div>
+        <div class="grid-demo1">col-4</div>
       </c-col>
     </c-row>
     <br />
     <c-row align="middle" justify="center">
       <c-col :span="4">
-        <div class="demo1">col-4</div>
+        <div class="grid-demo1">col-4</div>
       </c-col>
       <c-col :span="4">
-        <div class="demo1">col-4</div>
+        <div class="grid-demo1">col-4</div>
       </c-col>
       <c-col :span="4">
-        <div class="demo1">col-4</div>
+        <div class="grid-demo1">col-4</div>
       </c-col>
       <c-col :span="4">
-        <div class="demo1">col-4</div>
+        <div class="grid-demo1">col-4</div>
       </c-col>
     </c-row>
     <br />
     <c-row align="middle" justify="end">
       <c-col :span="4">
-        <div class="demo1">col-4</div>
+        <div class="grid-demo1">col-4</div>
       </c-col>
       <c-col :span="4">
-        <div class="demo1">col-4</div>
+        <div class="grid-demo1">col-4</div>
       </c-col>
       <c-col :span="4">
-        <div class="demo1">col-4</div>
+        <div class="grid-demo1">col-4</div>
       </c-col>
       <c-col :span="4">
-        <div class="demo1">col-4</div>
+        <div class="grid-demo1">col-4</div>
       </c-col>
     </c-row>
     <br />
     <c-row align="middle" justify="space-between">
       <c-col :span="4">
-        <div class="demo1">col-4</div>
+        <div class="grid-demo1">col-4</div>
       </c-col>
       <c-col :span="4">
-        <div class="demo1">col-4</div>
+        <div class="grid-demo1">col-4</div>
       </c-col>
       <c-col :span="4">
-        <div class="demo1">col-4</div>
+        <div class="grid-demo1">col-4</div>
       </c-col>
       <c-col :span="4">
-        <div class="demo1">col-4</div>
+        <div class="grid-demo1">col-4</div>
       </c-col>
     </c-row>
     <br />
     <c-row align="middle" justify="space-around">
       <c-col :span="4">
-        <div class="demo1">col-4</div>
+        <div class="grid-demo1">col-4</div>
       </c-col>
       <c-col :span="4">
-        <div class="demo1">col-4</div>
+        <div class="grid-demo1">col-4</div>
       </c-col>
       <c-col :span="4">
-        <div class="demo1">col-4</div>
+        <div class="grid-demo1">col-4</div>
       </c-col>
       <c-col :span="4">
-        <div class="demo1">col-4</div>
+        <div class="grid-demo1">col-4</div>
       </c-col>
     </c-row>
   </div>
@@ -358,7 +358,7 @@ export default {
 </script>
 
 <style>
-.demo2 {
+.grid-demo2 {
   width: 100%;
   height: 60px;
 }
@@ -367,11 +367,11 @@ export default {
   background: #eaecef;
 }
 
-.grid-demo div > div:nth-child(odd) .demo1 {
+.grid-demo div > div:nth-child(odd) .grid-demo1 {
   background-color: #2f9bff;
 }
 
-.grid-demo div > div:nth-child(even) .demo1 {
+.grid-demo div > div:nth-child(even) .grid-demo1 {
   background-color: #7cc0ff;
 }
 </style>
@@ -388,30 +388,30 @@ export default {
   <div class="grid-demo">
     <c-row :gutter="10" align="middle">
       <c-col :span="6">
-        <div class="demo1">col-1</div>
+        <div class="grid-demo1">col-1</div>
       </c-col>
       <c-col :span="6">
-        <div class="demo1">col-2</div>
+        <div class="grid-demo1">col-2</div>
       </c-col>
       <c-col :span="6">
-        <div class="demo1">col-3</div>
+        <div class="grid-demo1">col-3</div>
       </c-col>
       <c-col :span="6">
-        <div class="demo1">col-4</div>
+        <div class="grid-demo1">col-4</div>
       </c-col>
     </c-row>
     <c-row :gutter="10" align="middle">
       <c-col :span="6">
-        <div class="demo1">col-1</div>
+        <div class="grid-demo1">col-1</div>
       </c-col>
       <c-col :span="6">
-        <div class="demo1">col-2</div>
+        <div class="grid-demo1">col-2</div>
       </c-col>
       <c-col :span="6">
-        <div class="demo1">col-3</div>
+        <div class="grid-demo1">col-3</div>
       </c-col>
       <c-col :span="6">
-        <div class="demo1">col-4</div>
+        <div class="grid-demo1">col-4</div>
       </c-col>
     </c-row>
   </div>
@@ -424,7 +424,7 @@ export default {
 </script>
 
 <style>
-.demo2 {
+.grid-demo2 {
   width: 100%;
   height: 60px;
 }
@@ -433,11 +433,11 @@ export default {
   background: #eaecef;
 }
 
-.grid-demo div > div:nth-child(odd) .demo1 {
+.grid-demo div > div:nth-child(odd) .grid-demo1 {
   background-color: #2f9bff;
 }
 
-.grid-demo div > div:nth-child(even) .demo1 {
+.grid-demo div > div:nth-child(even) .grid-demo1 {
   background-color: #7cc0ff;
 }
 </style>
