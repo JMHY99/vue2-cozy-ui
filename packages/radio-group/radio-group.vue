@@ -36,6 +36,10 @@ export default {
         return ["outline", "fill"].includes(value);
       },
     },
+    name: {
+      type: String,
+      default: "",
+    },
   },
 
   data() {

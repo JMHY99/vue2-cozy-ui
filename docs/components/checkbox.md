@@ -99,7 +99,7 @@
 
 :::
 
-### 不确定选择
+### 不确定状态
 
 在实现全选效果时，用到`indeterminate`
 ::: demo
@@ -156,3 +156,34 @@
 ```
 
 :::
+
+### API
+
+#### Checkbox
+
+| 参数          | 说明                              | 类型                    | 可选值     | 默认值 |
+| ------------- | --------------------------------- | ----------------------- | ---------- | ------ |
+| v-model       | 指定当前是否选中                  | string, number, boolean |            | —      |
+| label         | 根据 label 进行比较，判断是否选中 | string, number, boolean |            | —      |
+| disabled      | 禁用状态                          | boolean                 | true/false | false  |
+| indeterminate | 设置不确定状态，仅样式控制        | boolean                 | true/false | false  |
+
+#### Checkbox 事件
+
+| 事件名称 | 说明                 | 回调参数        |
+| -------- | -------------------- | --------------- |
+| change   | 选项变化时的回调函数 | Function(value) |
+
+#### Checkbox Group
+
+| 参数     | 说明                                                     | 类型     | 可选值     | 默认值 |
+| -------- | -------------------------------------------------------- | -------- | ---------- | ------ |
+| v-model  | 用于设置当前选中的值                                     | string[] |            | []     |
+| name     | CheckboxGroup 下所有 input[type="checkbox"] 的 name 属性 | string   |            | —      |
+| disabled | 禁选所有子单选器                                         | boolean  | true/false | false  |
+
+#### Checkbox Group 事件
+
+| 事件名称 | 说明                 | 回调参数        |
+| -------- | -------------------- | --------------- |
+| change   | 选项变化时的回调函数 | Function(value) |

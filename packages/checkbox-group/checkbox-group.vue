@@ -19,6 +19,10 @@ export default {
       type: Array,
       default: () => [],
     },
+    name: {
+      type: String,
+      default: "",
+    },
     disabled: Boolean,
   },
 

@@ -15,7 +15,7 @@
         type="checkbox"
         class="cozy-checkbox-input"
         v-model="model"
-        :name="name"
+        :name="_name"
         :value="label"
         :disabled="isDisabled"
         @change="handleChange"
@@ -88,6 +88,10 @@ export default {
     },
     isIndeterminate() {
       return this.indeterminate;
+    },
+
+    _name() {
+      return this.isGroup ? this.CCheckboxGroup.name : this.name;
     },
   },
 

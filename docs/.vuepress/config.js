@@ -55,19 +55,19 @@ module.exports = {
               title: "基础",
               collapsable: false, //下拉
               sidebarDepth: 1, // 只显示一级标题
-              children: ["color", "icon", "button"],
+              children: ["color", "icon", "button"].sort(),
             },
             {
               title: "布局",
               collapsable: false,
               sidebarDepth: 1, // 只显示一级标题
-              children: ["flex", "grid", "layout", "space"],
+              children: ["flex", "grid", "layout", "space"].sort(),
             },
             {
               title: "导航",
               collapsable: false,
               sidebarDepth: 1, // 只显示一级标题
-              children: ["affix", "anchor", "breadcrumb", "dropdown"],
+              children: ["affix", "anchor", "breadcrumb", "dropdown"].sort(),
             },
             {
               title: "表单",
@@ -80,13 +80,13 @@ module.exports = {
                 "radio",
                 "checkbox",
                 "switch",
-              ],
+              ].sort(),
             },
             {
               title: "视图",
               collapsable: false,
               sidebarDepth: 1, // 只显示一级标题
-              children: ["alert", "message", "avatar", "badge"],
+              children: ["alert", "message", "avatar", "badge"].sort(),
             },
           ],
         },

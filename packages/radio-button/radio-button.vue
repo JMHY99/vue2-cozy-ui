@@ -17,7 +17,7 @@
         class="cozy-radio-button-input"
         type="radio"
         v-model="model"
-        :name="name"
+        :name="_name"
         :value="label"
         :disabled="_disabled"
         @change="handleChange"
@@ -65,6 +65,10 @@ export default {
     },
     _disabled() {
       return this.isGroup ? this.CRadioGroup.disabled : this.disabled;
+    },
+
+    _name() {
+      return this.isGroup ? this.CRadioGroup.name : this.name;
     },
   },
   methods: {

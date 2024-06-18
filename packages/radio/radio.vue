@@ -17,7 +17,7 @@
         class="cozy-radio-input"
         type="radio"
         v-model="model"
-        :name="name"
+        :name="_name"
         :value="label"
         :disabled="_disabled"
         @change="handleChange"
@@ -79,6 +79,10 @@ export default {
     // 禁用状态，如果属于radio组，则根据radio组的disabled属性判断，否则根据自身的disabled属性判断
     _disabled() {
       return this.isGroup ? this.CRadioGroup.disabled : this.disabled;
+    },
+
+    _name() {
+      return this.isGroup ? this.CRadioGroup.name : this.name;
     },
   },
   methods: {

@@ -281,15 +281,16 @@
 
 #### RadioGroup
 
-| 参数        | 说明                     | 类型                    | 可选值              | 默认值  |
-| ----------- | ------------------------ | ----------------------- | ------------------- | ------- |
-| v-model     | 用于设置当前选中的值     | string, number, boolean |                     | —       |
-| size        | 大小，只对按钮样式生效   | string                  | large/default/small | default |
-| disabled    | 禁选所有子单选器         | boolean                 | true/false          | false   |
-| buttonStyle | 目前有描边和填色两种风格 | string                  | outline / fill      | outline |
+| 参数        | 说明                                               | 类型                    | 可选值              | 默认值  |
+| ----------- | -------------------------------------------------- | ----------------------- | ------------------- | ------- |
+| v-model     | 用于设置当前选中的值                               | string, number, boolean |                     | —       |
+| name        | RadioGroup 下所有 input[type="radio"] 的 name 属性 | string                  |                     | —       |
+| size        | 大小，只对按钮样式生效                             | string                  | large/default/small | default |
+| disabled    | 禁选所有子单选器                                   | boolean                 | true/false          | false   |
+| buttonStyle | 目前有描边和填色两种风格                           | string                  | outline / fill      | outline |
 
 #### RadioGroup 事件
 
-| 事件名称 | 说明                 | 回调参数          |
-| -------- | -------------------- | ----------------- |
+| 事件名称 | 说明                 | 回调参数        |
+| -------- | -------------------- | --------------- |
 | change   | 选项变化时的回调函数 | Function(value) |
