@@ -27,11 +27,11 @@
 ::: demo
 
 ```html
-<div>
+<!-- <div>
   <c-affix :offset-top="100">
     <c-button>测试</c-button>
   </c-affix>
-</div>
+</div> -->
 ```
 
 :::
@@ -43,11 +43,11 @@
 ::: demo
 
 ```html
-<div>
+<!-- <div>
   <c-affix :offset-top="100">
     <c-button>测试</c-button>
   </c-affix>
-</div>
+</div> -->
 ```
 
 :::
@@ -59,11 +59,11 @@
 ::: demo
 
 ```html
-<div>
+<!-- <div>
   <c-affix :offset-top="100">
     <c-button>测试</c-button>
   </c-affix>
-</div>
+</div> -->
 ```
 
 :::
@@ -75,11 +75,11 @@
 ::: demo
 
 ```html
-<div>
+<!-- <div>
   <c-affix :offset-top="100">
     <c-button>测试</c-button>
   </c-affix>
-</div>
+</div> -->
 ```
 
 :::
