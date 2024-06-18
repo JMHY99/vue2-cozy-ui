@@ -27,6 +27,8 @@ import CSwitch from "./switch/index.js";
 import CCheckbox from "./checkbox/index.js";
 import CCheckboxGroup from "./checkbox-group/index.js";
 import CBadge from "./badge/index.js";
+import CBreadcrumb from "./breadcrumb/index.js";
+import CBreadcrumbItem from "./breadcrumb-item/index.js";
 
 import { version } from "../package.json"; //版本号
 
@@ -59,6 +61,8 @@ const components = [
   CCheckbox,
   CCheckboxGroup,
   CBadge,
+  CBreadcrumb,
+  CBreadcrumbItem,
 ];
 
 const install = function (Vue) {
@@ -103,6 +107,8 @@ export {
   CCheckbox,
   CCheckboxGroup,
   CBadge,
+  CBreadcrumb,
+  CBreadcrumbItem,
 };
 
 export default {
