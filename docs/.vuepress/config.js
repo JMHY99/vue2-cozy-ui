@@ -98,14 +98,14 @@ module.exports = {
   plugins: [
     "demo-container",
     "@vuepress/back-to-top",
-    [
-      "cursor-effects", //鼠标点击出现星星效果插件
-      {
-        size: 2,
-        shape: "star", // 形状['star' | 'circle'],
-        zIndex: 999999999,
-      },
-    ],
+    // [
+    //   "cursor-effects", //鼠标点击出现星星效果插件
+    //   {
+    //     size: 2,
+    //     shape: "star", // 形状['star' | 'circle'],
+    //     zIndex: 999999999,
+    //   },
+    // ],
     [
       "vuepress-plugin-right-anchor", //右侧小目录插件
       {

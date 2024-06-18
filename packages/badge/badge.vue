@@ -3,13 +3,21 @@
     <!-- 插槽用于包裹组件的内容 -->
     <slot></slot>
     <!-- 根据不同条件显示不同类型的徽标 -->
+
+    <span v-if="$slots.count" class="cozy-badge-icon" :style="iconStyle"
+      ><slot name="count"></slot
+    ></span>
+    <!-- 数字 -->
     <span
-      v-if="!isDot && !status"
+      v-if="!isDot && !status && !$slots.count"
       class="cozy-badge-count"
       :style="badgeStyle"
-      >{{ displayCount }}</span
     >
+      {{ displayCount }}
+    </span>
+    <!-- 小红点 -->
     <span v-else-if="isDot" class="cozy-badge-dot" :style="badgeStyle"></span>
+    <!-- 状态点 -->
     <span v-else class="cozy-badge-status-dot" :style="statusStyle"></span>
   </div>
 </template>
@@ -93,6 +101,16 @@ export default {
       }
       return style;
     },
+    iconStyle() {
+      let style = {
+        color: this.color,
+      };
+      if (this.offset.length === 2) {
+        style.right = `${-this.offset[0]}px`;
+        style.marginTop = `${this.offset[1]}px`;
+      }
+      return style;
+    },
   },
 };
 </script>
@@ -101,6 +119,18 @@ export default {
 .cozy-badge {
   position: relative;
   display: inline-block;
+}
+
+.cozy-badge-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(50%, -50%);
+  color: #f5222d;
+  text-align: center;
+  white-space: nowrap;
+  cursor: default;
+  z-index: 10;
 }
 
 /* 数字徽标的样式 */
@@ -131,6 +161,7 @@ export default {
   height: 8px;
   background-color: #f5222d;
   border-radius: 50%;
+  z-index: 10;
 }
 
 /* 状态点的样式 */
@@ -142,6 +173,7 @@ export default {
   width: 8px;
   height: 8px;
   border-radius: 50%;
+  z-index: 10;
 }
 
 /* 不同状态的样式 */
@@ -165,4 +197,3 @@ export default {
   background-color: #faad14;
 }
 </style>
-
