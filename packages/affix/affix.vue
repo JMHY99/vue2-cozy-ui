@@ -79,7 +79,7 @@ export default {
         newAffixed = true;
         newAffixStyles = {
           position: "fixed",
-          top: `${this.offsetTop}px`,
+          top: `${targetRect.top + this.offsetTop}px`, //修改在容器中的固钉高度
           width: `${elementRect.width}px`,
         };
       } else if (
@@ -103,7 +103,7 @@ export default {
 
       // 如果不处于固定状态，清空固定样式，保持原始布局
       if (!newAffixed) {
-        this.affixStyles = { position: "", top: "", bottom: "" };
+        this.affixStyles = {};
         this.placeholderStyle = {};
       } else {
         // 如果处于固定状态，设置固定样式，并保持占位元素的高度

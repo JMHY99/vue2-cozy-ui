@@ -22,7 +22,7 @@
 
 ### 滚动容器
 
-创建不同样式的按钮，可以通过设置 `type` 属性为 primary、info、success、warning 或 danger。如果不设置 `type` 属性，则按钮将采用默认样式。
+用 target 设置 Affix 需要监听其滚动事件的元素，默认为 window。
 
 ::: demo
 
@@ -34,20 +34,20 @@
     class="scrollable-container"
   >
     <div class="background">
-      <c-affix :target="() => this.$refs.container">
-        <c-button type="primary"> Fixed at the top of container </c-button>
+      <c-affix :offset-top="10" :target="() => this.$refs.container">
+        <c-button type="primary"> 在容器中固钉 </c-button>
       </c-affix>
     </div>
   </div>
 </template>
 <style>
   #components-affix-demo-target.scrollable-container {
-    height: 100px;
+    height: 300px;
     overflow-y: scroll;
   }
   #components-affix-demo-target .background {
     padding-top: 60px;
-    height: 300px;
+    height: 600px;
     background-image: url("https://zos.alipayobjects.com/rmsportal/RmjwQiJorKyobvI.jpg");
   }
 </style>
