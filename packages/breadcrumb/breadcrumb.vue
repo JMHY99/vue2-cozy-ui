@@ -1,6 +1,6 @@
 <!-- Breadcrumb.vue -->
 <template>
-  <nav aria-label="breadcrumb" class="cozy-breadcrumb">
+  <!-- <nav aria-label="breadcrumb" class="cozy-breadcrumb">
     <ol>
       <li
         v-for="(item, index) in items"
@@ -24,12 +24,30 @@
         >
       </li>
     </ol>
-  </nav>
+  </nav> -->
+  <div class="cozy-breadcrumb">
+    <span v-for="(item, index) in items" :key="index">
+      <span v-if="index < items.length - 1" class="cozy-breadcrumb-link">
+        <a v-if="item.link" :href="item.link">{{ item.text }}</a>
+        <span v-else>{{ item.text }}</span>
+      </span>
+      <span v-if="index < items.length - 1" class="cozy-breadcrumb-separator"
+        ></span
+      >
+    </span>
+    <slot></slot>
+  </div>
 </template>
 
 <script>
 export default {
   name: "CBreadcrumb",
+
+  provide() {
+    return {
+      CBreadcrumb: this,
+    };
+  },
   props: {
     itemRender: Function,
     params: Object,
@@ -38,7 +56,7 @@ export default {
       default: () => [], // 设置默认值为空数组
     },
     separator: {
-      type: [String, Object],
+      type: String,
       default: "/",
     },
   },
