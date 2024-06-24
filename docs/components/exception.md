@@ -1,23 +1,61 @@
 # Exception 异常
 
-### 基础用法
+### 概述
 
-最简单的用法，`v-model`双向数据绑定
+异常页用于对页面特定的异常状态进行反馈。
+
+### 404 页面
+
+404 页面。
 
 ::: demo
 
 ```html
 <template>
-  <c-exception></c-exception>
+  <c-exception type="404"></c-exception>
 </template>
+```
 
-<script>
-  export default {
-    data() {
-      return {};
-    },
-  };
-</script>
+:::
+
+### 401 页面
+
+401 页面。
+
+::: demo
+
+```html
+<template>
+  <c-exception type="401"></c-exception>
+</template>
+```
+
+:::
+
+### 403 页面
+
+403 页面。
+
+::: demo
+
+```html
+<template>
+  <c-exception type="403"></c-exception>
+</template>
+```
+
+:::
+
+### 500 页面
+
+500 页面。
+
+::: demo
+
+```html
+<template>
+  <c-exception type="500"></c-exception>
+</template>
 ```
 
 :::
