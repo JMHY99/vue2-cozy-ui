@@ -1,0 +1,403 @@
+// 定义单选按钮的一些基础变量
+$radio-size: 14px;
+$radio-checked-color: #1890ff;
+$radio-inner-size: 8px;
+$radio-border-width: 1px;
+$radio-disabled-color: #ddd;
+$radio-bg: #fff;
+$motion-duration-slow: 0.3s;
+$motion-ease-in-out: ease-in-out;
+
+// 定义单选按钮被选中时的动画
+@keyframes cozyRadioAnimation {
+  0% {
+    transform: scale(0);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+
+.cozy-radio-wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  margin-inline-start: 0; // 开始方向的margin为0
+  margin-inline-end: 8px; // 结束方向的margin为8px
+  cursor: pointer; // 鼠标悬停时显示为手形光标
+
+  // 禁用状态下的样式
+  &-disabled {
+    cursor: not-allowed;
+    color: $radio-disabled-color;
+  }
+
+  // 伪元素用于调整布局或显示
+  &::after {
+    display: inline-block;
+    width: 0;
+    overflow: hidden;
+    content: "\a0"; // 使用换行符作为内容，主要用于调整布局
+  }
+
+  .cozy-radio {
+    position: relative;
+    display: inline-block;
+    outline: none;
+    cursor: pointer;
+    align-self: center;
+    margin-right: 4px;
+
+    // 选中状态时的外圈动画效果
+    &::after {
+      position: absolute;
+      inset: 0; // 四个方向的外边距均为0
+      width: 100%;
+      height: 100%;
+      border: $radio-border-width solid $radio-checked-color;
+      border-radius: 50%;
+      visibility: hidden; // 不可见
+      animation: cozyRadioAnimation $motion-duration-slow $motion-ease-in-out
+        both;
+      content: "";
+    }
+
+    // 鼠标悬停时的样式
+    &:hover .cozy-radio-inner {
+      border-color: $radio-checked-color;
+    }
+
+    .cozy-radio-inner {
+      position: relative;
+      display: block;
+      width: $radio-size;
+      height: $radio-size;
+      background-color: $radio-bg;
+      border: $radio-border-width solid $radio-disabled-color;
+      border-radius: 50%;
+      transition: all $motion-duration-slow $motion-ease-in-out;
+
+      // 白色圆点样式
+      &::after {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: $radio-inner-size;
+        height: $radio-inner-size;
+        background-color: $radio-bg;
+        border-radius: 50%;
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 0;
+        transition: all $motion-duration-slow $motion-ease-in-out;
+        content: "";
+      }
+    }
+
+    // 选中状态
+    &.cozy-radio-checked {
+      .cozy-radio-inner {
+        border-color: $radio-checked-color;
+        background-color: $radio-checked-color;
+
+        &::after {
+          transform: translate(-50%, -50%) scale(1);
+          opacity: 1;
+        }
+      }
+
+      &::after {
+        visibility: visible;
+      }
+    }
+
+    // 禁用状态
+    &.cozy-radio-disabled {
+      cursor: not-allowed;
+
+      .cozy-radio-inner {
+        background-color: #f5f5f5;
+        border-color: #b8b8b8;
+        cursor: not-allowed;
+
+        &::after {
+          background-color: #b8b8b8;
+        }
+      }
+    }
+  }
+
+  // 隐藏原生input
+  .cozy-radio-input {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    cursor: pointer;
+    opacity: 0;
+  }
+
+  // 标签样式
+  .cozy-radio-label {
+    vertical-align: middle;
+    font-size: 14px;
+    line-height: 14px;
+    color: rgba(0, 0, 0, 0.85);
+  }
+}
+
+
+// radio-button
+// 定义单选按钮容器的样式
+.cozy-radio-button-wrapper {
+  position: relative;
+  display: inline-block;
+  height: 32px;
+  margin: 0 -3px;
+  padding-inline: 16px;
+  padding-block: 0;
+  color: #333;
+  font-size: 14px;
+  line-height: 30px; // 32px height - 1px border * 2
+  background: #fff;
+  border: 1px solid #d9d9d9;
+  cursor: pointer;
+  transition: color 0.3s, background 0.3s, border-color 0.3s, box-shadow 0.3s;
+
+  // 当不是第一个子元素时，添加一个左边框的伪元素
+  &:not(:first-child) {
+    &::before {
+      position: absolute;
+      top: -1px;
+      left: -1px;
+      display: block;
+      box-sizing: content-box;
+      width: 1px;
+      height: 100%;
+      padding-block: 1px;
+      padding-inline: 0;
+      background-color: #d9d9d9;
+      transition: background-color 0.3s;
+      content: "";
+    }
+  }
+
+  // 当是第一个子元素时，添加左边框
+  &:first-child {
+    border-left: 1px solid #d9d9d9;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+  }
+
+  // 当是最后一个子元素时，添加右边框，并设置圆角
+  &:last-child {
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+  }
+
+  // 当既是第一个子元素又是最后一个子元素时，设置完整的圆角
+  &:first-child:last-child {
+    border-radius: 4px;
+  }
+
+  // 鼠标悬停时改变文字颜色
+  &:hover {
+    color: #1890ff;
+  }
+
+  // 当选中且未禁用时
+  &.cozy-radio-button-wrapper-checked:not(.cozy-radio-button-wrapper-disabled) {
+    z-index: 1;
+    color: #fff;
+    background: #1890ff;
+    border-color: #1890ff;
+
+    &::before {
+      background-color: #1890ff;
+    }
+
+    // 鼠标悬停时改变背景色和边框色
+    &:hover {
+      color: #fff;
+      border-color: #40a9ff;
+
+      // 悬停时的左边框伪元素颜色
+      &::before {
+        background-color: #40a9ff;
+      }
+    }
+
+    // 激活状态时的样式
+    &:active {
+      color: #fff;
+      border-color: #096dd9;
+
+      &::before {
+        background-color: #096dd9;
+      }
+    }
+  }
+
+  // 当禁用时
+  &.cozy-radio-button-wrapper-disabled {
+    color: #bfbfbf;
+    background-color: #f5f5f5;
+    border-color: #d9d9d9;
+    cursor: not-allowed;
+
+    &:first-child,
+    &:hover {
+      color: #bfbfbf;
+      background-color: #f5f5f5;
+      border-color: #d9d9d9;
+    }
+    &.cozy-radio-button-wrapper-checked {
+      background-color: #d9d9d9;
+      color: #a3a3a3;
+    }
+  }
+
+  .cozy-radio-button {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+
+    //  隐藏的实际单选按钮的样式
+    .cozy-radio-button-input {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      cursor: pointer;
+    }
+
+    .cozy-radio-button-inner {
+      display: block;
+      width: 100%;
+      height: 100%;
+      background-color: transparent;
+    }
+  }
+
+  .cozy-radio-button-label {
+    font-size: inherit;
+    line-height: inherit;
+  }
+
+  &.cozy-radio-button-large {
+    height: 40px;
+    font-size: 16px;
+    line-height: 38px; // 40px height - 1px border * 2
+
+    &:first-child {
+      border-top-left-radius: 4px;
+      border-bottom-left-radius: 4px;
+    }
+
+    &:last-child {
+      border-top-right-radius: 4px;
+      border-bottom-right-radius: 4px;
+    }
+  }
+
+  &.cozy-radio-button-small {
+    height: 24px;
+    padding-inline: 8px; // Reduced padding for small size
+    padding-block: 0;
+    line-height: 22px; // 24px height - 1px border * 2
+
+    &:first-child {
+      border-top-left-radius: 4px;
+      border-bottom-left-radius: 4px;
+    }
+
+    &:last-child {
+      border-top-right-radius: 4px;
+      border-bottom-right-radius: 4px;
+    }
+  }
+}
+
+
+// cozy-radio-group
+.cozy-radio-group {
+  margin: 4px;
+}
+.cozy-radio-group-large .cozy-radio-button-wrapper {
+  height: 40px;
+  font-size: 16px;
+  line-height: 38px; // 40px height - 1px border * 2
+
+  &:first-child {
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+  }
+
+  &:last-child {
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+  }
+}
+
+.cozy-radio-group-small .cozy-radio-button-wrapper {
+  height: 24px;
+  padding-inline: 8px; // Reduced padding for small size
+  padding-block: 0;
+  line-height: 22px; // 24px height - 1px border * 2
+
+  &:first-child {
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+  }
+
+  &:last-child {
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+  }
+}
+
+.cozy-radio-group-outline .cozy-radio-button-wrapper {
+  &.cozy-radio-button-wrapper-checked:not(.cozy-radio-button-wrapper-disabled) {
+    background-color: #fff;
+    color: #1890ff;
+
+    // 鼠标悬停时改变背景色和边框色
+    &:hover {
+      color: #1890ff;
+      border-color: #40a9ff;
+
+      // 悬停时的左边框伪元素颜色
+      &::before {
+        background-color: #40a9ff;
+      }
+    }
+  }
+}
+
+.cozy-radio-group-fill .cozy-radio-button-wrapper {
+  &.cozy-radio-button-wrapper-checked:not(.cozy-radio-button-wrapper-disabled) {
+    color: #fff;
+    background: #1890ff;
+    border-color: #1890ff;
+
+    &::before {
+      background-color: #1890ff;
+    }
+
+    // 鼠标悬停时改变背景色和边框色
+    &:hover {
+      color: #fff;
+      border-color: #40a9ff;
+
+      // 悬停时的左边框伪元素颜色
+      &::before {
+        background-color: #40a9ff;
+      }
+    }
+  }
+}
