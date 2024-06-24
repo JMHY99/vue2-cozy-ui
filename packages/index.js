@@ -29,6 +29,7 @@ import CCheckboxGroup from "./checkbox-group/index.js";
 import CBadge from "./badge/index.js";
 import CBreadcrumb from "./breadcrumb/index.js";
 import CBreadcrumbItem from "./breadcrumb-item/index.js";
+import CException from "./exception/index.js";
 
 import { version } from "../package.json"; //版本号
 
@@ -63,6 +64,7 @@ const components = [
   CBadge,
   CBreadcrumb,
   CBreadcrumbItem,
+  CException,
 ];
 
 const install = function (Vue) {
@@ -109,6 +111,7 @@ export {
   CBadge,
   CBreadcrumb,
   CBreadcrumbItem,
+  CException,
 };
 
 export default {
