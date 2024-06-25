@@ -30,6 +30,7 @@ import CBadge from "./badge/index.js";
 import CBreadcrumb from "./breadcrumb/index.js";
 import CBreadcrumbItem from "./breadcrumb-item/index.js";
 import CException from "./exception/index.js";
+import CResult from "./result/index.js";
 
 import { version } from "../package.json"; //版本号
 
@@ -65,6 +66,7 @@ const components = [
   CBreadcrumb,
   CBreadcrumbItem,
   CException,
+  CResult,
 ];
 
 const install = function (Vue) {
@@ -112,6 +114,7 @@ export {
   CBreadcrumb,
   CBreadcrumbItem,
   CException,
+  CResult,
 };
 
 export default {

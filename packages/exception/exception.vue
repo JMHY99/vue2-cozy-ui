@@ -22,7 +22,6 @@
 </template>
 
 <script>
-import img from "../style/src/images/500.png";
 export default {
   name: "CException",
 
@@ -103,57 +102,3 @@ export default {
   },
 };
 </script>
-<style lang="scss" scoped>
-.cozy-exception {
-  height: 50%;
-  min-height: 500px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
-.cozy-exception-img {
-  flex: 0 0 62.5%;
-  width: 62.5%;
-  padding-right: 50px;
-}
-
-.cozy-exception-content {
-  flex: auto;
-}
-
-.cozy-exception-content h1 {
-  margin-bottom: 24px;
-  color: #515a6e;
-  font-weight: 600;
-  font-size: 72px;
-  line-height: 72px;
-}
-
-.cozy-exception-content-desc {
-  margin-bottom: 16px;
-  color: #808695;
-  font-size: 20px;
-  line-height: 28px;
-}
-
-
-
-.cozy-exception-img-element {
-  height: auto;
-  width: 100%;
-  min-height: 500px;
-  background-size: 90%;
-  background-repeat: no-repeat;
-  background-position: center center;
-}
-
-.cozy-exception-content-actions a{
-  text-decoration: none;
-  color: #fff;
-}
-
-.cozy-exception-content-actions a:hover{
-  text-decoration: none !important;
-}
-</style>
