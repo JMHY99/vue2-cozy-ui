@@ -2,11 +2,11 @@
 
 ### 概述
 
-按钮用于触发一个操作，是用户与应用进行交互的重要方式之一。
+用来代表用户或事物，支持图片、图标或字符展示。
 
 ### 基础用法
 
-创建不同样式的按钮，可以通过设置 `type` 属性为 primary、info、success、warning 或 danger。如果不设置 `type` 属性，则按钮将采用默认样式。
+头像有三种尺寸，两种形状可选。
 
 ::: demo
 
@@ -25,9 +25,9 @@
 
 :::
 
-### 基础用法
+### 头像类型
 
-创建不同样式的按钮，可以通过设置 `type` 属性为 primary、info、success、warning 或 danger。如果不设置 `type` 属性，则按钮将采用默认样式。
+支持三种类型：图片、Icon 以及字符，其中 Icon 和字符型可以自定义图标颜色及背景色。
 
 ::: demo
 
@@ -36,7 +36,77 @@
 <c-avatar><c-icon size="20" name="c-user-outlined"></c-icon></c-avatar>
 <c-avatar>Z</c-avatar>
 <c-avatar>User22222222</c-avatar>
-<c-avatar src="https://foruda.gitee.com/avatar/1713970336200040602/9810895_itxiaoming9_1713970336.png"></c-avatar>
+<c-avatar style="color: #f56a00; backgroundColor: #fde3cf">J</c-avatar>
+<c-avatar
+  src="https://foruda.gitee.com/avatar/1713970336200040602/9810895_itxiaoming9_1713970336.png"
+></c-avatar>
+```
+
+:::
+
+### 带徽标的
+
+通常用于消息提示。
+
+::: demo
+
+```html
+<c-badge :count="20">
+  <c-avatar shape="square" size="large" icon="c-user-outlined"></c-avatar>
+</c-badge>
+
+<c-badge dot>
+  <c-avatar shape="square" size="large" icon="c-user-outlined"></c-avatar>
+</c-badge>
+```
+
+:::
+
+### 字符大小
+
+对于字符型的头像，当字符串较长时，字体大小可以根据头像宽度自动调整。
+
+::: demo
+
+```html
+<template>
+  <div>
+    <c-avatar
+      shape="square"
+      size="large"
+      :style="{ backgroundColor: color, verticalAlign: 'middle' }"
+    >
+      {{ avatarValue }}
+    </c-avatar>
+    <c-button
+      :style="{ marginLeft: 16, verticalAlign: 'middle' }"
+      @click="changeValue"
+    >
+      改变
+    </c-button>
+  </div>
+</template>
+<script>
+  const UserList = ["U", "Lucy", "Tom", "Edward"];
+  const colorList = ["#f56a00", "#7265e6", "#ffbf00", "#00a2ae"];
+  export default {
+    data() {
+      return {
+        avatarValue: UserList[0],
+        color: colorList[0],
+      };
+    },
+    methods: {
+      changeValue() {
+        const index = UserList.indexOf(this.avatarValue);
+        this.avatarValue =
+          index < UserList.length - 1 ? UserList[index + 1] : UserList[0];
+        this.color =
+          index < colorList.length - 1 ? colorList[index + 1] : colorList[0];
+      },
+    },
+  };
+</script>
 ```
 
 :::
