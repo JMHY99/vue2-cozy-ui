@@ -73,9 +73,47 @@ export default {
       this.$emit("validate");
     },
 
-    validate(){
-      console.log(111111111);
-    }
+    // validate(){
+    //   console.log(111111111);
+    // }
+    // validate(callback) {
+    //   // 校验表单数据
+    //   let valid = true;
+    //   Object.keys(this.rules).forEach((prop) => {
+    //     if (this.rules[prop] && this.rules[prop].length > 0) {
+    //       this.rules[prop].forEach((rule) => {
+    //         if (rule.required) {
+    //           if (!this.model[prop] || this.model[prop] === "") {
+    //             valid = false;
+    //             this.$set(this.model, prop, "");
+    //             this.$nextTick(() => {
+    //               callback && callback(prop);
+    //             });
+    //           }
+    //         }
+    //       });
+    //     }
+    //   });
+    //   return valid;
+    // },
+
+    validate(callback) {
+      let valid = true;
+      Object.keys(this.rules).forEach((prop) => {
+        if (this.rules[prop] && this.rules[prop].length > 0) {
+          this.rules[prop].forEach((rule) => {
+            if (rule.required) {
+              if (!this.model[prop] || this.model[prop] === "") {
+                valid = false;
+                callback && callback(valid);
+              }
+            }
+            // Other rules can be added here (e.g., min, max, type)
+          });
+        }
+      });
+      callback && callback(valid);
+    },
   },
 };
 </script>

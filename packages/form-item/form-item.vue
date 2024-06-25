@@ -89,7 +89,7 @@ export default {
       return required;
     },
 
-    showError() {
+    /* showError() {
       if (
         this.isRequired &&
         (this.CForm.model[this.prop] == null ||
@@ -105,6 +105,27 @@ export default {
         this.CForm?.rules?.[this.prop]?.find((rule) => rule.message)?.message ??
         this.error;
       return message;
+    }, */
+
+    showError() {
+      return (
+        this.CForm && this.prop &&
+        this.CForm.rules[this.prop] &&
+        this.CForm.rules[this.prop].some((rule) => {
+          return (
+            rule.required &&
+            (!this.CForm.model[this.prop] || this.CForm.model[this.prop] === "")
+          );
+        })
+      );
+    },
+
+    errorMessage() {
+      if (this.showError) {
+        return this.prop && this.CForm.rules[this.prop].find((rule) => rule.required)
+          .message;
+      }
+      return "";
     },
   },
 };
