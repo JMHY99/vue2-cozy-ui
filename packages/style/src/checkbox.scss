@@ -35,7 +35,7 @@
 .cozy-checkbox-checked .cozy-checkbox-inner::after {
   content: "";
   position: absolute;
-  top: 50%;
+  top: 47%;
   left: 22%;
   width: 4px;
   height: 8px;
@@ -92,4 +92,8 @@
   margin-left: 5px; /* 与复选框之间的间距 */
   font-size: 14px; /* 字体大小 */
   color: #333; /* 文本颜色 */
+}
+
+.cozy-checkbox-group{
+  display: flex;
 }

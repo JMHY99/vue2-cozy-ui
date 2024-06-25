@@ -36,7 +36,7 @@
 <c-avatar><c-icon size="20" name="c-user-outlined"></c-icon></c-avatar>
 <c-avatar>Z</c-avatar>
 <c-avatar>User22222222</c-avatar>
-<c-avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"></c-avatar>
+<c-avatar src="https://foruda.gitee.com/avatar/1713970336200040602/9810895_itxiaoming9_1713970336.png"></c-avatar>
 ```
 
 :::

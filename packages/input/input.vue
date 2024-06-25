@@ -16,8 +16,6 @@
       :placeholder="placeholder"
       @input="onInput"
       @change="onChange"
-      v-bind="$attrs"
-      v-on="$listeners"
     />
     <span
       v-if="allowClear && value"

@@ -35,6 +35,11 @@
 <script>
 export default {
   name: "CSwitch",
+  // v-model
+  model: {
+    prop: 'value', // 指定绑定的prop
+    event: 'change' // 指定触发更新的事件名，但通常我们会用'input'来保持一致性
+  },
   props: {
     autoFocus: {
       type: Boolean,
