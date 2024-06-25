@@ -50,32 +50,7 @@ export default {
     };
   },
 
-  mounted() {
-    this.adjustFontSize();
-    window.addEventListener("resize", this.adjustFontSize);
-  },
-  beforeDestroy() {
-    window.removeEventListener("resize", this.adjustFontSize);
-  },
-
-  methods: {
-    adjustFontSize() {
-      const avatarWidth = this.$refs.avatar.offsetWidth; // 获取头像宽度
-      // 根据头像宽度计算字体大小，这里只是一个简单的示例，你可能需要根据你的需求来调整这个计算逻辑
-      let avatarText = ""; // 获取头像内容
-      if (
-        this.$slots.default &&
-        this.$slots.default.length > 0 &&
-        this.$slots.default[0].text
-      ) {
-        avatarText = this.$slots.default[0].text.trim().replace(/\s+/g, " ");
-      }
-      console.log(avatarText);
-      const fontSize = avatarWidth / (this.avatarText.length * 1.5); // 假设每个字符需要1.5倍的宽度
-      this.fontSize = `${fontSize}px`; // 设置字体大小
-      this.$refs.avatar.style.fontSize = this.fontSize; // 应用到DOM元素上
-    },
-  },
+  methods: {},
 
   computed: {
     avatarStyle() {
