@@ -43,13 +43,20 @@
 .cozy-button-default {
   transform: all 0.2s;
   &:active {
-    background:  $color-white;
+    background: $color-white;
     box-shadow: 0 0 3px 0px $color-primary;
   }
   &:hover {
     border-color: $color-primary;
     color: $color-primary;
   }
+}
+
+.cozy-button-link {
+  color: #1890ff;
+  background-color: transparent;
+  border-color: transparent;
+  box-shadow: none;
 }
 
 .cozy-button-primary {

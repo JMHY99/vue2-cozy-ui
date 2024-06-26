@@ -21,6 +21,7 @@ pageClass: button-page-class
 <c-button type="info">信息按钮</c-button>
 <c-button type="danger">危险按钮</c-button>
 <c-button type="warning">警告按钮</c-button>
+<c-button type="link">链接按钮</c-button>
 ```
 
 :::
@@ -38,6 +39,7 @@ pageClass: button-page-class
 <c-button disabled type="info">信息按钮</c-button>
 <c-button disabled type="danger">危险按钮</c-button>
 <c-button disabled type="warning">警告按钮</c-button>
+<c-button disabled type="link">链接按钮</c-button>
 <br />
 <br />
 <c-button disabled ghost>默认按钮</c-button>
@@ -46,6 +48,7 @@ pageClass: button-page-class
 <c-button disabled ghost type="info">信息按钮</c-button>
 <c-button disabled ghost type="danger">危险按钮</c-button>
 <c-button disabled ghost type="warning">警告按钮</c-button>
+<c-button disabled ghost type="link">链接按钮</c-button>
 ```
 
 :::
@@ -96,6 +99,7 @@ pageClass: button-page-class
 <c-button ghost size="small" type="info">信息按钮</c-button>
 <c-button ghost size="small" type="danger">危险按钮</c-button>
 <c-button size="small" type="warning">警告按钮</c-button>
+<c-button size="small" type="link">链接按钮</c-button>
 <br />
 <br />
 <c-button type="primary">主要按钮</c-button>
@@ -103,6 +107,7 @@ pageClass: button-page-class
 <c-button ghost type="info">信息按钮</c-button>
 <c-button ghost type="danger">危险按钮</c-button>
 <c-button type="warning">警告按钮</c-button>
+<c-button type="link">链接按钮</c-button>
 <br />
 <br />
 <c-button size="large" type="primary">主要按钮</c-button>
@@ -110,6 +115,7 @@ pageClass: button-page-class
 <c-button ghost size="large" type="info">信息按钮</c-button>
 <c-button ghost size="large" type="danger">危险按钮</c-button>
 <c-button size="large" type="warning">警告按钮</c-button>
+<c-button size="large" type="link">链接按钮</c-button>
 ```
 
 :::
@@ -161,11 +167,11 @@ pageClass: button-page-class
 
 ### API
 
-| 参数     | 说明           | 类型    | 可选值                                      | 默认值 |
-| -------- | -------------- | ------- | ------------------------------------------- | ------ |
-| type     | 类型           | string  | primary / success / warning / danger / info | —      |
-| disabled | 是否禁用状态   | boolean | —                                           | false  |
-| circle   | 是否圆形按钮   | boolean | —                                           | false  |
-| ghost    | 是否幽灵按钮   | boolean | —                                           | false  |
-| size     | 按钮尺寸大小   | string  | large / middle / small                      | —      |
-| loading  | 是否加载中状态 | boolean | —                                           | false  |
+| 参数     | 说明           | 类型    | 可选值                                            | 默认值 |
+| -------- | -------------- | ------- | ------------------------------------------------- | ------ |
+| type     | 类型           | string  | primary / success / warning / danger / info/ link | —      |
+| disabled | 是否禁用状态   | boolean | —                                                 | false  |
+| circle   | 是否圆形按钮   | boolean | —                                                 | false  |
+| ghost    | 是否幽灵按钮   | boolean | —                                                 | false  |
+| size     | 按钮尺寸大小   | string  | large / middle / small                            | —      |
+| loading  | 是否加载中状态 | boolean | —                                                 | false  |

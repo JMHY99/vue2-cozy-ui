@@ -15,7 +15,7 @@
   <div>
     <c-card title="卡片标题">
       <template #extra>
-        <c-button type="primary" size="small">操作按钮</c-button>
+        <c-button type="link" size="small">操作</c-button>
       </template>
       <div v-for="o in 4" :key="o" class="text item">{{'列表内容 ' + o }}</div>
     </c-card>
@@ -36,7 +36,7 @@
   <div style="background: #ccc;padding:20px">
     <c-card title="卡片标题" :bordered="false" shadow="never">
       <template #extra>
-        <c-button type="primary" size="small">操作按钮</c-button>
+        <c-button type="link" size="small">操作</c-button>
       </template>
       <div v-for="o in 4" :key="o" class="text item">{{'列表内容 ' + o }}</div>
     </c-card>
@@ -59,19 +59,19 @@
   <div style="display:flex;gap:20px">
     <c-card title="卡片标题" shadow="always" style="width:30%">
       <template #extra>
-        <c-button type="primary" size="small">操作按钮</c-button>
+        <c-button type="link" size="small">操作</c-button>
       </template>
       <div v-for="o in 4" :key="o" class="text item">{{'列表内容 ' + o }}</div>
     </c-card>
     <c-card title="卡片标题" shadow="hover" style="width:30%">
       <template #extra>
-        <c-button type="primary" size="small">操作按钮</c-button>
+        <c-button type="link" size="small">操作</c-button>
       </template>
       <div v-for="o in 4" :key="o" class="text item">{{'列表内容 ' + o }}</div>
     </c-card>
     <c-card title="卡片标题" shadow="never" style="width:30%">
       <template #extra>
-        <c-button type="primary" size="small">操作按钮</c-button>
+        <c-button type="link" size="small">操作</c-button>
       </template>
       <div v-for="o in 4" :key="o" class="text item">{{'列表内容 ' + o }}</div>
     </c-card>
