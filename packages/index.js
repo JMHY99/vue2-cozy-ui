@@ -33,6 +33,7 @@ import CException from "./exception/index.js";
 import CResult from "./result/index.js";
 import CCard from "./card/index.js";
 import CRate from "./rate/index.js";
+import CSelect from "./select/index.js";
 
 import { version } from "../package.json"; //版本号
 
@@ -71,6 +72,7 @@ const components = [
   CResult,
   CCard,
   CRate,
+  CSelect,
 ];
 
 const install = function (Vue) {
@@ -121,6 +123,7 @@ export {
   CResult,
   CCard,
   CRate,
+  CSelect,
 };
 
 export default {
