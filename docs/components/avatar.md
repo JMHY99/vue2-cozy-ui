@@ -35,7 +35,7 @@
 <c-avatar icon="c-user-outlined"></c-avatar>
 <c-avatar><c-icon size="20" name="c-user-outlined"></c-icon></c-avatar>
 <c-avatar>Z</c-avatar>
-<c-avatar>User22222222</c-avatar>
+<c-avatar>USER</c-avatar>
 <c-avatar style="color: #f56a00; backgroundColor: #fde3cf">J</c-avatar>
 <c-avatar
   src="https://foruda.gitee.com/avatar/1713970336200040602/9810895_itxiaoming9_1713970336.png"
@@ -51,13 +51,15 @@
 ::: demo
 
 ```html
-<c-badge :count="20">
-  <c-avatar shape="square" size="large" icon="c-user-outlined"></c-avatar>
-</c-badge>
+<c-space :size="50">
+  <c-badge :count="20">
+    <c-avatar shape="square" size="large" icon="c-user-outlined"></c-avatar>
+  </c-badge>
 
-<c-badge dot>
-  <c-avatar shape="square" size="large" icon="c-user-outlined"></c-avatar>
-</c-badge>
+  <c-badge dot>
+    <c-avatar shape="square" size="large" icon="c-user-outlined"></c-avatar>
+  </c-badge>
+</c-space>
 ```
 
 :::
@@ -79,6 +81,7 @@
       {{ avatarValue }}
     </c-avatar>
     <c-button
+      type="primary"
       :style="{ marginLeft: 16, verticalAlign: 'middle' }"
       @click="changeValue"
     >
@@ -110,3 +113,12 @@
 ```
 
 :::
+
+### API
+
+| 参数  | 说明                 | 类型                                        | 默认值    |
+| :---- | :------------------- | :------------------------------------------ | :-------- |
+| icon  | 设置头像的图标类型， | string \slot                                | -         |
+| shape | 指定头像的形状       | Enum{ 'circle', 'square' }                  | `circle`  |
+| size  | 设置头像的大小       | number \Enum{ 'large', 'small', 'default' } | `default` |
+| src   | 图片类头像的资源地址 | string                                      | -         |

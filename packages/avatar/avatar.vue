@@ -9,7 +9,9 @@
     :style="avatarStyle"
   >
     <i v-if="icon" :class="[`cozy-icon ${icon}`]" :style="iconStyle"></i>
-    <span v-if="!icon && !src" class="cozy-avatar-string"><slot></slot></span>
+    <span v-if="!icon && !src" class="cozy-avatar-string" ref="avatarText"
+      ><slot></slot
+    ></span>
     <img v-if="src" :src="src" />
   </span>
 </template>
@@ -50,7 +52,29 @@ export default {
     };
   },
 
-  methods: {},
+  mounted() {
+    this.getFontSize();
+  },
+
+  updated() {
+    this.getFontSize();
+  },
+
+  methods: {
+    getFontSize() {
+      this.$nextTick(() => {
+        const element = this.$refs.avatar;
+        const avatarText = this.$refs.avatarText;
+        if (element && avatarText) {
+          const width = element.getBoundingClientRect().width;
+          let text = avatarText?.innerText ? avatarText.innerText : "";
+          let fontSize =
+            text.length > 2 ? (width / text.length) * 1.5 : width / 2;
+          avatarText.style.fontSize = `${fontSize}px`;
+        }
+      });
+    },
+  },
 
   computed: {
     avatarStyle() {
@@ -59,7 +83,6 @@ export default {
         width: `${this.size}px`,
         height: `${this.size}px`,
         "line-height": `${this.size}px`,
-        "font-size": `${this.size / 2}px`,
       };
     },
 
