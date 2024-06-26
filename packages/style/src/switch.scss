@@ -2,8 +2,8 @@
 .cozy-switch {
   position: relative;
   display: inline-block;
-  width: 46px;
-  height: 24px;
+  width: 42px;
+  height: 22px;
   background-color: $color-gray-light-1;
   border-radius: 12px;
   cursor: pointer;
@@ -16,44 +16,49 @@
 .cozy-switch-checked {
   background-color: $color-primary;
 }
-.cozy-switch-inner {
-  display: inline-flex;
-  color: $color-white;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  width: 100%;
-  transition: margin-left 0.3s;
-  font-size: 12px;
-  .cozy-icon {
-    font-size: 14px !important;
+
+.cozy-switch {
+  .cozy-switch-inner {
+    position: absolute;
+    display: inline-flex;
+    color: $color-white;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    transition: margin-left 0.3s;
+    font-size: 12px;
+    .cozy-icon {
+      font-size: 14px !important;
+    }
+    .cozy-switch-inner-checked {
+      text-align: left;
+      margin-left: 5px;
+    }
+
+    .cozy-switch-inner-unchecked {
+      text-align: right;
+      margin-right: 5px;
+    }
   }
 }
 .cozy-switch-inner-checked,
 .cozy-switch-inner-unchecked {
   width: 100%;
 }
-.cozy-switch-inner-checked {
-  text-align: left;
-  margin-left: 5px;
-}
 
-.cozy-switch-inner-unchecked {
-  text-align: right;
-  margin-right: 5px;
-}
 .cozy-switch-handle {
   position: absolute;
   top: 2px;
   left: 2px;
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
   background-color: $color-white;
   border-radius: 50%;
   transition: left 0.3s;
 }
 .cozy-switch-checked .cozy-switch-handle {
-  left: calc(100% - 22px);
+  left: calc(100% - 20px);
 }
 
 /* 小按钮 */
