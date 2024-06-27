@@ -12,14 +12,21 @@
           'cozy-rate-star-empty': !(
             selected >= index + 1 || hoverIndex > index
           ),
+          'cozy-rate-star-half': selected + 0.5 === index + 1,
         }"
       >
         <div>
           <div class="cozy-rate-star-first">
-            <i :class="[`cozy-icon c-shoucang1`]"></i>
+            <span v-if="character">{{ character }}</span>
+            <slot v-else name="character">
+              <i :class="[`cozy-icon c-shoucang1`]"></i>
+            </slot>
           </div>
           <div class="cozy-rate-star-second">
-            <i :class="[`cozy-icon c-shoucang1`]"></i>
+            <span v-if="character">{{ character }}</span>
+            <slot v-else name="character">
+              <i :class="[`cozy-icon c-shoucang1`]"></i>
+            </slot>
           </div>
         </div>
       </li>
@@ -49,6 +56,14 @@ export default {
       type: Boolean,
       default: false,
     },
+    character: {
+      type: String,
+      default: "",
+    },
+    allowClear: {
+      type: Boolean,
+      default: true,
+    },
   },
 
   data() {
@@ -66,7 +81,7 @@ export default {
     handleStarClick(index) {
       if (this.disabled) return;
       if (index > this.count) return;
-      if (index === 1) {
+      if (index === 1 && this.allowClear) {
         if (this.value === 0) {
           this.selected = 1;
         } else {
@@ -86,6 +101,7 @@ export default {
       if (this.disabled) return;
       if (index > this.count) return;
       this.hoverIndex = index;
+      this.$emit("hoverChange", index);
       this.selected = 0;
     },
 
@@ -93,6 +109,12 @@ export default {
       if (this.disabled) return;
       this.hoverIndex = 0;
       this.selected = this.value;
+    },
+  },
+
+  watch: {
+    value(val) {
+      this.selected = val;
     },
   },
 };
@@ -154,5 +176,12 @@ export default {
 }
 .cozy-rate-star-second {
   opacity: 1;
+}
+.cozy-rate-star-half .cozy-rate-star-first {
+  color: #fadb14;
+  opacity: 1;
+}
+.cozy-rate-star-half .cozy-rate-star-second {
+  color: #ccc;
 }
 </style>

@@ -68,6 +68,44 @@ export default {
 
 :::
 
+### 是否清除
+
+`allowClear`属性可以设置是否清除，默认清除。
+
+::: demo
+
+```html
+<template>
+  <div>
+    <span>
+      <c-rate v-model="value" />
+      <span class="cozy-rate-text">清除</span>
+    </span>
+    <br />
+    <span>
+      <c-rate v-model="value" :allowClear="false" />
+      <span class="cozy-rate-text">不允许清除</span>
+    </span>
+  </div>
+</template>
+<script>
+  export default {
+    data() {
+      return {
+        value: 3,
+      };
+    },
+    watch: {
+      value(val) {
+        console.log("value:", val);
+      },
+    },
+  };
+</script>
+```
+
+:::
+
 ### 只读状态
 
 `disabled`属性可以设置只读状态。
@@ -127,3 +165,57 @@ export default {
 ```
 
 :::
+
+### 其他字符
+
+可以将星星替换为其他字符，比如字母，数字，字体图标甚至中文。
+
+::: demo
+
+```html
+<template>
+  <div>
+    <c-rate v-model="value">
+      <template #character>
+        <c-icon size="20" name="c-like-outlined"></c-icon>
+      </template>
+    </c-rate>
+    <c-rate v-model="value" character="A" />
+    <c-rate v-model="value" character="好" />
+  </div>
+</template>
+<script>
+  export default {
+    data() {
+      return {
+        value: 2,
+      };
+    },
+    watch: {
+      value(val) {
+        console.log("value:", val);
+      },
+    },
+  };
+</script>
+```
+
+:::
+
+### API
+
+| 参数           | 说明                   | 类型                       | 默认值                 |
+| :------------- | :--------------------- | :------------------------- | :--------------------- |
+| value(v-model) | 当前数，受控值         | number                     | -                      |
+| count          | star 总数              | number                     | 5                      |
+| disabled       | 只读，无法进行交互     | boolean                    | false                  |
+| character      | 自定义字符             | String or slot="character" | `<Icon type="star" />` |
+| half           | 是否允许半选           | boolean                    | false                  |
+| allowClear     | 是否允许再次点击后清除 | boolean                    | true                   |
+
+### 事件
+
+| 事件名称    | 说明                     | 回调参数                |
+| :---------- | :----------------------- | :---------------------- |
+| change      | 选择时的回调             | Function(value: number) |
+| hoverChange | 鼠标经过时数值变化的回调 | Function(value: number) |
