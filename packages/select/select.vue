@@ -1,113 +1,3 @@
-<!--
-<template>
-  <div class="cozy-select" v-close-on-outside>
-    <input
-      type="text"
-      readonly
-      @focus="focus"
-      @blur="blur"
-      :value="selectValue"
-    />
-    <div class="cozy-select-position-box" v-if="position">
-      <li v-for="(item, index) in options" :key="index" @click="change(item)">
-        {{ item.label }}
-      </li>
-    </div>
-  </div>
-</template>
-
-<script>
-export default {
-  name: "CSelect",
-
-  props: {
-    options: {
-      type: Array,
-      default: () => [],
-    },
-  },
-
-  data() {
-    return {
-      position: false,
-      selectValue: null,
-    };
-  },
-
-  mounted() {},
-
-  methods: {
-    focus() {
-      this.position = true;
-    },
-    blur() {
-      // this.position = false;
-    },
-
-    change(item) {
-      this.selectValue = item.value || item.label;
-      this.position = false;
-      this.$emit("change", item);
-    },
-  },
-  directives: {
-    "close-on-outside": {
-      inserted(el, binding, vnode) {
-        let handleClickOutside = (event) => {
-          // 检查点击事件的目标元素是否是我们的元素
-          // 并且不是元素本身或其子元素
-          if (el.contains(event.target)) {
-            // 触发事件总线上的事件来关闭选项框
-            vnode.position = true;
-          } else {
-            vnode.position = false;
-          }
-        };
-        // 绑定事件监听器
-        document.body.addEventListener("click", handleClickOutside);
-      },
-    },
-  },
-};
-</script>
-<style lang="scss" scoped>
-.cozy-select {
-  min-width: 250px;
-  display: inline-block;
-  height: 40px;
-  position: relative;
-  input {
-    border: 1px solid #d9d9d9;
-    padding: 8px 10px;
-    outline: none;
-    width: 100%;
-    box-sizing: border-box;
-  }
-  .cozy-select-position-box {
-    width: 100%;
-    height: auto;
-    overflow: hidden;
-    position: absolute;
-    top: 42px;
-    border: 1px solid #d9d9d9;
-    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
-    z-index: 100;
-    background: #fff;
-    li {
-      list-style: none;
-      line-height: 40px;
-      padding: 0 10px;
-      cursor: pointer;
-      font-size: 14px;
-      &:hover {
-        background: #f0f0f0;
-      }
-    }
-  }
-}
-</style>
--->
-
 <template>
   <div class="cozy-select" @click.stop="toggleDropdown">
     <div class="cozy-select-selection" :class="{ 'cozy-select-open': open }">
@@ -115,8 +5,11 @@ export default {
         <span v-if="selected">{{ selected.label }}</span>
         <span v-else class="cozy-select-placeholder">{{ placeholder }}</span>
       </div>
-      <span class="cozy-select-arrow"></span>
+      <span class="cozy-select-arrow">
+        <i :class="[`cozy-icon c-down-outlined`]"></i>
+      </span>
     </div>
+    <!-- 选项 -->
     <transition name="fade">
       <ul v-if="open" class="cozy-select-dropdown">
         <li
@@ -200,7 +93,7 @@ export default {
   padding: 4px 11px;
   background: #fff;
   cursor: pointer;
-  border-radius: 2px;
+  border-radius: 4px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -213,6 +106,7 @@ export default {
 
 .cozy-select-selected-value {
   flex: 1;
+  color: #595959;
 }
 
 .cozy-select-placeholder {
@@ -220,11 +114,20 @@ export default {
 }
 
 .cozy-select-arrow {
-  width: 0;
-  height: 0;
-  border-left: 5px solid transparent;
-  border-right: 5px solid transparent;
-  border-top: 5px solid #000;
+  width: 16px;
+  height: 16px;
+  line-height: 16px;
+}
+
+.cozy-select .cozy-select-arrow .cozy-icon.c-down-outlined {
+  font-size: 16px;
+  color: #c5c5c5;
+}
+.cozy-select .cozy-select-arrow {
+  transition: all 0.2s ease;
+}
+.cozy-select-open .cozy-select-arrow {
+  transform: rotate(180deg);
 }
 
 .cozy-select-dropdown {
@@ -233,17 +136,18 @@ export default {
   width: 100%;
   max-height: 250px;
   overflow-y: auto;
-  border: 1px solid #d9d9d9;
+  /* border: 1px solid #d9d9d9; */
   background: #fff;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  -webkit-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
   border-radius: 2px;
-  margin-top: 2px;
+  margin-top: 6px;
   padding: 0;
   list-style: none;
 }
 
 .cozy-select-dropdown li {
-  padding: 8px 12px;
+  padding: 6px 10px;
   cursor: pointer;
 }
 
