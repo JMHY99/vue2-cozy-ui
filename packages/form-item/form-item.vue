@@ -2,7 +2,7 @@
   <div
     class="cozy-form-item"
     :class="{
-      'is-error': showError,
+      'is-error': errorMessage,
       'cozy-form-item-column': CForm.labelPosition === 'top',
       'cozy-form-item-required': isRequired,
     }"
@@ -17,11 +17,14 @@
       }"
       >{{ label }}
     </label>
+    <span v-else :style="{ width: CForm.labelWidth + 'px' }"></span>
     <div class="cozy-form-item-content">
       <slot></slot>
-      <span v-if="showError" class="cozy-form-item-error">{{
-        errorMessage
-      }}</span>
+      <transition name="fade">
+        <span v-if="errorMessage" class="cozy-form-item-error"
+          >{{ errorMessage }}
+        </span>
+      </transition>
     </div>
   </div>
 </template>
@@ -81,6 +84,7 @@ export default {
   methods: {},
 
   computed: {
+    // 是否必填
     isRequired() {
       let required =
         this.CForm?.rules?.[this.prop]?.find((rule) => rule.required)
@@ -89,43 +93,8 @@ export default {
       return required;
     },
 
-    /* showError() {
-      if (
-        this.isRequired &&
-        (this.CForm.model[this.prop] == null ||
-          this.CForm.model[this.prop] == "")
-      ) {
-        return true;
-      }
-      return false;
-    },
-
     errorMessage() {
-      let message =
-        this.CForm?.rules?.[this.prop]?.find((rule) => rule.message)?.message ??
-        this.error;
-      return message;
-    }, */
-
-    showError() {
-      return (
-        this.CForm && this.prop &&
-        this.CForm.rules[this.prop] &&
-        this.CForm.rules[this.prop].some((rule) => {
-          return (
-            rule.required &&
-            (!this.CForm.model[this.prop] || this.CForm.model[this.prop] === "")
-          );
-        })
-      );
-    },
-
-    errorMessage() {
-      if (this.showError) {
-        return this.prop && this.CForm.rules[this.prop].find((rule) => rule.required)
-          .message;
-      }
-      return "";
+      return this.CForm.errorMap[this.prop];
     },
   },
 };
@@ -133,7 +102,7 @@ export default {
 
 <style scoped>
 .cozy-form-item {
-  margin-bottom: 20px;
+  margin-bottom: 24px;
   /* background-color: antiquewhite; */
   display: flex;
   align-items: center;
@@ -164,6 +133,7 @@ export default {
 .cozy-form-item-content {
   display: inline-block;
   position: relative;
+  width: 100%;
 }
 
 .cozy-form-item-error {
@@ -172,5 +142,15 @@ export default {
   left: 0;
   color: #f56c6c;
   font-size: 14px;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 0.3s ease;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+  transform: translateY(-6px); /* 从上方滑出 */
 }
 </style>

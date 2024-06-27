@@ -67,53 +67,94 @@ export default {
     };
   },
 
+  data() {
+    return {
+      // 校验错误信息
+      errorMap: {},
+      // 初始表单数据
+      initialForm: this.model,
+    };
+  },
+
   methods: {
     handleSubmit() {
       this.$emit("submit", this.model);
       this.$emit("validate");
     },
 
-    // validate(){
-    //   console.log(111111111);
-    // }
+    resetFields() {
+      this.errorMap = {};
+    },
+
+    validate(callback) {
+      let valid = true;
+      let errorMap = {};
+      // 遍历表单规则
+      Object.keys(this.rules).forEach((prop) => {
+        const fieldRules = this.rules[prop];
+        if (fieldRules && fieldRules.length > 0) {
+          // 遍历每个字段的验证规则
+          for (let i = 0; i < fieldRules.length; i++) {
+            const rule = fieldRules[i];
+            const value = this.model[prop];
+
+            if (
+              rule.required &&
+              (!value || value === "" || value.length === 0)
+            ) {
+              // 如果必填项为空，则设置为无效并添加错误信息
+              valid = false;
+              errorMap[prop] = rule.message;
+              break; // 无需继续检查其他规则，因为该字段已经是无效的
+            }
+
+            if (rule.min && rule.min > 0 && value && value.length < rule.min) {
+              // 如果字段值长度小于最小长度
+              valid = false;
+              errorMap[prop] = rule.message;
+              break; // 同样无需继续检查其他规则
+            }
+
+            if (rule.max && rule.max > 0 && value && value.length > rule.max) {
+              // 如果字段值长度大于最大长度
+              valid = false;
+              errorMap[prop] = rule.message;
+              break; // 同样无需继续检查其他规则
+            }
+            // 可以继续添加其他类型的验证规则（如 type, pattern 等）
+          }
+        }
+      });
+      this.errorMap = errorMap;
+      // 所有字段验证完毕后才调用 callback
+      callback && callback(valid, errorMap);
+    },
+
     // validate(callback) {
-    //   // 校验表单数据
     //   let valid = true;
+    //   let errorMap = {};
     //   Object.keys(this.rules).forEach((prop) => {
     //     if (this.rules[prop] && this.rules[prop].length > 0) {
     //       this.rules[prop].forEach((rule) => {
     //         if (rule.required) {
-    //           if (!this.model[prop] || this.model[prop] === "") {
+    //           if (
+    //             !this.model[prop] ||
+    //             this.model[prop] === "" ||
+    //             this.model[prop].length === 0
+    //           ) {
+    //             //输入为空
     //             valid = false;
-    //             this.$set(this.model, prop, "");
-    //             this.$nextTick(() => {
-    //               callback && callback(prop);
-    //             });
+    //             errorMap[prop] = rule.message;
+    //             callback && callback(valid);
     //           }
     //         }
+    //         // Other rules can be added here (e.g., min, max, type)
     //       });
     //     }
     //   });
-    //   return valid;
+    //   this.errorMap = errorMap;
+    //   callback && callback(valid);
     // },
-
-    validate(callback) {
-      let valid = true;
-      Object.keys(this.rules).forEach((prop) => {
-        if (this.rules[prop] && this.rules[prop].length > 0) {
-          this.rules[prop].forEach((rule) => {
-            if (rule.required) {
-              if (!this.model[prop] || this.model[prop] === "") {
-                valid = false;
-                callback && callback(valid);
-              }
-            }
-            // Other rules can be added here (e.g., min, max, type)
-          });
-        }
-      });
-      callback && callback(valid);
-    },
   },
 };
 </script>

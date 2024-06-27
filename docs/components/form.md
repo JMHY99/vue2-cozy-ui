@@ -15,10 +15,10 @@
   <div>
     <c-form :model="form" :label-width="100">
       <c-form-item label="姓名">
-        <c-input v-model="form.name" />
+        <c-input v-model="form.name" style="width:300px" />
       </c-form-item>
       <c-form-item label="年龄">
-        <c-input v-model="form.age" />
+        <c-input v-model="form.age" style="width:300px" />
       </c-form-item>
       <c-form-item label="性别">
         <c-radio-group v-model="form.gender">
@@ -170,10 +170,10 @@ Form 组件提供了表单验证的功能，只需为 rules 属性传入约定�
   <div>
     <c-form :model="form" ref="ruleForm" :label-width="100" :rules="rules">
       <c-form-item label="姓名" prop="name">
-        <c-input v-model="form.name" />
+        <c-input v-model="form.name" style="width:300px" />
       </c-form-item>
       <c-form-item label="年龄" prop="age">
-        <c-input v-model="form.age" />
+        <c-input v-model="form.age" style="width:300px" />
       </c-form-item>
       <c-form-item label="性别" prop="gender">
         <c-radio-group v-model="form.gender">
@@ -194,6 +194,7 @@ Form 组件提供了表单验证的功能，只需为 rules 属性传入约定�
       </c-form-item>
       <c-form-item>
         <c-button type="primary" @click="submitForm('ruleForm')">提交</c-button>
+        <c-button @click="resetForm('ruleForm')">重置</c-button>
       </c-form-item>
     </c-form>
   </div>
@@ -226,12 +227,12 @@ export default {
           {
             type: "array",
             required: true,
-            message: "兴趣爱好",
+            message: "请选择兴趣爱好",
             trigger: "change",
           },
         ],
-        gender: [{ required: true, message: "选择性别", trigger: "change" }],
-        switch: [{ required: false, message: "请选择是否", trigger: "blur" }],
+        gender: [{ required: true, message: "请选择性别", trigger: "change" }],
+        switch: [{ required: true, message: "请选择是否", trigger: "blur" }],
       },
     };
   },
@@ -245,6 +246,9 @@ export default {
           return false;
         }
       });
+    },
+    resetForm(formName) {
+      this.$refs[formName].resetFields();
     },
   },
 };
