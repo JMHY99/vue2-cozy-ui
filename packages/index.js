@@ -34,6 +34,7 @@ import CResult from "./result/index.js";
 import CCard from "./card/index.js";
 import CRate from "./rate/index.js";
 import CSelect from "./select/index.js";
+import CPagination from "./pagination/index.js";
 
 import { version } from "../package.json"; //版本号
 
@@ -73,6 +74,7 @@ const components = [
   CCard,
   CRate,
   CSelect,
+  CPagination,
 ];
 
 const install = function (Vue) {
@@ -124,6 +126,7 @@ export {
   CCard,
   CRate,
   CSelect,
+  CPagination,
 };
 
 export default {

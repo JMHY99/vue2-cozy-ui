@@ -67,7 +67,13 @@ module.exports = {
               title: "导航",
               collapsable: false,
               sidebarDepth: 1, // 只显示一级标题
-              children: ["affix", "anchor", "breadcrumb", "dropdown"].sort(),
+              children: [
+                "affix",
+                "anchor",
+                "breadcrumb",
+                "dropdown",
+                "pagination",
+              ].sort(),
             },
             {
               title: "表单",

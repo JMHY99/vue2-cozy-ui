@@ -6,6 +6,20 @@
   "description": "cozy-ui组件库",
   "glyphs": [
     {
+      "icon_id": "7450597",
+      "name": "左双箭头",
+      "font_class": "zuoshuangjiantou",
+      "unicode": "e65c",
+      "unicode_decimal": 58972
+    },
+    {
+      "icon_id": "7450660",
+      "name": "右双箭头",
+      "font_class": "youshuangjiantou",
+      "unicode": "e66c",
+      "unicode_decimal": 58988
+    },
+    {
       "icon_id": "1125602",
       "name": "收藏",
       "font_class": "shoucang1",
