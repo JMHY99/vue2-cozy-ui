@@ -81,7 +81,15 @@ export default {
     return {};
   },
 
-  methods: {},
+  methods: {
+    validate() {
+      console.log("校验方法");
+    },
+
+    resetField() {
+      console.log("重置方法");
+    },
+  },
 
   computed: {
     // 是否必填

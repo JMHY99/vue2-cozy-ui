@@ -232,7 +232,7 @@ export default {
           },
         ],
         gender: [{ required: true, message: "请选择性别", trigger: "change" }],
-        switch: [{ required: true, message: "请选择是否", trigger: "blur" }],
+        switch: [{ required: false, message: "请选择是否", trigger: "blur" }],
       },
     };
   },

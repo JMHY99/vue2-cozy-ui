@@ -82,10 +82,16 @@ export default {
       this.$emit("validate");
     },
 
+    // 表单重置
     resetFields() {
       this.errorMap = {};
+      let chiledren = this.$slots.default.filter((item) => item.tag);
+      chiledren.forEach((item) => {
+        item.componentInstance.resetField();
+      });
     },
 
+    // 校验方法
     validate(callback) {
       let valid = true;
       let errorMap = {};
@@ -129,32 +135,6 @@ export default {
       // 所有字段验证完毕后才调用 callback
       callback && callback(valid, errorMap);
     },
-
-    // validate(callback) {
-    //   let valid = true;
-    //   let errorMap = {};
-    //   Object.keys(this.rules).forEach((prop) => {
-    //     if (this.rules[prop] && this.rules[prop].length > 0) {
-    //       this.rules[prop].forEach((rule) => {
-    //         if (rule.required) {
-    //           if (
-    //             !this.model[prop] ||
-    //             this.model[prop] === "" ||
-    //             this.model[prop].length === 0
-    //           ) {
-    //             //输入为空
-    //             valid = false;
-    //             errorMap[prop] = rule.message;
-    //             callback && callback(valid);
-    //           }
-    //         }
-    //         // Other rules can be added here (e.g., min, max, type)
-    //       });
-    //     }
-    //   });
-    //   this.errorMap = errorMap;
-    //   callback && callback(valid);
-    // },
   },
 };
 </script>
