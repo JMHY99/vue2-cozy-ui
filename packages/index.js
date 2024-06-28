@@ -35,6 +35,10 @@ import CCard from "./card/index.js";
 import CRate from "./rate/index.js";
 import CSelect from "./select/index.js";
 import CPagination from "./pagination/index.js";
+import CMenu from "./menu/index.js";
+import CMenuSub from "./menu/menu-sub/index.js";
+import CMenuItem from "./menu/menu-item/index.js";
+import CMenuItemGroup from "./menu/menu-item-group/index.js";
 
 import { version } from "../package.json"; //版本号
 
@@ -75,6 +79,10 @@ const components = [
   CRate,
   CSelect,
   CPagination,
+  CMenu,
+  CMenuSub,
+  CMenuItem,
+  CMenuItemGroup,
 ];
 
 const install = function (Vue) {
@@ -127,6 +135,10 @@ export {
   CRate,
   CSelect,
   CPagination,
+  CMenu,
+  CMenuSub,
+  CMenuItem,
+  CMenuItemGroup,
 };
 
 export default {

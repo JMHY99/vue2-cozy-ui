@@ -73,6 +73,7 @@ module.exports = {
                 "breadcrumb",
                 "dropdown",
                 "pagination",
+                "menu"
               ].sort(),
             },
             {
