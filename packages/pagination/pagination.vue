@@ -32,7 +32,7 @@
     </li>
     <li
       class="cozy-pagination-next"
-      :class="{ 'cozy-pagination-disabled ': value === total }"
+      :class="{ 'cozy-pagination-disabled ': value === totalPages }"
       @click="nextPage"
     >
       <i :class="[`cozy-icon c-right-outlined`]"></i>
@@ -85,7 +85,7 @@ export default {
   data() {
     return {
       maxDisplayedPages: 9,
-      pageSize_:10,
+      pageSize_: 10,
     };
   },
 
@@ -99,7 +99,7 @@ export default {
     },
 
     nextPage() {
-      if (this.value === this.total) return;
+      if (this.value === this.totalPages) return;
       this.model = this.value + 1;
       this.$emit("change", this.value + 1, this.pageSize);
     },
@@ -117,9 +117,9 @@ export default {
       }
 
       if (item.title === "后五页") {
-        if (this.value === this.total - 4) {
-          this.model = this.total;
-          this.$emit("change", this.total, this.pageSize);
+        if (this.value === this.totalPages - 4) {
+          this.model = this.totalPages;
+          this.$emit("change", this.totalPages, this.pageSize);
           return;
         }
         this.model = this.value + 5;
@@ -144,19 +144,29 @@ export default {
       },
     },
 
+    totalPages() {
+      if (this.total % this.pageSize === 0) {
+        return this.total / this.pageSize;
+      } else {
+        return Math.floor(this.total / this.pageSize) + 1;
+      }
+    },
+
     // ... 其他计算属性和方法 ...
 
     displayedPages() {
-      const { value, total, maxDisplayedPages } = this;
-      const isTotalLessThanMax = total <= maxDisplayedPages;
+      const { value, totalPages, maxDisplayedPages } = this;
+      const isTotalLessThanMax = totalPages <= maxDisplayedPages;
 
       if (isTotalLessThanMax) {
-        return Array.from({ length: total }, (_, i) => i + 1);
+        return Array.from({ length: totalPages }, (_, i) => i + 1).map(
+          (page) => ({ value: page, title: String(page) })
+        );
       }
 
       const middlePagesCount = maxDisplayedPages - 4; // 减去1（首页）和1（尾页）以及2个省略号占位
       let start = 2;
-      let end = total - 1;
+      let end = totalPages - 1;
 
       if (value <= 3) {
         start = 2;
@@ -164,12 +174,12 @@ export default {
       } else if (value === 4) {
         start = 2;
         end = 6;
-      } else if (value >= 5 && value <= total - 3) {
+      } else if (value >= 5 && value <= totalPages - 3) {
         start = Math.max(1, value - Math.floor(middlePagesCount / 2));
-        end = Math.min(total - 1, start + middlePagesCount - 1);
+        end = Math.min(totalPages - 1, start + middlePagesCount - 1);
       } else {
-        start = total - middlePagesCount + 1;
-        end = total - 1;
+        start = totalPages - middlePagesCount + 1;
+        end = totalPages - 1;
       }
 
       const pagesWithTitles = [];
@@ -186,11 +196,11 @@ export default {
       }
 
       // 如果不是最后一页，则添加省略号
-      if (end < total - 1) {
+      if (end < totalPages - 1) {
         pagesWithTitles.push({ value: "···", title: "后五页" }); // 假设这里用“后几页”表示省略的内容
       }
 
-      pagesWithTitles.push({ value: total, title: String(total) }); // 始终包含尾页
+      pagesWithTitles.push({ value: totalPages, title: String(totalPages) }); // 始终包含尾页
 
       return pagesWithTitles;
     },

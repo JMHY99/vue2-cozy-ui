@@ -18,13 +18,19 @@
       :total="50"
       @change="haldleChange"
     ></c-pagination>
+    <br />
+    <c-pagination
+      v-model="current"
+      :total="500"
+      @change="haldleChange"
+    ></c-pagination>
   </div>
 </template>
 <script>
   export default {
     data() {
       return {
-        current: 6,
+        current: 5,
       };
     },
     methods: {
@@ -60,7 +66,7 @@
   export default {
     data() {
       return {
-        current: 6,
+        current: 5,
       };
     },
     methods: {
