@@ -17,3 +17,11 @@ export default {
   methods: {},
 };
 </script>
+<style leng="scss" scoped>
+.cozy-menu-item {
+  padding: 0 16px 0 28px;
+  padding-left: 48px;
+  height: 40px;
+  line-height: 40px;
+}
+</style>

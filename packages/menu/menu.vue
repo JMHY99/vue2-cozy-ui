@@ -1,8 +1,5 @@
 <template>
-  <ul
-    class="cozy-menu"
-    :class="[`cozy-menu-${mode}`, { 'cozy-menu-dark': theme === 'dark' }]"
-  >
+  <ul class="cozy-menu" :class="[`cozy-menu-${mode} cozy-menu-dark-${theme}`]">
     <slot></slot>
   </ul>
 </template>
@@ -37,3 +34,14 @@ export default {
   methods: {},
 };
 </script>
+<style lang="scss" scoped>
+.cozy-menu {
+  margin: 0;
+  padding: 0;
+  display: block;
+  list-style: none;
+  position: relative;
+  z-index: 1;
+  font-size: 14px;
+}
+</style>
