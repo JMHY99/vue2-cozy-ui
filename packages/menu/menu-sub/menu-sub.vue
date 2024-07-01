@@ -1,37 +1,47 @@
 <template>
-  <li class="cozy-menu-sub">
-    <div class="cozy-menu-sub-title">
-      <span
-        ><slot name="title">{{ title }}</slot></span
-      >
-      <!-- 后面的小箭头 -->
+  <li class="cozy-menu-sub" :style="{ paddingLeft: paddingLeft }">
+    <div class="cozy-menu-sub-title" @click="handleClick">
+      <span>
+        <slot name="title">{{ title }}</slot>
+      </span>
       <i class="cozy-icon c-down-outlined cozy-menu-sub-title-icon"></i>
     </div>
-    <!-- 菜单项 -->
-    <slot></slot>
+    <transition name="fade">
+      <ul v-if="isOpen" class="cozy-menu-sub-content">
+        <slot></slot>
+      </ul>
+    </transition>
   </li>
 </template>
 
 <script>
 export default {
   name: "CMenuSub",
-
+  inject: ["toggleSubMenu", "isSubMenuOpen", "getMenuLevel"],
   props: {
     title: {
       type: String,
       default: "",
     },
   },
-
-  data() {
-    return {};
+  computed: {
+    isOpen() {
+      return this.isSubMenuOpen(this.$vnode.key);
+    },
+    paddingLeft() {
+      // Use getMenuLevel to calculate padding-left based on level
+      return `${this.getMenuLevel(this.$vnode.key) * 24}px`;
+    },
   },
-
-  mounted() {},
-
-  methods: {},
+  methods: {
+    handleClick() {
+      this.toggleSubMenu(this.$vnode.key);
+      this.$emit("titleClick", this.$vnode.key);
+    },
+  },
 };
 </script>
+
 <style lang="scss" scoped>
 .cozy-menu-sub {
   margin: 0;
@@ -54,5 +64,19 @@ export default {
       transform: translateY(-50%);
     }
   }
+  .cozy-menu-sub-content {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+/* 过渡效果 */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.1s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active in <2.1.8 */ {
+  opacity: 0;
 }
 </style>
