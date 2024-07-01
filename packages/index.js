@@ -34,6 +34,7 @@ import CResult from "./result/index.js";
 import CCard from "./card/index.js";
 import CRate from "./rate/index.js";
 import CSelect from "./select/index.js";
+import CSelectOption from "./select/select-option/index.js";
 import CPagination from "./pagination/index.js";
 import CMenu from "./menu/index.js";
 import CMenuSub from "./menu/menu-sub/index.js";
@@ -78,6 +79,7 @@ const components = [
   CCard,
   CRate,
   CSelect,
+  CSelectOption,
   CPagination,
   CMenu,
   CMenuSub,
@@ -134,6 +136,7 @@ export {
   CCard,
   CRate,
   CSelect,
+  CSelectOption,
   CPagination,
   CMenu,
   CMenuSub,

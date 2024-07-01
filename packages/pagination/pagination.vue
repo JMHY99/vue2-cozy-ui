@@ -37,6 +37,16 @@
     >
       <i :class="[`cozy-icon c-right-outlined`]"></i>
     </li>
+    <li class="cozy-pagination-options" v-if="showSizeChanger">
+      <c-select v-model="pageSize_" style="width: auto">
+        <c-select-option
+          v-for="(item, index) in pageSizeOptions"
+          :key="index"
+          :value="item"
+          >{{ item }}条/页</c-select-option
+        >
+      </c-select>
+    </li>
   </ul>
 </template>
 
@@ -45,23 +55,37 @@ export default {
   name: "CPagination",
 
   props: {
+    // 当前页数
     value: {
       type: Number,
       default: 1,
     },
+    // 总数
     total: {
       type: Number,
       default: 0,
     },
+    // 页面大小
     pageSize: {
       type: Number,
       default: 10,
+    },
+    // 显示页码个数
+    showSizeChanger: {
+      type: Boolean,
+      default: false,
+    },
+    // 页面大小选项
+    pageSizeOptions: {
+      type: Array,
+      default: () => [10, 20, 30, 40],
     },
   },
 
   data() {
     return {
       maxDisplayedPages: 9,
+      pageSize_:10,
     };
   },
 
@@ -289,5 +313,11 @@ export default {
   display: inline-block;
   color: #1890ff;
   font-weight: 500;
+}
+
+.cozy-pagination-options {
+  display: inline-block;
+  margin-left: 16px;
+  vertical-align: middle;
 }
 </style>

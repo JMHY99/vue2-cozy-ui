@@ -14,13 +14,18 @@
 <template>
   <div>
     <c-select :options="options"></c-select>
+    <c-select v-model="value">
+      <c-select-option value="北京"></c-select-option>
+      <c-select-option value="上海"></c-select-option>
+      <c-select-option value="广州"></c-select-option>
+    </c-select>
   </div>
 </template>
 <script>
   export default {
     data() {
       return {
-        value: 5,
+        value: "北京",
         options: [
           { label: "北京", value: "北京" },
           { label: "上海", value: "上海" },

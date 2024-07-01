@@ -11,15 +11,21 @@
     </div>
     <!-- 选项 -->
     <transition name="fade">
-      <ul v-if="open" class="cozy-select-dropdown">
-        <li
-          v-for="option in options"
-          :key="option.value"
-          :class="{ 'cozy-select-dropdown-selected': isSelected(option) }"
-          @click.stop="selectOption(option)"
-        >
-          {{ option.label }}
-        </li>
+      <ul
+        v-if="open"
+        class="cozy-select-dropdown"
+        @select="(value) => selectOption(value)"
+      >
+        <slot>
+          <li
+            v-for="option in options"
+            :key="option.value"
+            :class="{ 'cozy-select-dropdown-selected': isSelected(option) }"
+            @click.stop="selectOption(option)"
+          >
+            {{ option.label }}
+          </li>
+        </slot>
       </ul>
     </transition>
   </div>
@@ -28,6 +34,11 @@
 <script>
 export default {
   name: "CSelect",
+  provide() {
+    return {
+      CSelect: this,
+    };
+  },
   props: {
     value: [String, Number],
     options: {
@@ -36,7 +47,7 @@ export default {
     },
     placeholder: {
       type: String,
-      default: "Select an option",
+      default: "请选择",
     },
   },
   data() {

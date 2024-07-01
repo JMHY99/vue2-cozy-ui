@@ -38,3 +38,39 @@
 ```
 
 :::
+
+### 每页条数
+
+改变每页显示条目数。
+
+::: demo
+
+```html
+<template>
+  <div>
+    <c-pagination
+      show-size-changer
+      v-model="current"
+      :total="50"
+      @change="haldleChange"
+    ></c-pagination>
+  </div>
+</template>
+<script>
+  export default {
+    data() {
+      return {
+        current: 6,
+      };
+    },
+    methods: {
+      haldleChange(page, pageSize) {
+        console.log("page", page);
+        console.log("pageSize", pageSize);
+      },
+    },
+  };
+</script>
+```
+
+:::
