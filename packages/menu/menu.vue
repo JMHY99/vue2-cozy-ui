@@ -12,9 +12,12 @@ export default {
       toggleSubMenu: this.toggleSubMenu,
       isSubMenuOpen: this.isSubMenuOpen,
       getMenuLevel: this.getMenuLevel,
+      selectMenuItem: this.selectMenuItem,
+      isSelectedMenuItem: this.isSelectedMenuItem,
     };
   },
   props: {
+    // 菜单模式，可选值为 vertical horizontal
     mode: {
       type: String,
       default: "vertical",
@@ -22,6 +25,8 @@ export default {
         return ["vertical", "horizontal"].includes(value);
       },
     },
+
+    // 菜单主题，可选值为 light dark
     theme: {
       type: String,
       default: "light",
@@ -29,23 +34,37 @@ export default {
         return ["light", "dark"].includes(value);
       },
     },
-    defaultSelectedKeys: {
-      type: Array,
-      default: () => [],
-    },
+
+    // 初始选中的菜单项 key 数组
+    // defaultSelectedKeys: {
+    //   type: Array,
+    //   default: () => [],
+    // },
+
+    // 当前展开的菜单项 key 的数组
     openKeys: {
       type: Array,
       default: () => [],
+    },
+
+    // 当前选中的菜单项 key 的数组
+    selectedKey: {
+      type: String,
+      default: "",
     },
   },
   data() {
     return {
       currentOpenKeys: this.openKeys,
+      currentSelectedKey: this.selectedKey,
     };
   },
   watch: {
     openKeys(val) {
       this.currentOpenKeys = val;
+    },
+    selectedKey(val) {
+      this.currentSelectedKey = val;
     },
   },
   methods: {
@@ -57,9 +76,20 @@ export default {
         this.currentOpenKeys.push(key);
       }
       this.$emit("update:openKeys", [...this.currentOpenKeys]);
+      this.$emit("openChange", [...this.currentOpenKeys]);
     },
     isSubMenuOpen(key) {
       return this.currentOpenKeys.includes(key);
+    },
+
+    isSelectedMenuItem(key) {
+      return this.currentSelectedKey === key;
+    },
+
+    selectMenuItem(key) {
+      this.currentSelectedKey = key;
+      this.$emit("update:selectedKey", this.currentSelectedKey);
+      this.$emit("select", this.currentSelectedKey);
     },
 
     getMenuLevel(key) {
@@ -90,6 +120,7 @@ export default {
   font-size: 14px;
   &-vertical {
     display: block;
+    border-right: 1px solid #e8e8e8;
   }
   &-horizontal {
     display: flex;

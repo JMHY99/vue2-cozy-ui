@@ -1,6 +1,10 @@
 <template>
-  <li class="cozy-menu-sub" :style="{ paddingLeft: paddingLeft }">
-    <div class="cozy-menu-sub-title" @click="handleClick">
+  <li class="cozy-menu-sub" :class="{ 'cozy-menu-sub-open': isOpen }">
+    <div
+      class="cozy-menu-sub-title"
+      @click="handleClick"
+      :style="{ paddingLeft: paddingLeft }"
+    >
       <span>
         <slot name="title">{{ title }}</slot>
       </span>
@@ -29,7 +33,7 @@ export default {
       return this.isSubMenuOpen(this.$vnode.key);
     },
     paddingLeft() {
-      // Use getMenuLevel to calculate padding-left based on level
+      console.log(this);
       return `${this.getMenuLevel(this.$vnode.key) * 24}px`;
     },
   },
@@ -46,6 +50,7 @@ export default {
 .cozy-menu-sub {
   margin: 0;
   padding: 0;
+  color: #333;
   .cozy-menu-sub-title {
     padding: 14px 24px;
     position: relative;
@@ -62,6 +67,8 @@ export default {
       top: 50%;
       right: 24px;
       transform: translateY(-50%);
+      transition: all 0.2s ease;
+      margin-right: 0;
     }
   }
   .cozy-menu-sub-content {
@@ -69,6 +76,14 @@ export default {
     margin: 0;
     padding: 0;
   }
+}
+
+.cozy-menu-sub .cozy-menu-sub-title:hover {
+  color: #1890ff;
+}
+
+.cozy-menu-sub-open > .cozy-menu-sub-title > .cozy-menu-sub-title-icon {
+  transform: translateY(-50%) rotate(180deg);
 }
 
 /* 过渡效果 */

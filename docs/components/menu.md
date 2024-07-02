@@ -15,15 +15,18 @@
   <div>
     <c-menu
       style="width: 256px"
-      :default-selected-keys="['1']"
-      :open-keys.sync="openKeys"
       @click="handleClick"
+      :openKeys="openKeys"
+      :selectedKey.sync="selectedKey"
     >
+      <c-menu-item key="0"
+        ><c-icon name="c-folder-add" /> Navigation Zero
+      </c-menu-item>
       <c-menu-sub key="sub1" @titleClick="titleClick">
         <span slot="title">
           <c-icon name="c-folder-add" />
-          <span>Navigation One</span></span
-        >
+          <span>Navigation One</span>
+        </span>
         <c-menu-item-group key="g1">
           <template slot="title">
             <c-icon name="c-folder-add" /><span>Item 1</span>
@@ -37,9 +40,10 @@
         </c-menu-item-group>
       </c-menu-sub>
       <c-menu-sub key="sub2" @titleClick="titleClick">
-        <span slot="title"
-          ><c-icon name="c-folder-add" /><span>Navigation Two</span></span
-        >
+        <span slot="title">
+          <c-icon name="c-folder-add" />
+          <span>Navigation Two</span>
+        </span>
         <c-menu-item key="5"> Option 5 </c-menu-item>
         <c-menu-item key="6"> Option 6 </c-menu-item>
         <c-menu-sub key="sub3" title="Submenu">
@@ -48,9 +52,10 @@
         </c-menu-sub>
       </c-menu-sub>
       <c-menu-sub key="sub4">
-        <span slot="title"
-          ><c-icon name="c-folder-add" /><span>Navigation Three</span></span
-        >
+        <span slot="title">
+          <c-icon name="c-folder-add" />
+          <span>Navigation Three</span>
+        </span>
         <c-menu-item key="9"> Option 9 </c-menu-item>
         <c-menu-item key="10"> Option 10 </c-menu-item>
         <c-menu-item key="11"> Option 11 </c-menu-item>
@@ -65,6 +70,7 @@
       return {
         current: ["mail"],
         openKeys: ["sub1"],
+        selectedKey: "1",
       };
     },
     watch: {
