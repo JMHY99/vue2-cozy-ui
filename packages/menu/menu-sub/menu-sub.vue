@@ -21,19 +21,24 @@
 <script>
 export default {
   name: "CMenuSub",
-  inject: ["toggleSubMenu", "isSubMenuOpen", "getMenuLevel"],
+  inject: ["toggleSubMenu", "isSubMenuOpen", "getMenuLevel", "registerSubMenu"],
   props: {
     title: {
       type: String,
       default: "",
     },
   },
+  data() {
+    return {};
+  },
+  mounted() {
+    this.registerSubMenu(this.$vnode.key, this.$parent.$vnode.key);
+  },
   computed: {
     isOpen() {
       return this.isSubMenuOpen(this.$vnode.key);
     },
     paddingLeft() {
-      console.log(this);
       return `${this.getMenuLevel(this.$vnode.key) * 24}px`;
     },
   },

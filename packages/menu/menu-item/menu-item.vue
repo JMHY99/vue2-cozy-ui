@@ -3,6 +3,7 @@
     class="cozy-menu-item"
     :class="{ 'cozy-menu-item-selected': isSelected }"
     @click="handleClick"
+    :style="{ paddingLeft: paddingLeft }"
   >
     <slot></slot>
   </li>
@@ -11,8 +12,19 @@
 <script>
 export default {
   name: "CMenuItem",
-  inject: ["selectMenuItem", "isSelectedMenuItem"],
+  inject: [
+    "selectMenuItem",
+    "isSelectedMenuItem",
+    "getMenuLevel",
+    "registerSubMenu",
+  ],
   props: {},
+  data() {
+    return {};
+  },
+  mounted() {
+    this.registerSubMenu(this.$vnode.key, this.$parent.$vnode.key);
+  },
   methods: {
     handleClick() {
       this.selectMenuItem(this.$vnode.key);
@@ -22,6 +34,9 @@ export default {
     isSelected() {
       console.log(this);
       return this.isSelectedMenuItem(this.$vnode.key);
+    },
+    paddingLeft() {
+      return `${this.getMenuLevel(this.$vnode.key) * 24}px`;
     },
   },
 };

@@ -1,6 +1,9 @@
 <template>
   <li class="cozy-menu-item-group">
-    <div class="cozy-menu-item-group-title">
+    <div
+      class="cozy-menu-item-group-title"
+      :style="{ paddingLeft: paddingLeft }"
+    >
       <slot name="title">{{ title }}</slot>
     </div>
     <ul class="cozy-menu-item-group-list">
@@ -12,6 +15,7 @@
 <script>
 export default {
   name: "CMenuItemGroup",
+  inject: ["getMenuLevel", "registerSubMenu"],
   props: {
     title: {
       type: String,
@@ -23,9 +27,17 @@ export default {
     return {};
   },
 
-  mounted() {},
+  mounted() {
+    this.registerSubMenu(this.$vnode.key, this.$parent.$vnode.key);
+  },
 
   methods: {},
+
+  computed: {
+    paddingLeft() {
+      return `${this.getMenuLevel(this.$vnode.key) * 24}px`;
+    },
+  },
 };
 </script>
 <style lang="scss" scoped>

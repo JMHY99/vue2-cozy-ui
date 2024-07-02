@@ -11,9 +11,10 @@ export default {
     return {
       toggleSubMenu: this.toggleSubMenu,
       isSubMenuOpen: this.isSubMenuOpen,
-      getMenuLevel: this.getMenuLevel,
       selectMenuItem: this.selectMenuItem,
       isSelectedMenuItem: this.isSelectedMenuItem,
+      getMenuLevel: this.getMenuLevel,
+      registerSubMenu: this.registerSubMenu,
     };
   },
   props: {
@@ -57,6 +58,7 @@ export default {
     return {
       currentOpenKeys: this.openKeys,
       currentSelectedKey: this.selectedKey,
+      subMenus: {},
     };
   },
   watch: {
@@ -92,20 +94,41 @@ export default {
       this.$emit("select", this.currentSelectedKey);
     },
 
-    getMenuLevel(key) {
-      const findLevel = (key, level) => {
-        const children = this.$slots.default.filter(
-          (vnode) => vnode.componentOptions?.propsData?.key === key
-        );
-        for (const child of children) {
-          if (child.componentOptions?.propsData?.key) {
-            return findLevel(child.componentOptions.propsData.key, level + 1);
-          }
-        }
-        return level;
-      };
-      return findLevel(key, 1);
+    registerSubMenu(key, parentKey) {
+      this.$set(this.subMenus, key, parentKey);
     },
+
+     getKeyPath(key) {
+      let path = [];
+      let currentKey = key;
+      while (currentKey) {
+        path.unshift(currentKey);
+        currentKey = this.subMenus[currentKey];
+      }
+      return path;
+    },
+    getMenuLevel(key) {
+      const path = this.getKeyPath(key);
+      return path.length;
+    },
+
+    // getMenuLevel(key) {
+    //   let level = 1;
+    //   let parentKey = this.subMenus[key];
+    //   while (parentKey) {
+    //     level += 1;
+    //     parentKey = this.subMenus[parentKey];
+    //   }
+    //   return level;
+    // },
+
+    // getMenuLevel(vnode, level = 1) {
+    //   console.log("vnode",vnode);
+    //   if (vnode.parent && vnode.parent.$options.name === "c-menu-sub") {
+    //     return this.getMenuLevel(vnode.parent, level + 1);
+    //   }
+    //   return level;
+    // },
   },
 };
 </script>
