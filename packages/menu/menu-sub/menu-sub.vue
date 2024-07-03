@@ -11,7 +11,12 @@
       <i class="cozy-icon c-down-outlined cozy-menu-sub-title-icon"></i>
     </div>
     <transition name="fade">
-      <ul v-if="isOpen" class="cozy-menu-sub-content">
+      <ul
+        v-if="
+          (isOpen && this.mode === 'vertical') || this.mode === 'horizontal'
+        "
+        class="cozy-menu-sub-content"
+      >
         <slot></slot>
       </ul>
     </transition>
@@ -21,7 +26,13 @@
 <script>
 export default {
   name: "CMenuSub",
-  inject: ["toggleSubMenu", "isSubMenuOpen", "getMenuLevel", "registerSubMenu"],
+  inject: [
+    "toggleSubMenu",
+    "isSubMenuOpen",
+    "getMenuLevel",
+    "registerSubMenu",
+    "mode",
+  ],
   props: {
     title: {
       type: String,
@@ -81,6 +92,50 @@ export default {
     margin: 0;
     padding: 0;
   }
+}
+
+.cozy-menu-horizontal
+  .cozy-menu-sub
+  .cozy-menu-sub-title
+  .cozy-menu-sub-title-icon {
+  display: none;
+}
+
+.cozy-menu-horizontal .cozy-menu-sub .cozy-menu-sub-content {
+  position: absolute;
+  z-index: 10000;
+  width: 100%;
+  max-height: 250px;
+  overflow-y: auto;
+  background: #fff;
+  -webkit-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
+  border-radius: 2px;
+  margin-top: 6px;
+  padding: 0;
+  list-style: none;
+  display: none;
+  transform: all 0.5s ease;
+}
+
+.cozy-menu-horizontal .cozy-menu-sub {
+  position: relative;
+  display: inline-block;
+  vertical-align: bottom;
+  border-bottom: 2px solid transparent;
+}
+
+.cozy-menu-horizontal .cozy-menu-sub:hover {
+  border-bottom: 2px solid #1890ff;
+}
+
+.cozy-menu-horizontal .cozy-menu-sub:hover .cozy-menu-sub-content {
+  display: block;
+  transform: all 0.5s ease;
+}
+
+.cozy-menu-horizontal .cozy-menu-sub .cozy-menu-sub-title {
+  padding: 0 20px;
 }
 
 .cozy-menu-sub .cozy-menu-sub-title:hover {

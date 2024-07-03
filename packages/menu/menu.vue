@@ -15,6 +15,7 @@ export default {
       isSelectedMenuItem: this.isSelectedMenuItem,
       getMenuLevel: this.getMenuLevel,
       registerSubMenu: this.registerSubMenu,
+      mode:this.mode,
     };
   },
   props: {
@@ -98,7 +99,7 @@ export default {
       this.$set(this.subMenus, key, parentKey);
     },
 
-     getKeyPath(key) {
+    getKeyPath(key) {
       let path = [];
       let currentKey = key;
       while (currentKey) {
@@ -109,6 +110,7 @@ export default {
     },
     getMenuLevel(key) {
       const path = this.getKeyPath(key);
+      console.log(path);
       return path.length;
     },
 
@@ -147,6 +149,11 @@ export default {
   }
   &-horizontal {
     display: flex;
+    line-height: 40px;
+    white-space: nowrap;
+    border: 0;
+    border-bottom: 1px solid #e8e8e8;
+    box-shadow: none;
   }
   &-dark {
     background-color: #001529;
@@ -156,5 +163,10 @@ export default {
     background-color: #fff;
     color: #000;
   }
+}
+
+.cozy-menu-horizontal > .cozy-menu-item-selected {
+  color: #1890ff;
+  border-bottom: 2px solid #1890ff;
 }
 </style>

@@ -32,7 +32,6 @@ export default {
   },
   computed: {
     isSelected() {
-      console.log(this);
       return this.isSelectedMenuItem(this.$vnode.key);
     },
     paddingLeft() {
@@ -60,12 +59,12 @@ export default {
   color: #1890ff;
 }
 
-.cozy-menu-item-selected {
+.cozy-menu-vertical .cozy-menu-item-selected {
   color: #1890ff;
   background-color: #e6f7ff;
 }
 
-.cozy-menu-item-selected:not(.cozy-menu-sub-title):after {
+.cozy-menu-vertical .cozy-menu-item-selected:not(.cozy-menu-sub-title):after {
   content: "";
   display: block;
   width: 2px;
