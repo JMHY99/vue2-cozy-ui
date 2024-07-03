@@ -38,3 +38,39 @@
 ```
 
 :::
+
+::: demo
+
+```html
+<template>
+  <div>
+    <c-select v-model="selectedValue" placeholder="请选择">
+      <c-select-option
+        v-for="option in options"
+        :key="option.value"
+        :value="option.value"
+        :label="option.label"
+      >
+        {{ option.label }}
+      </c-select-option>
+    </c-select>
+  </div>
+</template>
+
+<script>
+  export default {
+    data() {
+      return {
+        selectedValue: "option1",
+        options: [
+          { value: "option1", label: "Option 1" },
+          { value: "option2", label: "Option 2" },
+          { value: "option3", label: "Option 3" },
+        ],
+      };
+    },
+  };
+</script>
+```
+
+:::

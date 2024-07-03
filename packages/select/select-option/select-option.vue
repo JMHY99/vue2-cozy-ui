@@ -1,56 +1,72 @@
 <template>
-  <li class="cozy-select-dropdown-item" @click.stop="handleClick">
-    <slot>{{ value }}</slot>
+  <li
+    class="cozy-select-dropdown-item"
+    :class="{ 'cozy-select-dropdown-selected': isSelected, 'disabled': disabled }"
+    @click.stop="handleClick"
+  >
+    <slot>{{ displayLabel }}</slot>
   </li>
 </template>
 
 <script>
 export default {
   name: "CSelectOption",
-
   inject: {
     CSelect: {
-      default: null, //默认为''
+      default: null,
     },
   },
-
   props: {
     value: {
       type: [String, Number],
-      default: "",
+      required: true,
+    },
+    label: {
+      type: String,
+      default: null,
     },
     disabled: {
       type: Boolean,
       default: false,
     },
   },
-
-  data() {
-    return {};
+  computed: {
+    isSelected() {
+      return this.CSelect && this.CSelect.selected && this.CSelect.selected.value === this.value;
+    },
+    displayLabel() {
+      return this.label || this.value;
+    },
   },
-
-  mounted() {},
-
   methods: {
     handleClick() {
-      let option = {};
-      option.value = this.value;
-      console.log(this.$slots.default);
-      option.label = this.$slots.default
-        ? this.$slots.default[0].text
-        : this.value;
-      option.disabled = this.disabled;
-      this.CSelect.selectOption(option);
+      if (!this.disabled) {
+        this.CSelect.selectOption({
+          value: this.value,
+          label: this.$slots.default ? this.$slots.default[0].text.trim() : this.displayLabel,
+        });
+      }
     },
   },
 };
 </script>
-<style lang="scss" scoped>
+
+<style scoped>
 .cozy-select-dropdown-item {
   padding: 6px 10px;
   cursor: pointer;
-  &:hover {
-    background: #f5f5f5;
-  }
+}
+
+.cozy-select-dropdown-item:hover {
+  background: #f5f5f5;
+}
+
+.cozy-select-dropdown-item.disabled {
+  cursor: not-allowed;
+  color: #bfbfbf;
+}
+
+.cozy-select-dropdown-selected {
+  background: #e6f7ff;
 }
 </style>
