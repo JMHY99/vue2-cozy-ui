@@ -41,6 +41,8 @@ import CMenuSub from "./menu/menu-sub/index.js";
 import CMenuItem from "./menu/menu-item/index.js";
 import CMenuItemGroup from "./menu/menu-item-group/index.js";
 import CDropdown from "./dropdown/index.js";
+import CAnchor from "./anchor/index.js";
+import CAnchorLink from "./anchor-link/index.js";
 
 import { version } from "../package.json"; //版本号
 
@@ -87,6 +89,8 @@ const components = [
   CMenuItem,
   CMenuItemGroup,
   CDropdown,
+  CAnchor,
+  CAnchorLink,
 ];
 
 const install = function (Vue) {
@@ -145,6 +149,8 @@ export {
   CMenuItem,
   CMenuItemGroup,
   CDropdown,
+  CAnchor,
+  CAnchorLink,
 };
 
 export default {
