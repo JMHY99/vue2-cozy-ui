@@ -43,6 +43,7 @@ import CMenuItemGroup from "./menu/menu-item-group/index.js";
 import CDropdown from "./dropdown/index.js";
 import CAnchor from "./anchor/index.js";
 import CAnchorLink from "./anchor-link/index.js";
+import CSlider from "./slider/index.js";
 
 import { version } from "../package.json"; //版本号
 
@@ -91,6 +92,7 @@ const components = [
   CDropdown,
   CAnchor,
   CAnchorLink,
+  CSlider,
 ];
 
 const install = function (Vue) {
@@ -151,6 +153,7 @@ export {
   CDropdown,
   CAnchor,
   CAnchorLink,
+  CSlider,
 };
 
 export default {

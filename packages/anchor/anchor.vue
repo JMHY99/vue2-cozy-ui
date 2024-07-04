@@ -119,6 +119,7 @@ export default {
 }
 
 .cozy-anchor-ink-ball {
+  box-sizing: border-box;
   position: absolute;
   left: 50%;
   display: none;
