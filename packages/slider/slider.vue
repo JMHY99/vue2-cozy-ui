@@ -47,8 +47,11 @@ export default {
       const rect = this.$refs.slider.getBoundingClientRect();
       const x = event.clientX - rect.left;
       const width = rect.width;
-      const newValue = Math.min(Math.max(0, (x / width) * 100), 100); // 假设最大值为100
+      const newValue = Math.round(
+        Math.min(Math.max(0, (x / (width - 14)) * 100), 100)
+      ); // 假设最大值为100
       this.model = newValue;
+      this.$emit("change", Math.round(this.model));
     },
 
     startDrag(event) {
@@ -111,6 +114,7 @@ export default {
 
       // 更新滑块位置和样式
       this.model = newValue;
+
     },
     stopDrag() {
       // 清除拖动状态
@@ -121,6 +125,7 @@ export default {
       document.removeEventListener("touchmove", this.draggingMethod);
       document.removeEventListener("mouseup", this.stopDrag);
       document.removeEventListener("touchend", this.stopDrag);
+      this.$emit("change", Math.round(this.model));
     },
   },
 
@@ -188,7 +193,17 @@ export default {
 }
 
 .cozy-slider:hover .cozy-slider-track {
-  color: #69c0ff;
+  background-color: #69c0ff;
+}
+
+.cozy-slider:hover .cozy-slider-rail {
+  background-color: #e1e1e1;
+}
+
+.cozy-slider-handle:focus {
+  border-color: #46a6ff;
+  outline: none;
+  box-shadow: 0 0 0 5px rgba(24, 144, 255, 0.2);
 }
 
 .cozy-slider-step {

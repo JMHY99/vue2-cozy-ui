@@ -8,7 +8,7 @@
 
 ```html
 <template>
-  <c-slider v-model="value" />
+  <c-slider v-model="value" @change="handleChange" />
 </template>
 <script>
   export default {
@@ -17,6 +17,12 @@
         value: 30,
       };
     },
+
+    methods: {
+      handleChange(value) {
+        console.log(value);
+      }
+    }
   };
 </script>
 ```
